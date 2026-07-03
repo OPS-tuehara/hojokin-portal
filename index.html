@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金・助成金ポータル</title>
+<style>
+  :root{
+    --bg:#f4f6f9; --card:#ffffff; --ink:#1f2933; --sub:#5b6b7b;
+    --accent:#0f5fa8; --accent-light:#e8f1fa; --border:#dde4ec;
+    --tag-size:#e0f0e4; --tag-size-ink:#1e6b3a;
+    --tag-cat:#fdeedd; --tag-cat-ink:#9a5b12;
+    --tag-nat:#e6e9f7; --tag-nat-ink:#3a4a9a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+  header{background:linear-gradient(120deg,#0f5fa8,#1a7fbf);color:#fff;padding:28px 20px 22px;}
+  header h1{font-size:1.5rem;margin-bottom:6px;}
+  header p{font-size:.85rem;opacity:.9;}
+  .container{max-width:1080px;margin:0 auto;padding:0 16px 60px;}
+  .filters{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-top:-14px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+  .filter-row{margin-bottom:14px;}
+  .filter-row:last-child{margin-bottom:0;}
+  .filter-label{font-weight:700;font-size:.85rem;margin-bottom:6px;display:block;color:var(--sub);}
+  select{padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:.95rem;min-width:220px;background:#fff;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{border:1px solid var(--border);background:#fff;border-radius:999px;padding:6px 14px;font-size:.87rem;cursor:pointer;transition:.15s;}
+  .chip:hover{border-color:var(--accent);}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .count{margin:18px 4px 10px;font-size:.9rem;color:var(--sub);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+  .card h3{font-size:1.02rem;color:var(--accent);}
+  .tags{display:flex;flex-wrap:wrap;gap:5px;}
+  .tag{font-size:.72rem;padding:2px 9px;border-radius:999px;}
+  .tag.size{background:var(--tag-size);color:var(--tag-size-ink);}
+  .tag.cat{background:var(--tag-cat);color:var(--tag-cat-ink);}
+  .tag.nat{background:var(--tag-nat);color:var(--tag-nat-ink);}
+  .amount{font-weight:700;font-size:.92rem;}
+  .amount span{color:var(--accent);}
+  .desc{font-size:.85rem;color:var(--sub);}
+  .meta{font-size:.8rem;color:var(--sub);}
+  .card a{margin-top:auto;font-size:.85rem;color:var(--accent);text-decoration:none;font-weight:600;}
+  .card a:hover{text-decoration:underline;}
+  .local{background:var(--accent-light);border:1px solid #c3d9ee;border-radius:12px;padding:18px 20px;margin-top:26px;}
+  .local h2{font-size:1.05rem;margin-bottom:8px;color:var(--accent);}
+  .local p{font-size:.86rem;color:var(--sub);margin-bottom:10px;}
+  .local ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .local li a{color:var(--accent);font-size:.9rem;font-weight:600;text-decoration:none;}
+  .local li a:hover{text-decoration:underline;}
+  .local li span{font-size:.8rem;color:var(--sub);}
+  .disclaimer{margin-top:26px;font-size:.78rem;color:var(--sub);border-top:1px solid var(--border);padding-top:14px;}
+  .empty{padding:40px;text-align:center;color:var(--sub);background:var(--card);border:1px dashed var(--border);border-radius:12px;}
+  .diag{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:18px 20px;margin-top:18px;}
+  .diag h2{font-size:1.05rem;color:var(--accent);margin-bottom:4px;}
+  .diag>p{font-size:.83rem;color:var(--sub);margin-bottom:14px;}
+  .diag-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:12px;}
+  .diag-field label{display:block;font-size:.8rem;font-weight:700;color:var(--sub);margin-bottom:4px;}
+  .diag-field input[type=number],.diag-field select{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:.92rem;background:#fff;}
+  .diag-checks{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px;}
+  .diag-checks label{font-size:.87rem;display:flex;align-items:center;gap:6px;cursor:pointer;}
+  .btn{padding:9px 22px;border-radius:8px;border:none;font-size:.92rem;font-weight:700;cursor:pointer;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:#0c4d88;}
+  .btn-ghost{background:#fff;border:1px solid var(--border);color:var(--sub);margin-left:8px;}
+  .reason{font-size:.8rem;background:var(--tag-size);color:var(--tag-size-ink);border-radius:8px;padding:6px 10px;}
+  .diag-note{font-size:.8rem;color:var(--sub);margin-top:10px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="container" style="padding-bottom:20px;">
+    <h1>補助金・助成金ポータル</h1>
+    <p>所在地・企業規模・目的で使える制度を絞り込み（2026年7月時点の情報）</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="filters">
+    <div class="filter-row">
+      <label class="filter-label">会社・店舗の所在地（都道府県）</label>
+      <select id="pref"></select>
+    </div>
+    <div class="filter-row">
+      <label class="filter-label">企業規模</label>
+      <div class="chips" id="sizeChips">
+        <button class="chip active" data-v="all">すべて</button>
+        <button class="chip" data-v="micro">個人事業主・小規模（〜5人）</button>
+        <button class="chip" data-v="small">小規模（〜20人）</button>
+        <button class="chip" data-v="sme">中小企業（21人〜）</button>
+        <button class="chip" data-v="mid">中堅企業</button>
+      </div>
+    </div>
+    <div class="filter-row">
+      <label class="filter-label">並び替え</label>
+      <div class="chips" id="sortChips">
+        <button class="chip active" data-v="default">標準</button>
+        <button class="chip" data-v="deadline">締切が近い順</button>
+      </div>
+    </div>
+    <div class="filter-row">
+      <label class="filter-label">目的・分野（複数選択可）</label>
+      <div class="chips" id="catChips">
+        <button class="chip active" data-v="all">すべて</button>
+        <button class="chip" data-v="it">IT・DX</button>
+        <button class="chip" data-v="equip">設備投資・省力化</button>
+        <button class="chip" data-v="sales">販路開拓・売上拡大</button>
+        <button class="chip" data-v="newbiz">新事業・事業拡大</button>
+        <button class="chip" data-v="hr">雇用・人材育成</button>
+        <button class="chip" data-v="wage">賃上げ</button>
+        <button class="chip" data-v="succession">事業承継・M&amp;A</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="diag">
+    <h2>かんたん適用診断</h2>
+    <p>法人情報を入力すると、各制度の対象要件（中小企業基本法の定義・小規模事業者の従業員基準など）に照らして「適用見込みあり」の制度だけを表示します。</p>
+    <div class="diag-grid">
+      <div class="diag-field">
+        <label>事業形態</label>
+        <select id="dForm">
+          <option value="corp">法人</option>
+          <option value="solo">個人事業主</option>
+        </select>
+      </div>
+      <div class="diag-field">
+        <label>業種（主たる事業）</label>
+        <select id="dInd">
+          <option value="mfg">製造業・建設業・運輸業その他</option>
+          <option value="whole">卸売業</option>
+          <option value="retail">小売業</option>
+          <option value="service">サービス業（宿泊・娯楽以外）</option>
+          <option value="hotel">宿泊業・娯楽業</option>
+        </select>
+      </div>
+      <div class="diag-field">
+        <label>常時使用する従業員数（人）</label>
+        <input type="number" id="dEmp" min="0" placeholder="例：8">
+      </div>
+      <div class="diag-field">
+        <label>資本金（万円・法人のみ、任意）</label>
+        <input type="number" id="dCap" min="0" placeholder="例：1000">
+      </div>
+    </div>
+    <div class="diag-checks">
+      <label><input type="checkbox" id="dNonreg"> パート・契約社員など非正規の従業員がいる</label>
+      <label><input type="checkbox" id="dEmpIns"> 雇用保険の適用事業所である</label>
+    </div>
+    <button class="btn btn-primary" id="dRun">診断する</button>
+    <button class="btn btn-ghost" id="dClear" style="display:none;">診断をクリア</button>
+    <p class="diag-note">※ 簡易判定です。みなし大企業（大企業の子会社等）の除外規定や課税所得要件など、詳細要件は各公募要領でご確認ください。</p>
+  </div>
+
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none;">条件に一致する制度がありません。条件を緩めてお試しください。</div>
+
+  <div class="local" id="localBox">
+    <h2 id="localTitle">地域独自の補助金・助成金を探す</h2>
+    <p>都道府県・市区町村独自の制度（家賃補助、創業支援、設備導入支援など）は数が多く更新も頻繁なため、以下の公式検索サイトが確実です。</p>
+    <ul>
+      <li><a href="https://j-net21.smrj.go.jp/snavi2/" target="_blank">J-Net21 支援情報ヘッドライン（中小機構）</a><br><span>国・都道府県の補助金・助成金を地域別・分野別に検索。毎日更新。</span></li>
+      <li><a href="https://mirasapo-plus.go.jp/" target="_blank">ミラサポplus（中小企業庁）</a><br><span>国の補助金・給付金の総合案内。制度ナビで条件検索可能。</span></li>
+      <li><a href="https://seisansei.smrj.go.jp/subsidy_info/schedule.html" target="_blank">補助金活用ナビ 公募スケジュール（中小機構）</a><br><span>主要補助金の年間公募スケジュール一覧。</span></li>
+      <li id="prefSearch" style="display:none;"><a href="#" target="_blank" id="prefSearchLink"></a><br><span>選択した都道府県の制度をJ-Net21で検索。</span></li>
+    </ul>
+  </div>
+
+  <p class="disclaimer">※ 本ページは2026年7月時点の公開情報をもとに作成した参考資料です。補助上限・補助率・公募期間は変更されることがあるため、申請前に必ず各制度の公式サイト・公募要領をご確認ください。国の制度は原則全国どの所在地でも申請できます。</p>
+</div>
+
+<script>
+const PREFS = ["全国（未選択）","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"];
+
+// sizes: micro(〜5人), small(〜20人), sme(中小), mid(中堅)
+const PROGRAMS = [
+ {
+  id:"jizokuka",
+  name:"小規模事業者持続化補助金",
+  agency:"中小企業庁・商工会議所",
+  sizes:["micro","small"],
+  cats:["sales"],
+  amount:"上限50万円（特例併用で最大250万円）",
+  rate:"補助率 2/3（赤字事業者の賃上げ特例は3/4）",
+  desc:"販路開拓の取組（チラシ、Webサイト、店舗改装、展示会出展など）を支援。従業員5人以下（商業・サービス業）または20人以下（製造業その他）が対象。",
+  schedule:"第20回公募：2026年11月5日〜12月15日締切",
+  deadline:"2026-12-15",
+  url:"https://mirasapo-plus.go.jp/subsidy/jizokuka/"
+ },
+ {
+  id:"mono",
+  name:"新事業進出・ものづくり補助金（統合後）",
+  agency:"中小企業庁",
+  sizes:["small","sme","mid"],
+  cats:["equip","newbiz"],
+  amount:"革新的新製品・サービス枠：750万〜2,500万円／新事業進出枠・グローバル枠：2,500万〜7,000万円（大幅賃上げ特例で最大9,000万円）",
+  rate:"補助率は枠・規模により異なる（1/2〜2/3目安）",
+  desc:"2026年度からものづくり補助金と新事業進出補助金が統合。革新的な製品・サービス開発や新分野進出のための設備投資を支援。上限は従業員数区分で変動。",
+  schedule:"統合後第1回公募：2026年8月31日〜9月30日（予定）",
+  deadline:"2026-09-30",
+  url:"https://seisansei.smrj.go.jp/subsidy_info/schedule.html"
+ },
+ {
+  id:"digital",
+  name:"デジタル化・AI導入補助金 2026（旧IT導入補助金）",
+  agency:"中小企業庁・中小機構",
+  sizes:["micro","small","sme"],
+  cats:["it"],
+  amount:"最大450万円程度（枠により異なる）",
+  rate:"補助率 小規模事業者は最大4/5、中小企業2/3など",
+  desc:"会計・受発注・EC・AIツールなどITツール導入を支援。通常枠のほかインボイス枠、セキュリティ対策推進枠、複数者連携枠あり。",
+  schedule:"2026年2月末公募開始、交付申請受付中（回次あり・締切は公式サイトで確認）",
+  deadline:null,
+  url:"https://it-shien.smrj.go.jp/"
+ },
+ {
+  id:"shoryoku_cat",
+  name:"中小企業省力化投資補助金（カタログ注文型）",
+  agency:"中小企業庁・中小機構",
+  sizes:["micro","small","sme"],
+  cats:["equip"],
+  amount:"従業員5名以下：500万円／6〜20名：750万円／21名以上：1,000万円（大幅賃上げ特例でそれぞれ増額、最大1,500万円）",
+  rate:"補助率 1/2",
+  desc:"人手不足解消のため、カタログ掲載の省力化製品（配膳ロボット、無人レジ、自動倉庫など）の導入を支援。申請は比較的簡易。",
+  schedule:"随時受付（公式サイトで確認）",
+  deadline:null,
+  url:"https://shoryokuka.smrj.go.jp/catalog/"
+ },
+ {
+  id:"shoryoku_gen",
+  name:"中小企業省力化投資補助金（一般型）",
+  agency:"中小企業庁・中小機構",
+  sizes:["small","sme","mid"],
+  cats:["equip"],
+  amount:"従業員数に応じ最大8,000万円（特例で最大1億円）",
+  rate:"補助率 1/2など（規模・条件による）",
+  desc:"現場に合わせたオーダーメイドの省力化設備・システム導入を支援。カタログ型より大規模な投資に対応。",
+  schedule:"公募回次あり（公式サイトで確認）",
+  deadline:null,
+  url:"https://shoryokuka.smrj.go.jp/"
+ },
+ {
+  id:"shokei",
+  name:"事業承継・M&A補助金",
+  agency:"中小企業庁",
+  sizes:["micro","small","sme"],
+  cats:["succession"],
+  amount:"枠により150万〜最大2,000万円（事業承継促進枠・専門家活用枠・PMI推進枠は上限300万円など）",
+  rate:"補助率 1/2〜2/3",
+  desc:"事業承継やM&Aに伴う設備投資、専門家費用（FA・仲介手数料等）、PMI費用、廃業費用を支援。小規模売り手支援類型も新設。",
+  schedule:"第15次公募：2026年6月中旬〜7月下旬締切（予定）",
+  deadline:"2026-07-31",
+  url:"https://mirasapo-plus.go.jp/subsidy/syokei/"
+ },
+ {
+  id:"careerup",
+  name:"キャリアアップ助成金（正社員化コース）",
+  agency:"厚生労働省",
+  sizes:["micro","small","sme","mid"],
+  cats:["hr"],
+  amount:"重点支援対象者：中小企業80万円／人（大企業60万円）、それ以外：中小企業40万円／人。情報公表加算 +20万円／事業所",
+  rate:"定額支給",
+  desc:"有期雇用・パート等の非正規労働者を正社員へ転換した事業主に支給。通年申請可能で使いやすい雇用系助成金の代表格。",
+  schedule:"通年（転換後6か月の賃金支払い実績で申請）",
+  deadline:null,
+  url:"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/part_haken/jigyounushi/career.html"
+ },
+ {
+  id:"gyomukaizen",
+  name:"業務改善助成金",
+  agency:"厚生労働省",
+  sizes:["micro","small","sme"],
+  cats:["wage","equip"],
+  amount:"賃上げ額・人数に応じ最大600万円／年（事業主単位）",
+  rate:"設備投資費用の一部を助成（コースにより異なる）",
+  desc:"事業場内最低賃金を引き上げ、あわせて生産性向上のための設備投資（機器導入、POS、車両など）を行う中小事業者を支援。",
+  schedule:"通年公募（予算消化により早期終了あり）",
+  deadline:null,
+  url:"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/shienjigyou/03.html"
+ },
+ {
+  id:"jinzai",
+  name:"人材開発支援助成金",
+  agency:"厚生労働省",
+  sizes:["micro","small","sme","mid"],
+  cats:["hr","it"],
+  amount:"訓練経費の45〜75%＋賃金助成など（コースによる）。リスキリング関連の設備投資助成（上限150万円）も予定",
+  rate:"コースにより異なる",
+  desc:"従業員への職業訓練・研修（DXリスキリング、資格取得等）の経費と訓練期間中の賃金を助成。人への投資促進コースなど複数コースあり。",
+  schedule:"通年（訓練開始前の計画届出が必要）",
+  deadline:null,
+  url:"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html"
+ }
+];
+
+const state = { pref:"全国（未選択）", size:"all", cats:new Set(["all"]), sort:"default", diag:null };
+
+// ===== 適用診断ロジック =====
+// 中小企業基本法：資本金または従業員数のいずれかを満たせば中小企業
+const SME_LIMIT = { mfg:{cap:30000,emp:300}, whole:{cap:10000,emp:100}, retail:{cap:5000,emp:50}, service:{cap:5000,emp:100}, hotel:{cap:5000,emp:200} };
+// 小規模事業者：商業・サービス業(宿泊・娯楽除く)5人以下、製造業その他・宿泊娯楽20人以下
+const SMALL_LIMIT = { mfg:20, whole:5, retail:5, service:5, hotel:20 };
+
+function isSME(d){
+  const lim=SME_LIMIT[d.ind];
+  if(d.form==="solo") return d.emp<=lim.emp;
+  const capOk = d.cap!=null && d.cap<=lim.cap;
+  return capOk || d.emp<=lim.emp;
+}
+function isSmall(d){ return d.emp<=SMALL_LIMIT[d.ind]; }
+
+function smeReason(d){
+  const lim=SME_LIMIT[d.ind];
+  if(d.form==="solo") return `従業員${d.emp}人 ≦ ${lim.emp}人（中小企業基本法の基準内）`;
+  if(d.cap!=null && d.cap<=lim.cap) return `資本金${d.cap.toLocaleString()}万円 ≦ ${lim.cap.toLocaleString()}万円（中小企業基本法の基準内）`;
+  return `従業員${d.emp}人 ≦ ${lim.emp}人（中小企業基本法の基準内）`;
+}
+function smallReason(d){ return `従業員${d.emp}人 ≦ ${SMALL_LIMIT[d.ind]}人（小規模事業者に該当）`; }
+
+// 各制度の判定：{ok, reason} を返す
+const RULES = {
+  jizokuka: d => isSmall(d)
+    ? {ok:true, reason:smallReason(d)}
+    : {ok:false, reason:`従業員${d.emp}人 ＞ ${SMALL_LIMIT[d.ind]}人（小規模事業者の基準超え）`},
+  mono: d => isSME(d)
+    ? {ok:true, reason:smeReason(d)}
+    : {ok:false, reason:"中小企業基本法の基準超え（中堅枠は公募要領を確認）"},
+  digital: d => isSME(d)
+    ? {ok:true, reason:smeReason(d)}
+    : {ok:false, reason:"中小企業基本法の基準超え"},
+  shoryoku_cat: d => isSME(d)
+    ? {ok:true, reason:smeReason(d)}
+    : {ok:false, reason:"中小企業基本法の基準超え"},
+  shoryoku_gen: d => isSME(d)
+    ? {ok:true, reason:smeReason(d)}
+    : {ok:false, reason:"中小企業基本法の基準超え"},
+  shokei: d => isSME(d)
+    ? {ok:true, reason:smeReason(d)}
+    : {ok:false, reason:"中小企業基本法の基準超え"},
+  careerup: d => {
+    if(!d.empIns) return {ok:false, reason:"雇用保険適用事業所であることが必要"};
+    if(!d.nonreg) return {ok:false, reason:"正社員化の対象となる非正規従業員が必要"};
+    return {ok:true, reason:"雇用保険適用＋非正規従業員あり（転換計画の作成が必要）"};
+  },
+  gyomukaizen: d => isSME(d)
+    ? {ok:true, reason:smeReason(d)+"　※事業場内最低賃金が地域別最低賃金＋50円未満であることが要件"}
+    : {ok:false, reason:"中小企業基本法の基準超え"},
+  jinzai: d => {
+    if(!d.empIns) return {ok:false, reason:"雇用保険適用事業所であることが必要"};
+    if(d.emp<1) return {ok:false, reason:"雇用保険被保険者である従業員が必要"};
+    return {ok:true, reason:"雇用保険適用事業所（訓練開始前の計画届出が必要）"};
+  }
+};
+
+const prefSel = document.getElementById("pref");
+PREFS.forEach(p=>{const o=document.createElement("option");o.value=p;o.textContent=p;prefSel.appendChild(o);});
+prefSel.addEventListener("change",()=>{state.pref=prefSel.value;render();});
+
+document.getElementById("sizeChips").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b)return;
+  document.querySelectorAll("#sizeChips .chip").forEach(c=>c.classList.remove("active"));
+  b.classList.add("active"); state.size=b.dataset.v; render();
+});
+
+document.getElementById("dRun").addEventListener("click",()=>{
+  const empRaw=document.getElementById("dEmp").value;
+  if(empRaw===""){ alert("従業員数を入力してください（0人の場合は0）"); return; }
+  const capRaw=document.getElementById("dCap").value;
+  state.diag={
+    form:document.getElementById("dForm").value,
+    ind:document.getElementById("dInd").value,
+    emp:Number(empRaw),
+    cap:capRaw===""?null:Number(capRaw),
+    nonreg:document.getElementById("dNonreg").checked,
+    empIns:document.getElementById("dEmpIns").checked
+  };
+  document.getElementById("dClear").style.display="inline-block";
+  render();
+});
+document.getElementById("dClear").addEventListener("click",()=>{
+  state.diag=null;
+  document.getElementById("dClear").style.display="none";
+  render();
+});
+
+document.getElementById("sortChips").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b)return;
+  document.querySelectorAll("#sortChips .chip").forEach(c=>c.classList.remove("active"));
+  b.classList.add("active"); state.sort=b.dataset.v; render();
+});
+
+document.getElementById("catChips").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b)return;
+  const v=b.dataset.v;
+  if(v==="all"){ state.cats=new Set(["all"]); }
+  else{
+    state.cats.delete("all");
+    state.cats.has(v)?state.cats.delete(v):state.cats.add(v);
+    if(state.cats.size===0) state.cats.add("all");
+  }
+  document.querySelectorAll("#catChips .chip").forEach(c=>c.classList.toggle("active",state.cats.has(c.dataset.v)));
+  render();
+});
+
+const SIZE_LABEL={micro:"〜5人",small:"〜20人",sme:"中小企業",mid:"中堅企業"};
+const CAT_LABEL={it:"IT・DX",equip:"設備・省力化",sales:"販路開拓",newbiz:"新事業",hr:"雇用・人材",wage:"賃上げ",succession:"承継・M&A"};
+
+function deadlineBadge(p){
+  if(!p.deadline) return `<span class="tag" style="background:#eef1f4;color:#5b6b7b;">通年・随時</span>`;
+  const days=Math.ceil((new Date(p.deadline)-new Date())/86400000);
+  if(days<0) return `<span class="tag" style="background:#eef1f4;color:#8a97a5;">締切済（次回公募を確認）</span>`;
+  const urgent=days<=30;
+  return `<span class="tag" style="background:${urgent?'#fde3e3':'#fff3d6'};color:${urgent?'#b02a2a':'#8a6410'};">締切まで${days}日</span>`;
+}
+
+function render(){
+  const grid=document.getElementById("grid");
+  grid.innerHTML="";
+  const diagResults={};
+  let excluded=[];
+  let list=PROGRAMS.filter(p=>{
+    const okSize = state.diag ? true : (state.size==="all" || p.sizes.includes(state.size));
+    const okCat = state.cats.has("all") || p.cats.some(c=>state.cats.has(c));
+    if(!(okSize&&okCat)) return false;
+    if(state.diag){
+      const r=RULES[p.id](state.diag);
+      diagResults[p.id]=r;
+      if(!r.ok){ excluded.push({name:p.name,reason:r.reason}); return false; }
+    }
+    return true;
+  });
+  if(state.sort==="deadline"){
+    const now=new Date();
+    list=[...list].sort((a,b)=>{
+      const da=a.deadline&&new Date(a.deadline)>=now?new Date(a.deadline):null;
+      const db=b.deadline&&new Date(b.deadline)>=now?new Date(b.deadline):null;
+      if(da&&db) return da-db;      // 締切あり同士：近い順
+      if(da) return -1;             // 締切ありを先に
+      if(db) return 1;
+      const pa=a.deadline?1:0, pb=b.deadline?1:0; // 締切済は通年より後
+      return pa-pb;
+    });
+  }
+  const countEl=document.getElementById("count");
+  if(state.diag){
+    countEl.innerHTML=`<strong style="color:var(--accent);">診断結果：適用見込み ${list.length}件</strong>（対象外 ${excluded.length}件）`
+      + (excluded.length?`<br><span style="font-size:.82rem;">対象外：${excluded.map(x=>`${x.name}（${x.reason}）`).join("／")}</span>`:"");
+  }else{
+    countEl.textContent=`国の制度：${list.length}件（全国どの所在地でも申請可）`;
+  }
+  document.getElementById("empty").style.display=list.length?"none":"block";
+  list.forEach(p=>{
+    const el=document.createElement("div"); el.className="card";
+    el.innerHTML=`
+      <div class="tags">
+        <span class="tag nat">国の制度</span>
+        ${deadlineBadge(p)}
+        ${p.sizes.map(s=>`<span class="tag size">${SIZE_LABEL[s]}</span>`).join("")}
+        ${p.cats.map(c=>`<span class="tag cat">${CAT_LABEL[c]}</span>`).join("")}
+      </div>
+      <h3>${p.name}</h3>
+      <p class="amount"><span>${p.amount}</span></p>
+      <p class="meta">${p.rate}</p>
+      <p class="desc">${p.desc}</p>
+      <p class="meta">📅 ${p.schedule}　｜　所管：${p.agency}</p>
+      ${state.diag&&diagResults[p.id]?`<p class="reason">✅ 適用見込み：${diagResults[p.id].reason}</p>`:""}
+      <a href="${p.url}" target="_blank">公式サイトで詳細を見る →</a>`;
+    grid.appendChild(el);
+  });
+  // 地域リンク
+  const box=document.getElementById("prefSearch");
+  if(state.pref!=="全国（未選択）"){
+    box.style.display="block";
+    const a=document.getElementById("prefSearchLink");
+    a.textContent=`${state.pref}の補助金・助成金をJ-Net21で検索`;
+    a.href=`https://j-net21.smrj.go.jp/snavi/articles?category%5B%5D=2&keyword=${encodeURIComponent(state.pref)}`;
+    document.getElementById("localTitle").textContent=`${state.pref}の地域独自制度を探す`;
+  } else {
+    box.style.display="none";
+    document.getElementById("localTitle").textContent="地域独自の補助金・助成金を探す";
+  }
+}
+render();
+</script>
+</body>
+</html>
