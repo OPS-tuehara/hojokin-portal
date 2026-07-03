@@ -78,6 +78,10 @@
 <div class="container">
   <div class="filters">
     <div class="filter-row">
+      <label class="filter-label">フリーワード検索</label>
+      <input type="search" id="kw" placeholder="例：ロボット、賃上げ、正社員、ホームページ…" style="width:100%;max-width:420px;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.95rem;">
+    </div>
+    <div class="filter-row">
       <label class="filter-label">会社・店舗の所在地（都道府県）</label>
       <select id="pref"></select>
     </div>
@@ -294,7 +298,7 @@ const PROGRAMS = [
  }
 ];
 
-const state = { pref:"全国（未選択）", size:"all", cats:new Set(["all"]), sort:"default", diag:null };
+const state = { pref:"全国（未選択）", size:"all", cats:new Set(["all"]), sort:"default", diag:null, q:"" };
 
 // ===== 適用診断ロジック =====
 // 中小企業基本法：資本金または従業員数のいずれかを満たせば中小企業
@@ -363,6 +367,10 @@ document.getElementById("sizeChips").addEventListener("click",e=>{
   b.classList.add("active"); state.size=b.dataset.v; render();
 });
 
+document.getElementById("kw").addEventListener("input",e=>{
+  state.q=e.target.value.trim().toLowerCase(); render();
+});
+
 document.getElementById("dRun").addEventListener("click",()=>{
   const empRaw=document.getElementById("dEmp").value;
   if(empRaw===""){ alert("従業員数を入力してください（0人の場合は0）"); return; }
@@ -422,7 +430,9 @@ function render(){
   let list=PROGRAMS.filter(p=>{
     const okSize = state.diag ? true : (state.size==="all" || p.sizes.includes(state.size));
     const okCat = state.cats.has("all") || p.cats.some(c=>state.cats.has(c));
-    if(!(okSize&&okCat)) return false;
+    const hay=(p.name+" "+p.agency+" "+p.amount+" "+p.rate+" "+p.desc+" "+p.schedule+" "+p.cats.map(c=>CAT_LABEL[c]).join(" ")).toLowerCase();
+    const okQ = !state.q || state.q.split(/\s+/).every(w=>hay.includes(w));
+    if(!(okSize&&okCat&&okQ)) return false;
     if(state.diag){
       const r=RULES[p.id](state.diag);
       diagResults[p.id]=r;
