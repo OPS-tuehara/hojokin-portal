@@ -1,6 +1,30 @@
 {
- "updated": "2026-07-09",
+ "updated": "2026-07-10",
  "items": [
+  {
+   "id": "chusho-shoukei-ma-15",
+   "date": "2026-07-10",
+   "title": "事業承継・M&A補助金（十五次公募）公募要領公表",
+   "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260522001.html",
+   "source": "中小企業庁",
+   "summary": "受付は6/19〜7/24。専門家活用枠・PMI推進枠等。グループのM&A・事業承継戦略に直結"
+  },
+  {
+   "id": "kawazu-shukuhaku-kiban",
+   "date": "2026-07-10",
+   "title": "河津町宿泊業の経営力基盤強化事業費補助金",
+   "url": "https://kankou.town.kawazu.shizuoka.jp/information/4143/",
+   "source": "河津町",
+   "summary": "業務効率化・生産性向上や社員寮整備を支援（静岡県と並行補助）。河津の宿×写真のお祝い事業に関連"
+  },
+  {
+   "id": "mhlw-jinzai-kaihatsu",
+   "date": "2026-07-10",
+   "title": "人材開発支援助成金（令和8年4月改正・新規採用助成等を追加）",
+   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html",
+   "source": "厚生労働省",
+   "summary": "研修・リスキリング費用を助成。フォトスタジオ・ブライダル・宿泊など全事業の人材育成に活用可"
+  },
   {
    "id": "mlit-shoryoku-kanko",
    "date": "2026-07-09",
