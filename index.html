@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPS SSP - Grants Subsidy Search -</title>
+<title>OPS GSS - Grants Subsidy Search -</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#0f5fa8">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="OPS SSP">
+<meta name="apple-mobile-web-app-title" content="OPS GSS">
 <style>
   :root{
     --bg:#f4f6f9; --card:#ffffff; --ink:#1f2933; --sub:#5b6b7b;
@@ -71,6 +71,7 @@
   .btn-ghost{background:#fff;border:1px solid var(--border);color:var(--sub);margin-left:8px;}
   .reason{font-size:.8rem;background:var(--tag-size);color:var(--tag-size-ink);border-radius:8px;padding:6px 10px;}
   .diag-note{font-size:.8rem;color:var(--sub);margin-top:10px;}
+  .new-dot{background:#d3302f;color:#fff;font-size:.68rem;padding:1px 7px;border-radius:999px;font-weight:700;margin-right:4px;}
   @media(max-width:480px){
     header{padding:20px 14px 16px;}
     header h1{font-size:1.25rem;}
@@ -85,10 +86,10 @@
 <header>
   <div class="container" style="padding-bottom:20px;">
     <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-      <img src="icon-192.png" alt="OPS SSP" width="52" height="52" style="border-radius:12px;flex-shrink:0;">
+      <img src="icon-192.png" alt="OPS GSS" width="52" height="52" style="border-radius:12px;flex-shrink:0;">
       <div style="flex:1;min-width:220px;">
-        <h1>OPS SSP <span style="font-size:1rem;font-weight:600;opacity:.9;">- Grants Subsidy Search -</span></h1>
-        <p>いつでも・どこでも・どんなときでも｜所在地・企業規模・目的で使える制度を絞り込み（2026年7月時点の情報）</p>
+        <h1>OPS GSS <span style="font-size:1rem;font-weight:600;opacity:.9;">- Grants Subsidy Search -</span></h1>
+        <p>いつでも・どこでも・どんなときでも<br>｜所在地・企業規模・目的で使える制度を絞り込み（2026年7月時点の情報）</p>
       </div>
       <button id="installBtn" style="display:none;padding:9px 16px;border:none;border-radius:8px;background:#fff;color:#0f5fa8;font-weight:700;font-size:.88rem;cursor:pointer;">📲 アプリとして使う</button>
     </div>
@@ -135,6 +136,15 @@
         <button class="chip" data-v="succession">事業承継・M&amp;A</button>
       </div>
     </div>
+  </div>
+
+  <div class="local" style="margin-top:18px;" id="newsBox">
+    <h2 style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">🔔 関連新着情報
+      <span id="newsBadge" style="display:none;background:#d3302f;color:#fff;border-radius:999px;min-width:22px;height:22px;font-size:.75rem;align-items:center;justify-content:center;padding:0 6px;font-weight:700;"></span>
+      <button id="newsRead" class="btn btn-ghost" style="margin-left:auto;padding:5px 12px;font-size:.78rem;">すべて既読にする</button>
+    </h2>
+    <p>フォトスタジオ・ブライダル・振袖レンタル・宿泊・EC・アプリ関連の補助金・助成金情報を毎日自動収集。<span id="newsUpdated" style="margin-left:6px;"></span></p>
+    <ul id="newsList" style="gap:10px;"></ul>
   </div>
 
   <div class="diag">
@@ -529,6 +539,38 @@ installBtn.addEventListener("click",async()=>{
   else{ alert("お使いのブラウザのメニューから「アプリをインストール」または「ホーム画面に追加」を選択してください。"); }
 });
 window.addEventListener("appinstalled",()=>{ installBtn.style.display="none"; });
+
+// ===== 関連新着情報+バッヂ =====
+const NEWS_SEEN_KEY="gss_seen_v1";
+const BASE_TITLE="OPS GSS - Grants Subsidy Search -";
+async function loadNews(){
+  try{
+    const res=await fetch("news.json?t="+Date.now());
+    if(!res.ok) return;
+    const data=await res.json();
+    const items=data.items||[];
+    let seen=[];
+    try{ seen=JSON.parse(localStorage.getItem(NEWS_SEEN_KEY)||"[]"); }catch(_){}
+    const seenSet=new Set(seen);
+    const unseen=items.filter(i=>!seenSet.has(i.id));
+    const badge=document.getElementById("newsBadge");
+    if(unseen.length){ badge.textContent=unseen.length; badge.style.display="inline-flex"; document.title=`(${unseen.length}) ${BASE_TITLE}`; }
+    else{ badge.style.display="none"; document.title=BASE_TITLE; }
+    const list=document.getElementById("newsList");
+    list.innerHTML="";
+    items.forEach(i=>{
+      const li=document.createElement("li");
+      li.innerHTML=`${seenSet.has(i.id)?"":'<span class="new-dot">NEW</span>'}<a href="${i.url}" target="_blank" rel="noopener">${i.title}</a><br><span>${i.date}｜${i.source}${i.summary?"｜"+i.summary:""}</span>`;
+      list.appendChild(li);
+    });
+    document.getElementById("newsUpdated").textContent=`最終更新：${data.updated||"-"}`;
+    document.getElementById("newsRead").onclick=()=>{
+      localStorage.setItem(NEWS_SEEN_KEY,JSON.stringify(items.map(i=>i.id)));
+      loadNews();
+    };
+  }catch(_){}
+}
+loadNews();
 </script>
 </body>
 </html>

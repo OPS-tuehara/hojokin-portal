@@ -1,4 +1,4 @@
-const CACHE = "ops-ssp-v1";
+const CACHE = "ops-gss-v2";
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c =>
     c.addAll(["./", "./index.html", "./icon-192.png", "./icon-512.png", "./manifest.json"])

@@ -1,6 +1,6 @@
 {
-  "name": "OPS SSP - Grants Subsidy Search -",
-  "short_name": "OPS SSP",
+  "name": "OPS GSS - Grants Subsidy Search -",
+  "short_name": "OPS GSS",
   "description": "補助金・助成金をいつでも・どこでも・どんなときでも検索",
   "start_url": "./",
   "scope": "./",
