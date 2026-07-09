@@ -92,6 +92,7 @@
         <p>いつでも・どこでも・どんなときでも<br>｜所在地・企業規模・目的で使える制度を絞り込み（2026年7月時点の情報）</p>
       </div>
       <button id="installBtn" style="display:none;padding:9px 16px;border:none;border-radius:8px;background:#fff;color:#0f5fa8;font-weight:700;font-size:.88rem;cursor:pointer;">📲 アプリとして使う</button>
+      <button id="pushBtn" style="display:none;padding:9px 16px;border:none;border-radius:8px;background:rgba(255,255,255,.22);color:#fff;font-weight:700;font-size:.88rem;cursor:pointer;">🔔 通知</button>
     </div>
   </div>
 </header>
@@ -539,6 +540,41 @@ installBtn.addEventListener("click",async()=>{
   else{ alert("お使いのブラウザのメニューから「アプリをインストール」または「ホーム画面に追加」を選択してください。"); }
 });
 window.addEventListener("appinstalled",()=>{ installBtn.style.display="none"; });
+
+// ===== プッシュ通知の購読(Netlify) =====
+const VAPID_PUBLIC="BPRKbfbGA-8FEwpDq9AXiupMlKlFqsSxuPelgpQBsEiZjLEZnTL92btAgoXpE58AzKA4x0lPkvKql-EXqBcsOEE";
+const pushBtn=document.getElementById("pushBtn");
+const onNetlify=location.hostname.endsWith("netlify.app")||location.hostname==="localhost";
+function b64ToU8(s){const p="=".repeat((4-s.length%4)%4);const b=atob((s+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(b,c=>c.charCodeAt(0));}
+async function pushState(){
+  if(!onNetlify||!("serviceWorker" in navigator)||!("PushManager" in window)) return null;
+  const reg=await navigator.serviceWorker.ready;
+  return {reg, sub: await reg.pushManager.getSubscription()};
+}
+async function refreshPushBtn(){
+  const st=await pushState().catch(()=>null);
+  if(!st){ pushBtn.style.display="none"; return; }
+  pushBtn.style.display="inline-block";
+  pushBtn.textContent=st.sub?"🔔 通知オン(タップでオフ)":"🔔 通知";
+}
+pushBtn.addEventListener("click",async()=>{
+  const st=await pushState().catch(()=>null);
+  if(!st){ alert("この環境は通知に対応していません。iPhoneは「アプリとして使う」でホーム画面に追加し、そのアイコンから開いてください(iOS16.4以降)。"); return; }
+  if(st.sub){
+    await fetch("/.netlify/functions/subscribe",{method:"DELETE",body:JSON.stringify({endpoint:st.sub.endpoint})}).catch(()=>{});
+    await st.sub.unsubscribe();
+    refreshPushBtn(); return;
+  }
+  const perm=await Notification.requestPermission();
+  if(perm!=="granted"){ alert("通知が許可されませんでした。端末の設定から許可できます。"); return; }
+  try{
+    const sub=await st.reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64ToU8(VAPID_PUBLIC)});
+    await fetch("/.netlify/functions/subscribe",{method:"POST",body:JSON.stringify(sub)});
+    refreshPushBtn();
+    alert("通知をオンにしました。新着があった日の朝8:45頃に通知が届きます。");
+  }catch(e){ alert("通知の登録に失敗しました: "+e); }
+});
+refreshPushBtn();
 
 // ===== 関連新着情報+バッヂ =====
 const NEWS_SEEN_KEY="gss_seen_v1";
