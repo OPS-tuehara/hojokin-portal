@@ -556,6 +556,10 @@ async function loadNews(){
     const badge=document.getElementById("newsBadge");
     if(unseen.length){ badge.textContent=unseen.length; badge.style.display="inline-flex"; document.title=`(${unseen.length}) ${BASE_TITLE}`; }
     else{ badge.style.display="none"; document.title=BASE_TITLE; }
+    // アプリアイコンのバッヂ(iOS 16.4+のホーム画面アプリ / PCのインストール済みPWA)
+    if("setAppBadge" in navigator){
+      (unseen.length?navigator.setAppBadge(unseen.length):navigator.clearAppBadge()).catch(()=>{});
+    }
     const list=document.getElementById("newsList");
     list.innerHTML="";
     items.forEach(i=>{
