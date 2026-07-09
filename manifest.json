@@ -1,0 +1,15 @@
+{
+  "name": "OPS SSP - Grants Subsidy Search -",
+  "short_name": "OPS SSP",
+  "description": "補助金・助成金をいつでも・どこでも・どんなときでも検索",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f9",
+  "theme_color": "#0f5fa8",
+  "lang": "ja",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

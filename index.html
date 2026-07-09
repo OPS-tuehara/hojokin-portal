@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>補助金・助成金ポータル</title>
+<title>OPS SSP - Grants Subsidy Search -</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#0f5fa8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="OPS SSP">
 <style>
   :root{
     --bg:#f4f6f9; --card:#ffffff; --ink:#1f2933; --sub:#5b6b7b;
@@ -65,13 +71,27 @@
   .btn-ghost{background:#fff;border:1px solid var(--border);color:var(--sub);margin-left:8px;}
   .reason{font-size:.8rem;background:var(--tag-size);color:var(--tag-size-ink);border-radius:8px;padding:6px 10px;}
   .diag-note{font-size:.8rem;color:var(--sub);margin-top:10px;}
+  @media(max-width:480px){
+    header{padding:20px 14px 16px;}
+    header h1{font-size:1.25rem;}
+    .grid{grid-template-columns:1fr;}
+    select{width:100%;min-width:0;}
+    .filters,.diag,.local{padding:14px;}
+    .btn-ghost{margin-left:0;margin-top:8px;}
+  }
 </style>
 </head>
 <body>
 <header>
   <div class="container" style="padding-bottom:20px;">
-    <h1>補助金・助成金ポータル</h1>
-    <p>所在地・企業規模・目的で使える制度を絞り込み（2026年7月時点の情報）</p>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <img src="icon-192.png" alt="OPS SSP" width="52" height="52" style="border-radius:12px;flex-shrink:0;">
+      <div style="flex:1;min-width:220px;">
+        <h1>OPS SSP <span style="font-size:1rem;font-weight:600;opacity:.9;">- Grants Subsidy Search -</span></h1>
+        <p>いつでも・どこでも・どんなときでも｜所在地・企業規模・目的で使える制度を絞り込み（2026年7月時点の情報）</p>
+      </div>
+      <button id="installBtn" style="display:none;padding:9px 16px;border:none;border-radius:8px;background:#fff;color:#0f5fa8;font-weight:700;font-size:.88rem;cursor:pointer;">📲 アプリとして使う</button>
+    </div>
   </div>
 </header>
 
@@ -492,6 +512,23 @@ function render(){
   }
 }
 render();
+
+// ===== PWA（アプリ化） =====
+if("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").catch(()=>{}); }
+let deferredPrompt=null;
+const installBtn=document.getElementById("installBtn");
+window.addEventListener("beforeinstallprompt",e=>{
+  e.preventDefault(); deferredPrompt=e; installBtn.style.display="inline-block";
+});
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+const standalone=window.matchMedia("(display-mode: standalone)").matches||navigator.standalone;
+if(isIOS&&!standalone) installBtn.style.display="inline-block";
+installBtn.addEventListener("click",async()=>{
+  if(deferredPrompt){ deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; installBtn.style.display="none"; }
+  else if(isIOS){ alert("iPhone/iPadでは：Safariの共有ボタン →「ホーム画面に追加」でアプリとして使えます。"); }
+  else{ alert("お使いのブラウザのメニューから「アプリをインストール」または「ホーム画面に追加」を選択してください。"); }
+});
+window.addEventListener("appinstalled",()=>{ installBtn.style.display="none"; });
 </script>
 </body>
 </html>
