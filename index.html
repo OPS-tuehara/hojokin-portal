@@ -72,6 +72,14 @@
   .reason{font-size:.8rem;background:var(--tag-size);color:var(--tag-size-ink);border-radius:8px;padding:6px 10px;}
   .diag-note{font-size:.8rem;color:var(--sub);margin-top:10px;}
   .new-dot{background:#d3302f;color:#fff;font-size:.68rem;padding:1px 7px;border-radius:999px;font-weight:700;margin-right:4px;}
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;}
+  .modal-bg.open{display:flex;align-items:flex-start;justify-content:center;padding:24px 12px;overflow-y:auto;}
+  .modal{background:#fff;border-radius:14px;max-width:640px;width:100%;padding:24px 22px;margin:auto 0;box-shadow:0 10px 40px rgba(0,0,0,.25);}
+  .modal h2{color:var(--accent);font-size:1.15rem;margin-bottom:10px;}
+  .modal h3{font-size:.98rem;margin:16px 0 6px;color:var(--ink);}
+  .modal p,.modal li{font-size:.88rem;color:var(--sub);line-height:1.7;}
+  .modal ul{padding-left:1.2em;margin:4px 0;}
+  .modal .close-btn{margin-top:18px;}
   @media(max-width:480px){
     header{padding:20px 14px 16px;}
     header h1{font-size:1.25rem;}
@@ -93,6 +101,7 @@
       </div>
       <button id="installBtn" style="display:none;padding:9px 16px;border:none;border-radius:8px;background:#fff;color:#0f5fa8;font-weight:700;font-size:.88rem;cursor:pointer;">📲 アプリとして使う</button>
       <button id="pushBtn" style="display:none;padding:9px 16px;border:none;border-radius:8px;background:rgba(255,255,255,.22);color:#fff;font-weight:700;font-size:.88rem;cursor:pointer;">🔔 通知</button>
+      <button id="helpBtn" style="padding:9px 16px;border:none;border-radius:8px;background:rgba(255,255,255,.22);color:#fff;font-weight:700;font-size:.88rem;cursor:pointer;">❓ ヘルプ</button>
     </div>
   </div>
 </header>
@@ -203,6 +212,48 @@
   </div>
 
   <p class="disclaimer">※ 本ページは2026年7月時点の公開情報をもとに作成した参考資料です。補助上限・補助率・公募期間は変更されることがあるため、申請前に必ず各制度の公式サイト・公募要領をご確認ください。国の制度は原則全国どの所在地でも申請できます。</p>
+</div>
+
+<div class="modal-bg" id="helpModal">
+  <div class="modal">
+    <h2>❓ OPS GSS の使い方</h2>
+    <p>OPS GSS(Grants Subsidy Search)は、自社で使える<strong>補助金・助成金を検索・診断できるポータル</strong>です。国の主要制度の一覧と、自社事業に関連する新着情報を自動で集めています。</p>
+
+    <h3>🔄 自動更新の仕組み</h3>
+    <ul>
+      <li><strong>制度データ(カード一覧)</strong>: 毎月1日に最新の補助額・公募回・締切へ自動更新されます。</li>
+      <li><strong>関連新着情報</strong>: 毎朝8時頃、自社の事業内容と店舗地域(茨城・首都圏・愛知など)に関連する補助金情報をWebから自動収集します。全16自治体を3日で一巡します。</li>
+    </ul>
+
+    <h3>🔍 探し方(3つの方法)</h3>
+    <ul>
+      <li><strong>フリーワード検索</strong>: 「ロボット」「正社員」「ホームページ」など目的の言葉で絞り込み。スペース区切りでAND検索。</li>
+      <li><strong>フィルター</strong>: 所在地(都道府県)・企業規模・目的で絞り込み。「締切が近い順」の並び替えも可能。</li>
+      <li><strong>かんたん適用診断</strong>: 業種・従業員数・資本金などを入れて「診断する」を押すと、対象要件を満たす見込みの制度だけが理由付きで表示されます。</li>
+    </ul>
+
+    <h3>🔔 新着のお知らせ・バッヂ</h3>
+    <ul>
+      <li>新着には <strong>NEW</strong> が付き、未読件数が赤バッヂとタブ表示に出ます。「すべて既読にする」で消えます(端末ごとに記録)。</li>
+      <li><strong>閉じている間も通知を受け取る</strong>には、ヘッダーの「🔔 通知」を押して許可してください。新着があった朝に通知とアイコンバッヂが届きます。</li>
+      <li>※ iPhone/iPadは先に「📲 アプリとして使う」でホーム画面に追加し、<strong>そのアイコンから開いてから</strong>通知をオンにしてください(iOS16.4以降)。</li>
+    </ul>
+
+    <h3>📲 アプリとしての設置・削除</h3>
+    <ul>
+      <li>「📲 アプリとして使う」でホーム画面やデスクトップにアイコンを置けます(無料・ダウンロード不要)。</li>
+      <li>iPhoneは 共有ボタン →「ホーム画面に追加」。削除はアイコン長押し →「アプリを削除」。</li>
+      <li>PC(Chrome/Edge)は画面右上の ⋮ →「アンインストール」で削除できます。</li>
+    </ul>
+
+    <h3>⚠️ ご注意</h3>
+    <ul>
+      <li>掲載情報は自動収集による参考情報です。補助額・締切・要件は変更されることがあるため、<strong>申請前に必ず各制度の公式サイト・公募要領をご確認ください</strong>。</li>
+      <li>適用診断は簡易判定です。みなし大企業の除外規定など詳細要件は公募要領をご確認ください。</li>
+    </ul>
+
+    <button class="btn btn-primary close-btn" id="helpClose">閉じる</button>
+  </div>
 </div>
 
 <script>
@@ -575,6 +626,12 @@ pushBtn.addEventListener("click",async()=>{
   }catch(e){ alert("通知の登録に失敗しました: "+e); }
 });
 refreshPushBtn();
+
+// ===== ヘルプモーダル =====
+const helpModal=document.getElementById("helpModal");
+document.getElementById("helpBtn").addEventListener("click",()=>helpModal.classList.add("open"));
+document.getElementById("helpClose").addEventListener("click",()=>helpModal.classList.remove("open"));
+helpModal.addEventListener("click",e=>{ if(e.target===helpModal) helpModal.classList.remove("open"); });
 
 // ===== 関連新着情報+バッヂ =====
 const NEWS_SEEN_KEY="gss_seen_v1";
