@@ -1,69 +1,85 @@
 {
- "updated": "2026-07-10",
- "items": [
-  {
-   "id": "chusho-shoukei-ma-15",
-   "date": "2026-07-10",
-   "title": "事業承継・M&A補助金（十五次公募）公募要領公表",
-   "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260522001.html",
-   "source": "中小企業庁",
-   "summary": "受付は6/19〜7/24。専門家活用枠・PMI推進枠等。グループのM&A・事業承継戦略に直結"
-  },
-  {
-   "id": "kawazu-shukuhaku-kiban",
-   "date": "2026-07-10",
-   "title": "河津町宿泊業の経営力基盤強化事業費補助金",
-   "url": "https://kankou.town.kawazu.shizuoka.jp/information/4143/",
-   "source": "河津町",
-   "summary": "業務効率化・生産性向上や社員寮整備を支援（静岡県と並行補助）。河津の宿×写真のお祝い事業に関連"
-  },
-  {
-   "id": "mhlw-jinzai-kaihatsu",
-   "date": "2026-07-10",
-   "title": "人材開発支援助成金（令和8年4月改正・新規採用助成等を追加）",
-   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html",
-   "source": "厚生労働省",
-   "summary": "研修・リスキリング費用を助成。フォトスタジオ・ブライダル・宿泊など全事業の人材育成に活用可"
-  },
-  {
-   "id": "mlit-shoryoku-kanko",
-   "date": "2026-07-09",
-   "title": "観光地・観光産業における省力化投資補助事業（観光庁）",
-   "url": "https://www.mlit.go.jp/kankocho/kobo06_00042.html",
-   "source": "観光庁",
-   "summary": "宿泊事業者の省力化投資を支援。令和7年度補正の公募は5月末で終了、次回公募の発表に注目"
-  },
-  {
-   "id": "mlit-sustainability",
-   "date": "2026-07-09",
-   "title": "宿泊施設サステナビリティ強化支援事業",
-   "url": "https://r7shukuhaku-sustainability.go.jp/",
-   "source": "観光庁",
-   "summary": "旅館・ホテルの省エネ設備等への改修を支援。宿とお祝い事業に関連"
-  },
-  {
-   "id": "ibaraki-jinzai",
-   "date": "2026-07-09",
-   "title": "中小企業人材育成支援事業補助金（茨城県）",
-   "url": "https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/tyuusyoukigyou.html",
-   "source": "茨城県",
-   "summary": "従業員のデジタルスキル資格取得・研修費用を補助。本社所在地の県制度"
-  },
-  {
-   "id": "mito-shinko",
-   "date": "2026-07-09",
-   "title": "中小企業振興支援補助金（水戸市）",
-   "url": "https://www.city.mito.lg.jp/page/75067.html",
-   "source": "水戸市",
-   "summary": "県内店舗網に関連する市町村レベルの支援制度の例"
-  },
-  {
-   "id": "ibaraki-list",
-   "date": "2026-07-09",
-   "title": "茨城県の補助金・助成金 最新一覧",
-   "url": "https://hojyokin-portal.jp/subsidies/list?pref_id=8",
-   "source": "補助金ポータル",
-   "summary": "県内で募集中の制度一覧。随時更新"
-  }
- ]
+  "updated": "2026-07-11",
+  "items": [
+    {
+      "id": "ryugasaki-bukka2026",
+      "date": "2026-07-11",
+      "title": "【龍ケ崎市】事業者等物価高騰対策支援金(法人6万円・個人3万円、9/30まで)",
+      "url": "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html",
+      "source": "龍ケ崎市",
+      "summary": "市内に事業所を有する事業者へ一律支援金(法人6万円)。龍ケ崎の写真館店舗が対象になり得る。申請は令和8年9月30日まで。"
+    },
+    {
+      "id": "tsukuba-bizkakudai-r8",
+      "date": "2026-07-11",
+      "title": "【つくば市】令和8年度ビジネス拡大支援補助金(補助率最大8/10・上限30万円)",
+      "url": "https://www.city.tsukuba.lg.jp/soshikikarasagasu/keizaibusangyoshinkoka/gyomuannai/3/2/2/1018201.html",
+      "source": "つくば市",
+      "summary": "新サービス開発・新分野進出の経費を補助。つくばエリア店舗のフォトスタジオ・ブライダル新企画に活用可。申請は令和9年1月末まで(予算次第で早期終了)。"
+    },
+    {
+      "id": "chusho-shoukei-ma-15",
+      "date": "2026-07-10",
+      "title": "事業承継・M&A補助金（十五次公募）公募要領公表",
+      "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260522001.html",
+      "source": "中小企業庁",
+      "summary": "受付は6/19〜7/24。専門家活用枠・PMI推進枠等。グループのM&A・事業承継戦略に直結"
+    },
+    {
+      "id": "kawazu-shukuhaku-kiban",
+      "date": "2026-07-10",
+      "title": "河津町宿泊業の経営力基盤強化事業費補助金",
+      "url": "https://kankou.town.kawazu.shizuoka.jp/information/4143/",
+      "source": "河津町",
+      "summary": "業務効率化・生産性向上や社員寮整備を支援（静岡県と並行補助）。河津の宿×写真のお祝い事業に関連"
+    },
+    {
+      "id": "mhlw-jinzai-kaihatsu",
+      "date": "2026-07-10",
+      "title": "人材開発支援助成金（令和8年4月改正・新規採用助成等を追加）",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html",
+      "source": "厚生労働省",
+      "summary": "研修・リスキリング費用を助成。フォトスタジオ・ブライダル・宿泊など全事業の人材育成に活用可"
+    },
+    {
+      "id": "mlit-shoryoku-kanko",
+      "date": "2026-07-09",
+      "title": "観光地・観光産業における省力化投資補助事業（観光庁）",
+      "url": "https://www.mlit.go.jp/kankocho/kobo06_00042.html",
+      "source": "観光庁",
+      "summary": "宿泊事業者の省力化投資を支援。令和7年度補正の公募は5月末で終了、次回公募の発表に注目"
+    },
+    {
+      "id": "mlit-sustainability",
+      "date": "2026-07-09",
+      "title": "宿泊施設サステナビリティ強化支援事業",
+      "url": "https://r7shukuhaku-sustainability.go.jp/",
+      "source": "観光庁",
+      "summary": "旅館・ホテルの省エネ設備等への改修を支援。宿とお祝い事業に関連"
+    },
+    {
+      "id": "ibaraki-jinzai",
+      "date": "2026-07-09",
+      "title": "中小企業人材育成支援事業補助金（茨城県）",
+      "url": "https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/tyuusyoukigyou.html",
+      "source": "茨城県",
+      "summary": "従業員のデジタルスキル資格取得・研修費用を補助。本社所在地の県制度"
+    },
+    {
+      "id": "mito-shinko",
+      "date": "2026-07-09",
+      "title": "中小企業振興支援補助金（水戸市）",
+      "url": "https://www.city.mito.lg.jp/page/75067.html",
+      "source": "水戸市",
+      "summary": "県内店舗網に関連する市町村レベルの支援制度の例"
+    },
+    {
+      "id": "ibaraki-list",
+      "date": "2026-07-09",
+      "title": "茨城県の補助金・助成金 最新一覧",
+      "url": "https://hojyokin-portal.jp/subsidies/list?pref_id=8",
+      "source": "補助金ポータル",
+      "summary": "県内で募集中の制度一覧。随時更新"
+    }
+  ]
 }
