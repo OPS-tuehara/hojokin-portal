@@ -1,6 +1,62 @@
 {
-  "updated": "2026-07-12",
+  "updated": "2026-07-13",
   "items": [
+    {
+      "id": "nasu-shukuhakuzei-reji",
+      "date": "2026-07-13",
+      "title": "【那須町】宿泊税レジシステム改修費等補助金（上限100万円・補助率1/2、10/30まで）",
+      "url": "https://www.town.nasu.lg.jp/0002/info-0000004060-1.html",
+      "source": "那須町",
+      "summary": "2026年10月の宿泊税課税開始に伴い、レジ・PMSの改修/新規構築費を補助。那須のログコテージ等の宿泊事業が直接対象（特別徴収義務者の届出が要件）。申請は令和8年1月13日〜10月30日。"
+    },
+    {
+      "id": "nasu-akitenpo-reform",
+      "date": "2026-07-13",
+      "title": "【那須町】空き店舗等リフォーム補助金（開業向け改修費補助）",
+      "url": "https://www.town.nasu.lg.jp/0037/info-0000000457-1.html",
+      "source": "那須町",
+      "summary": "町内の空き店舗・空き家を改修して開業する事業者へ改修費を補助。那須エリアでの宿×写真の新規拠点・店舗展開に活用可。町内業者施工・3年以上営業等の要件あり。"
+    },
+    {
+      "id": "nagoya-kasuhara-r8",
+      "date": "2026-07-13",
+      "title": "【名古屋市】中小企業カスタマーハラスメント対策支援補助金（上限30万円、6/22〜10/30）",
+      "url": "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026425/1040789/1035725.html",
+      "source": "名古屋市",
+      "summary": "防犯カメラ・通話録音機器の設置、社労士による対応マニュアル作成費等を補助率1/2で支援。名古屋エリアのフォトスタジオ・ブライダル接客現場の環境整備に活用可。締切10/30 17時。"
+    },
+    {
+      "id": "nagoya-digital-robot-r8",
+      "date": "2026-07-13",
+      "title": "【名古屋市】令和8年度 中小企業デジタル活用支援補助金・ロボット枠（上限500万円、9/30まで）",
+      "url": "https://www.city.nagoya.jp/keizai/page/0000163806.html",
+      "source": "名古屋市",
+      "summary": "通常枠・賃上げ枠は6/1で受付終了、ロボット枠は9/30まで受付中。名古屋エリア店舗のデジタル化・省力化投資に。事前の相談（名古屋商工会議所等）が申請要件。"
+    },
+    {
+      "id": "ichinomiya-shoene-r8",
+      "date": "2026-07-13",
+      "title": "【一宮市】中小企業省エネルギー対策補助金（上限100万円・補助率1/2）",
+      "url": "https://www.city.ichinomiya.aichi.jp/kankyou/kankyouseisaku/1043982/1043983/1043984/1066100.html",
+      "source": "一宮市",
+      "summary": "省エネ診断に基づく設備更新・改修費を補助。一宮エリア店舗の空調・照明等の更新に活用可。着手14日前までに申請、事業完了は令和9年1月31日まで。"
+    },
+    {
+      "id": "fukuoka-seisansei-chinage",
+      "date": "2026-07-13",
+      "title": "【福岡県】中小企業生産性向上・賃上げ緊急支援補助金（令和7年12月補正分）募集中",
+      "url": "https://www.pref.fukuoka.lg.jp/contents/productivity-improvement-subsidy-2025-26.html",
+      "source": "福岡県",
+      "summary": "省力化投資による生産性向上と賃上げをセットで支援。春日市など福岡エリア店舗の設備投資・業務効率化に活用可。予算枠に達し次第終了のため早めの確認を推奨。"
+    },
+    {
+      "id": "mhlw-gyomu-kaizen-r8",
+      "date": "2026-07-13",
+      "title": "業務改善助成金 令和8年度（3コース再編・最大600万円、9/1受付開始）",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/shienjigyou/03.html",
+      "source": "厚生労働省",
+      "summary": "事業場内最低賃金を50/70/90円引き上げ、設備投資・人材育成等を行った中小企業に費用の一部を助成。令和8年度の交付申請受付は9/1開始。全事業（スタジオ・ブライダル・宿泊）の賃上げ原資に。"
+    },
     {
       "id": "digital-ai-hojokin-2026",
       "date": "2026-07-12",
@@ -72,14 +128,6 @@
       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html",
       "source": "厚生労働省",
       "summary": "研修・リスキリング費用を助成。フォトスタジオ・ブライダル・宿泊など全事業の人材育成に活用可"
-    },
-    {
-      "id": "mlit-shoryoku-kanko",
-      "date": "2026-07-09",
-      "title": "観光地・観光産業における省力化投資補助事業（観光庁）",
-      "url": "https://www.mlit.go.jp/kankocho/kobo06_00042.html",
-      "source": "観光庁",
-      "summary": "宿泊事業者の省力化投資を支援。令和7年度補正の公募は5月末で終了、次回公募の発表に注目"
     },
     {
       "id": "mlit-sustainability",
