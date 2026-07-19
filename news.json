@@ -1,6 +1,30 @@
 {
-  "updated": "2026-07-19",
+  "updated": "2026-07-20",
   "items": [
+    {
+      "id": "hitachi-kyosoryoku-r8",
+      "date": "2026-07-20",
+      "title": "【日立市】令和8年度 中小企業競争力強化支援事業補助金（上限80万円・補助率1/3、11/30まで先着）",
+      "url": "https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/1019263.html",
+      "source": "日立市",
+      "summary": "収益力向上に向けた販路開拓（展示会出展・HP開設）、新事業展開、先端設備導入等を支援。日立エリアのフォトスタジオの集客・新サービス展開に活用可。申請期間は令和8年5月11日〜11月30日（先着順）。※課題解決支援・人的資本経営支援補助金とはいずれか1つのみ申請可。"
+    },
+    {
+      "id": "hitachi-ai-jissho-r8",
+      "date": "2026-07-20",
+      "title": "【日立市】中小企業AIサービス実証支援事業補助金（上限100万円・補助率1/2、9/30締切）",
+      "url": "https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/1020317.html",
+      "source": "日立市",
+      "summary": "市内中小企業が指定スタートアップ6社と連携し、AI等デジタル技術で課題解決を図る実証を支援（委託・外注費等）。フォトアプリ開発やスタジオ・宿泊予約業務のAI活用実証に活用可。申請期限は令和8年9月30日17時（先着順）。"
+    },
+    {
+      "id": "hitachi-datsutanso-r8",
+      "date": "2026-07-20",
+      "title": "【日立市】令和8年度 脱炭素設備導入促進事業補助金（上限100万円・補助率1/3、11/30締切）",
+      "url": "https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/1019299.html",
+      "source": "日立市",
+      "summary": "省エネ診断等の提案に基づく設備の導入・更新・運用改善費を補助（年間1t-CO2以上の削減が要件）。スタジオ・式場等の空調照明更新に活用可。事前に省エネ診断受診と「脱炭素経営支援システム」登録が必要。申請締切は令和8年11月30日。"
+    },
     {
       "id": "adachi-shokibo-keiei-r8",
       "date": "2026-07-18",
@@ -216,22 +240,6 @@
       "url": "https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/tyuusyoukigyou.html",
       "source": "茨城県",
       "summary": "従業員のデジタルスキル資格取得・研修費用を補助。本社所在地の県制度"
-    },
-    {
-      "id": "mito-shinko",
-      "date": "2026-07-09",
-      "title": "中小企業振興支援補助金（水戸市）",
-      "url": "https://www.city.mito.lg.jp/page/75067.html",
-      "source": "水戸市",
-      "summary": "県内店舗網に関連する市町村レベルの支援制度の例"
-    },
-    {
-      "id": "ibaraki-list",
-      "date": "2026-07-09",
-      "title": "茨城県の補助金・助成金 最新一覧",
-      "url": "https://hojyokin-portal.jp/subsidies/list?pref_id=8",
-      "source": "補助金ポータル",
-      "summary": "県内で募集中の制度一覧。随時更新"
     }
   ]
 }
