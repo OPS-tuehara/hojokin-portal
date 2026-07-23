@@ -1,6 +1,14 @@
 {
-  "updated": "2026-07-23",
+  "updated": "2026-07-24",
   "items": [
+    {
+      "id": "adachi-jinzai-saiyo-r8",
+      "date": "2026-07-24",
+      "title": "【足立区】令和8年度 区内中小企業人材採用支援助成金（求人広告・紹介手数料を助成率1/2・上限4〜6万円、4/1〜2027/1/29）",
+      "url": "https://www.city.adachi.tokyo.jp/chusho/jinzaisaiyoshien.html",
+      "source": "足立区",
+      "summary": "求人サイト・求人誌の広告費やチラシ制作費、採用動画制作費（上限4万円）、人材紹介会社への成功報酬（上限6万円）を助成率1/2で補助。年度内2回まで申請可（令和8年度から紹介会社経由が1→2回に拡充）。足立エリアのフォトスタジオ・接客スタッフやフォトグラファー採用に活用可。申請は令和8年4月1日〜令和9年1月29日。"
+    },
     {
       "id": "hitachi-kyosoryoku-r8",
       "date": "2026-07-20",
@@ -232,14 +240,6 @@
       "url": "https://r7shukuhaku-sustainability.go.jp/",
       "source": "観光庁",
       "summary": "旅館・ホテルの省エネ設備等への改修を支援。宿とお祝い事業に関連"
-    },
-    {
-      "id": "ibaraki-jinzai",
-      "date": "2026-07-09",
-      "title": "中小企業人材育成支援事業補助金（茨城県）",
-      "url": "https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/tyuusyoukigyou.html",
-      "source": "茨城県",
-      "summary": "従業員のデジタルスキル資格取得・研修費用を補助。本社所在地の県制度"
     }
   ]
 }
