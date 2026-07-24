@@ -1,6 +1,14 @@
 {
-  "updated": "2026-07-24",
+  "updated": "2026-07-25",
   "items": [
+    {
+      "id": "shoryokuka-ippan-7",
+      "date": "2026-07-25",
+      "title": "中小企業省力化投資補助金（一般型）第7回公募（7月下旬締切・DX/自動化投資を支援）",
+      "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260605001.html",
+      "source": "中小企業庁",
+      "summary": "業務プロセスの自動化・高度化、ロボット導入、DX等の省力化投資に係る設備導入・システム構築を支援。フォトスタジオ・ブライダル・宿泊など労働集約的な全事業の省人化・業務効率化に活用可。申請受付は7月上旬〜7月下旬締切（GビズIDプライムアカウント必須）、まもなく締切のため早急な確認を推奨。"
+    },
     {
       "id": "adachi-jinzai-saiyo-r8",
       "date": "2026-07-24",
@@ -208,14 +216,6 @@
       "url": "https://www.city.tsukuba.lg.jp/soshikikarasagasu/keizaibusangyoshinkoka/gyomuannai/3/2/2/1018201.html",
       "source": "つくば市",
       "summary": "新サービス開発・新分野進出の経費を補助。つくばエリア店舗のフォトスタジオ・ブライダル新企画に活用可。申請は令和9年1月末まで(予算次第で早期終了)。"
-    },
-    {
-      "id": "chusho-shoukei-ma-15",
-      "date": "2026-07-10",
-      "title": "事業承継・M&A補助金（十五次公募）公募要領公表",
-      "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260522001.html",
-      "source": "中小企業庁",
-      "summary": "受付は6/19〜7/24。専門家活用枠・PMI推進枠等。グループのM&A・事業承継戦略に直結"
     },
     {
       "id": "kawazu-shukuhaku-kiban",
