@@ -1,6 +1,14 @@
 {
-  "updated": "2026-07-25",
+  "updated": "2026-07-26",
   "items": [
+    {
+      "id": "ibaraki-digitalskill-r8",
+      "date": "2026-07-26",
+      "title": "【茨城県】デジタルスキル習得支援事業補助金（上限10万円・補助率1/2、2027/1/29まで先着）",
+      "url": "https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/tyuusyoukigyou.html",
+      "source": "茨城県",
+      "summary": "県内中小企業の従業員のDX・デジタルスキル研修受講料等を補助（上限10万円・補助率1/2）。本社・茨城県内店舗のスタッフのデジタル人材育成（予約システム運用・EC・アプリ関連スキル等）に活用可。事前に「いばらきリスキリング推進宣言」が必要。募集は令和9年1月29日まで（先着順・予算到達で終了）。"
+    },
     {
       "id": "shoryokuka-ippan-7",
       "date": "2026-07-25",
@@ -232,14 +240,6 @@
       "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html",
       "source": "厚生労働省",
       "summary": "研修・リスキリング費用を助成。フォトスタジオ・ブライダル・宿泊など全事業の人材育成に活用可"
-    },
-    {
-      "id": "mlit-sustainability",
-      "date": "2026-07-09",
-      "title": "宿泊施設サステナビリティ強化支援事業",
-      "url": "https://r7shukuhaku-sustainability.go.jp/",
-      "source": "観光庁",
-      "summary": "旅館・ホテルの省エネ設備等への改修を支援。宿とお祝い事業に関連"
     }
   ]
 }
