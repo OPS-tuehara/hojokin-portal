@@ -1,6 +1,30 @@
 {
-  "updated": "2026-07-26",
+  "updated": "2026-07-27",
   "items": [
+    {
+      "id": "yokohama-tenjikai-r8",
+      "date": "2026-07-27",
+      "title": "【横浜市】令和8年度 展示会出展費用助成金 第1期（上限30万円・助成率1/2、8/31まで先着15件程度）",
+      "url": "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/kaihatsu/tenjikai/tennjikaijyosei.files/0139_20260416.pdf",
+      "source": "横浜市",
+      "summary": "国内展示会への出展料・小間装飾費等を助成。ブライダル・ドレスレンタル『dressy』やフォトアプリの販路開拓・BtoB商談会出展に活用可。市内で12カ月以上営業する中小企業が対象。第1期は令和8年4月22日～8月31日17時（先着）。"
+    },
+    {
+      "id": "adachi-it-iot-r8",
+      "date": "2026-07-27",
+      "title": "【足立区】令和8年度 IT・IoT導入補助金（IT上限75万円/IoT上限150万円・補助率2/3、2027/2/12まで）",
+      "url": "https://www.city.adachi.tokyo.jp/chusho/itiothojyo.html",
+      "source": "足立区",
+      "summary": "生産性向上のためのソフトウェア・IoT機器導入を補助。予約管理システム、EC『dressy』の業務ツール、フォトアプリ関連の社内システム投資などに適合。区内1年以上営業の中小企業が対象、申請前に区の中小企業診断士との事前相談が必須。申請期間は令和8年4月1日～令和9年2月12日。"
+    },
+    {
+      "id": "adachi-jigyoshokei-r8",
+      "date": "2026-07-27",
+      "title": "【足立区】事業承継促進支援助成金（設備投資上限100万円・販促50万円、助成率1/2、2027/1/29まで）",
+      "url": "https://www.city.adachi.tokyo.jp/chusho/jigyousyoukeijoseikin.html",
+      "source": "足立区",
+      "summary": "区内5年以上営業の事業者の事業承継に伴う設備導入・店舗改修・販路拡大経費を助成。写真館・美容/理容など店舗型サービス業の承継案件に活用可（第三者承継=M&Aは対象外、親族・従業員承継が要件）。申請期間は令和8年4月1日～令和9年1月29日。"
+    },
     {
       "id": "ibaraki-digitalskill-r8",
       "date": "2026-07-26",
@@ -216,30 +240,6 @@
       "url": "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html",
       "source": "龍ケ崎市",
       "summary": "市内に事業所を有する事業者へ一律支援金(法人6万円)。龍ケ崎の写真館店舗が対象になり得る。申請は令和8年9月30日まで。"
-    },
-    {
-      "id": "tsukuba-bizkakudai-r8",
-      "date": "2026-07-11",
-      "title": "【つくば市】令和8年度ビジネス拡大支援補助金(補助率最大8/10・上限30万円)",
-      "url": "https://www.city.tsukuba.lg.jp/soshikikarasagasu/keizaibusangyoshinkoka/gyomuannai/3/2/2/1018201.html",
-      "source": "つくば市",
-      "summary": "新サービス開発・新分野進出の経費を補助。つくばエリア店舗のフォトスタジオ・ブライダル新企画に活用可。申請は令和9年1月末まで(予算次第で早期終了)。"
-    },
-    {
-      "id": "kawazu-shukuhaku-kiban",
-      "date": "2026-07-10",
-      "title": "河津町宿泊業の経営力基盤強化事業費補助金",
-      "url": "https://kankou.town.kawazu.shizuoka.jp/information/4143/",
-      "source": "河津町",
-      "summary": "業務効率化・生産性向上や社員寮整備を支援（静岡県と並行補助）。河津の宿×写真のお祝い事業に関連"
-    },
-    {
-      "id": "mhlw-jinzai-kaihatsu",
-      "date": "2026-07-10",
-      "title": "人材開発支援助成金（令和8年4月改正・新規採用助成等を追加）",
-      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html",
-      "source": "厚生労働省",
-      "summary": "研修・リスキリング費用を助成。フォトスタジオ・ブライダル・宿泊など全事業の人材育成に活用可"
     }
   ]
 }
