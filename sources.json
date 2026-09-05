@@ -1,0 +1,40 @@
+{
+  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。",
+  "updated": "2026-09-06",
+  "national": [
+    {"name": "中小企業庁", "site": "chusho.meti.go.jp"},
+    {"name": "中小企業基盤整備機構", "site": "smrj.go.jp"},
+    {"name": "厚生労働省", "site": "mhlw.go.jp"},
+    {"name": "観光庁", "site": "mlit.go.jp/kankocho"},
+    {"name": "経済産業省・環境共創イニシアチブ", "site": "meti.go.jp / sii.or.jp"},
+    {"name": "環境省", "site": "env.go.jp"}
+  ],
+  "local": {
+    "A_茨城": [
+      {"name": "茨城県", "site": "pref.ibaraki.jp"},
+      {"name": "日立市", "site": "city.hitachi.lg.jp"},
+      {"name": "つくば市", "site": "city.tsukuba.lg.jp"},
+      {"name": "龍ケ崎市", "site": "city.ryugasaki.ibaraki.jp"},
+      {"name": "水戸市"},
+      {"name": "ひたちなか市"}
+    ],
+    "B_首都圏": [
+      {"name": "東京都", "site": "metro.tokyo.lg.jp / tokyo-kosha.or.jp"},
+      {"name": "足立区", "site": "city.adachi.tokyo.jp"},
+      {"name": "神奈川県", "site": "pref.kanagawa.jp"},
+      {"name": "横浜市", "site": "city.yokohama.lg.jp"},
+      {"name": "千葉県", "site": "pref.chiba.lg.jp"},
+      {"name": "流山市", "site": "city.nagareyama.chiba.jp"}
+    ],
+    "C_愛知・その他": [
+      {"name": "愛知県", "site": "pref.aichi.jp"},
+      {"name": "名古屋市", "site": "city.nagoya.jp"},
+      {"name": "一宮市", "site": "city.ichinomiya.aichi.jp"},
+      {"name": "栃木県・那須町", "site": "pref.tochigi.lg.jp / town.nasu.lg.jp"},
+      {"name": "静岡県・河津町", "site": "pref.shizuoka.jp / town.kawazu.shizuoka.jp"},
+      {"name": "福岡県", "site": "pref.fukuoka.lg.jp"}
+    ]
+  },
+  "business_domains": ["フォトスタジオ", "ブライダル", "振袖・和装レンタル", "宿泊（旅館・那須コテージ）", "EC", "アプリ開発"],
+  "themes": ["設備投資", "省エネ・脱炭素", "DX・IT・AI導入", "販路開拓", "人材確保・育成", "賃上げ", "観光・宿泊業支援", "店舗改装・空き店舗活用", "事業承継・M&A", "省力化投資"]
+}
