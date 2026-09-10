@@ -384,6 +384,20 @@ const PROGRAMS = [
   schedule:"通年（訓練開始前に計画届の提出が必要）。令和8年8月3日付で運用改正あり",
   deadline:null,
   url:"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html"
+ },
+ {
+  id:"ibaraki_digital_skill",
+  pref:"茨城県",
+  name:"茨城県デジタルスキル習得支援事業補助金",
+  agency:"茨城県 産業戦略部産業人材課",
+  sizes:["micro","small","sme"],
+  cats:["it","hr"],
+  amount:"上限10万円",
+  rate:"補助率 1/2",
+  desc:"従業員のデジタルスキル習得にかかる研修参加費・資格取得費を補助。DX推進・生産性向上・新分野進出のいずれかの達成に必要な研修が対象で、県の「リスキリング推進宣言」を行った県内事業者が申請できる。スタジオ・ブライダル・ECの各部門の研修費に充てられる。",
+  schedule:"2026年4月15日〜2027年1月29日。研修開始の21日前までに申請必着。先着順・予算に達し次第終了",
+  deadline:"2027-01-29",
+  url:"https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/tyuusyoukigyou.html"
  }
 ];
 
@@ -413,6 +427,9 @@ function smallReason(d){ return `従業員${d.emp}人 ≦ ${SMALL_LIMIT[d.ind]}�
 
 // 各制度の判定：{ok, reason} を返す
 const RULES = {
+  ibaraki_digital_skill: d => isSME(d)
+    ? {ok:true, reason:smeReason(d)+"　※茨城県内に主たる事業所があり、県の「リスキリング推進宣言」の登録が必要"}
+    : {ok:false, reason:"中小企業基本法の基準超え"},
   jizokuka: d => isSmall(d)
     ? {ok:true, reason:smallReason(d)}
     : {ok:false, reason:`従業員${d.emp}人 ＞ ${SMALL_LIMIT[d.ind]}人（小規模事業者の基準超え）`},
@@ -519,9 +536,11 @@ function render(){
   let list=PROGRAMS.filter(p=>{
     const okSize = state.diag ? true : (state.size==="all" || p.sizes.includes(state.size));
     const okCat = state.cats.has("all") || p.cats.some(c=>state.cats.has(c));
-    const hay=(p.name+" "+p.agency+" "+p.amount+" "+p.rate+" "+p.desc+" "+p.schedule+" "+p.cats.map(c=>CAT_LABEL[c]).join(" ")).toLowerCase();
+    // 地域制度は「全国（未選択）」か、その都道府県を選んでいるときだけ出す
+    const okPref = !p.pref || state.pref==="全国（未選択）" || state.pref===p.pref;
+    const hay=((p.pref||"")+" "+p.name+" "+p.agency+" "+p.amount+" "+p.rate+" "+p.desc+" "+p.schedule+" "+p.cats.map(c=>CAT_LABEL[c]).join(" ")).toLowerCase();
     const okQ = !state.q || state.q.split(/\s+/).every(w=>hay.includes(w));
-    if(!(okSize&&okCat&&okQ)) return false;
+    if(!(okSize&&okCat&&okQ&&okPref)) return false;
     if(state.diag){
       const r=RULES[p.id](state.diag);
       diagResults[p.id]=r;
@@ -546,14 +565,16 @@ function render(){
     countEl.innerHTML=`<strong style="color:var(--accent);">診断結果：適用見込み ${list.length}件</strong>（対象外 ${excluded.length}件）`
       + (excluded.length?`<br><span style="font-size:.82rem;">対象外：${excluded.map(x=>`${x.name}（${x.reason}）`).join("／")}</span>`:"");
   }else{
-    countEl.textContent=`国の制度：${list.length}件（全国どの所在地でも申請可）`;
+    const natCount=list.filter(x=>!x.pref).length, locCount=list.length-natCount;
+    countEl.textContent=`国の制度：${natCount}件（全国どの所在地でも申請可）`
+      + (locCount?`　／　地域の制度：${locCount}件`:"");
   }
   document.getElementById("empty").style.display=list.length?"none":"block";
   list.forEach(p=>{
     const el=document.createElement("div"); el.className="card";
     el.innerHTML=`
       <div class="tags">
-        <span class="tag nat">国の制度</span>
+        ${p.pref?`<span class="tag" style="background:#e6f2ea;color:#2f6b45;">${p.pref}の制度</span>`:`<span class="tag nat">国の制度</span>`}
         ${deadlineBadge(p)}
         ${p.sizes.map(s=>`<span class="tag size">${SIZE_LABEL[s]}</span>`).join("")}
         ${p.cats.map(c=>`<span class="tag cat">${CAT_LABEL[c]}</span>`).join("")}
