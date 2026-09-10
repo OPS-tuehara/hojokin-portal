@@ -1,6 +1,6 @@
 {
   "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。",
-  "updated": "2026-09-10",
+  "updated": "2026-09-11",
   "collection_method": {
     "primary": "各機関の list_url を WebFetch で直接読み、掲載日・制度名・締切を取得する。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため、公開日・補助率・締切の判定には使えない。",
     "provenance": "WebFetch は会話に一度も出ていないURLを PROVENANCE_REQUIRED で拒否する。list_url はこのファイルを読んだ時点で会話に出るため直接 fetch できる。未知のURLは先に WebSearch で表出させてから WebFetch する。",
@@ -25,12 +25,12 @@
       {"name": "ひたちなか市", "list_url": "https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/index.html"}
     ],
     "B_首都圏": [
-      {"name": "東京都", "site": "metro.tokyo.lg.jp / tokyo-kosha.or.jp"},
-      {"name": "足立区", "site": "city.adachi.tokyo.jp"},
-      {"name": "神奈川県", "site": "pref.kanagawa.jp"},
-      {"name": "横浜市", "site": "city.yokohama.lg.jp"},
-      {"name": "千葉県", "site": "pref.chiba.lg.jp"},
-      {"name": "流山市", "site": "city.nagareyama.chiba.jp"}
+      {"name": "東京都", "site": "metro.tokyo.lg.jp / tokyo-kosha.or.jp", "list_url": ["https://www.tokyo-kosha.or.jp/", "https://www.tokyo-kosha.or.jp/support/josei/index.html", "https://www.sangyo-rodo.metro.tokyo.lg.jp/"]},
+      {"name": "足立区", "site": "city.adachi.tokyo.jp", "list_url": "https://www.city.adachi.tokyo.jp/shigoto/chushokigyo/jose/index.html"},
+      {"name": "神奈川県", "site": "pref.kanagawa.jp", "list_url": ["https://www.pref.kanagawa.jp/prs/list-2026-1-1.html", "https://www.pref.kanagawa.jp/docs/jf2/index.html"]},
+      {"name": "横浜市", "site": "city.yokohama.lg.jp", "list_url": ["https://www.city.yokohama.lg.jp/business/kigyoshien/allNewsList.html", "https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/"]},
+      {"name": "千葉県", "site": "pref.chiba.lg.jp", "list_url": ["https://www.pref.chiba.lg.jp/keisei/zaisei/shiensaku.html", "http://www.pref.chiba.lg.jp/cate/kt/kouhou/houdou/ichiran/"]},
+      {"name": "流山市", "site": "city.nagareyama.chiba.jp", "list_url": ["https://www.city.nagareyama.chiba.jp/newslist.html", "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/index.html"]}
     ],
     "C_愛知・その他": [
       {"name": "愛知県", "site": "pref.aichi.jp"},
