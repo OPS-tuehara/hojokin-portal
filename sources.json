@@ -1,6 +1,6 @@
 {
   "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。",
-  "updated": "2026-09-11",
+  "updated": "2026-09-12",
   "collection_method": {
     "primary": "各機関の list_url を WebFetch で直接読み、掲載日・制度名・締切を取得する。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため、公開日・補助率・締切の判定には使えない。",
     "provenance": "WebFetch は会話に一度も出ていないURLを PROVENANCE_REQUIRED で拒否する。list_url はこのファイルを読んだ時点で会話に出るため直接 fetch できる。未知のURLは先に WebSearch で表出させてから WebFetch する。",
@@ -17,12 +17,12 @@
   ],
   "local": {
     "A_茨城": [
-      {"name": "茨城県", "site": "pref.ibaraki.jp", "list_url": "https://www.pref.ibaraki.jp/"},
+      {"name": "茨城県", "site": "pref.ibaraki.jp", "list_url": ["https://www.pref.ibaraki.jp/", "https://www.pref.ibaraki.jp/somu/hodo/hodo/pressrelease/toppage.html"]},
       {"name": "日立市", "site": "city.hitachi.lg.jp", "list_url": "https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/index.html"},
       {"name": "つくば市", "site": "city.tsukuba.lg.jp", "list_url": "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/index.html"},
       {"name": "龍ケ崎市", "site": "city.ryugasaki.ibaraki.jp", "list_url": "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html"},
       {"name": "水戸市", "list_url": "https://www.city.mito.lg.jp/life/5/27/129/"},
-      {"name": "ひたちなか市", "list_url": "https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/index.html"}
+      {"name": "ひたちなか市", "list_url": ["https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/index.html", "https://www.city.hitachinaka.lg.jp/business/chushokigyo/index.html"]}
     ],
     "B_首都圏": [
       {"name": "東京都", "site": "metro.tokyo.lg.jp / tokyo-kosha.or.jp", "list_url": ["https://www.tokyo-kosha.or.jp/", "https://www.tokyo-kosha.or.jp/support/josei/index.html", "https://www.sangyo-rodo.metro.tokyo.lg.jp/"]},
