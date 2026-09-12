@@ -7,6 +7,8 @@
 
 const API_BASE = "https://api.chatwork.com/v2";
 const BODY_LIMIT = 5000; // Chatwork の上限より十分小さく抑える
+// 全ての自動投稿の末尾に付ける注記（[info]ブロックの外側＝投稿の最終行）
+const FOOTER = "\n\nこちらは GSSアプリ の 自動投稿です";
 
 /** 設定済みかどうか（未設定なら送信処理を丸ごとスキップする） */
 export function isChatworkConfigured() {
@@ -50,11 +52,15 @@ async function postToRoom(roomId, body) {
 
 /**
  * 設定された全ルームへ投稿する。例外は投げず、必ず結果配列を返す。
+ * 本文の末尾には自動投稿である旨の注記（FOOTER）を必ず付ける。
+ * 長文を切り詰める場合も注記が消えないよう、切り詰めたあとに付ける。
  * @param {string} body Chatwork 記法の本文
  */
 export async function postChatworkMessage(body) {
   if (!isChatworkConfigured()) return [];
-  const trimmed = body.length > BODY_LIMIT ? body.slice(0, BODY_LIMIT - 20) + "\n…(以下省略)" : body;
+  const limit = BODY_LIMIT - FOOTER.length;
+  const trimmed =
+    (body.length > limit ? body.slice(0, limit - 20) + "\n…(以下省略)" : body) + FOOTER;
   const results = [];
   for (const id of roomIds()) {
     results.push(await postToRoom(id, trimmed));
