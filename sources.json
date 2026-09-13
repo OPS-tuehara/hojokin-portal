@@ -1,46 +1,214 @@
 {
-  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。",
-  "updated": "2026-09-13",
-  "collection_method": {
-    "primary": "各機関の list_url を WebFetch で直接読み、掲載日・制度名・締切を取得する。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため、公開日・補助率・締切の判定には使えない。",
-    "provenance": "WebFetch は会話に一度も出ていないURLを PROVENANCE_REQUIRED で拒否する。list_url はこのファイルを読んだ時点で会話に出るため直接 fetch できる。未知のURLは先に WebSearch で表出させてから WebFetch する。",
-    "maintenance": "list_url が未設定の機関を巡回した日は、有効な一覧ページURLを見つけしだいこのファイルに追記する。404や構造変更で使えなくなったURLも同様に直す。",
-    "mhlw_pattern": "厚生労働省の報道発表一覧は https://www.mhlw.go.jp/stf/houdou/houdou_list_YYYYMM.html 形式。巡回月の年月に読み替える。"
+ "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。",
+ "updated": "2026-09-14",
+ "collection_method": {
+  "primary": "各機関の list_url を WebFetch で直接読み、掲載日・制度名・締切を取得する。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため、公開日・補助率・締切の判定には使えない。",
+  "provenance": "WebFetch は会話に一度も出ていないURLを PROVENANCE_REQUIRED で拒否する。list_url はこのファイルを読んだ時点で会話に出るため直接 fetch できる。未知のURLは先に WebSearch で表出させてから WebFetch する。",
+  "maintenance": "list_url が未設定の機関を巡回した日は、有効な一覧ページURLを見つけしだいこのファイルに追記する。404や構造変更で使えなくなったURLも同様に直す。",
+  "mhlw_pattern": "厚生労働省の報道発表一覧は https://www.mhlw.go.jp/stf/houdou/houdou_list_YYYYMM.html 形式。巡回月の年月に読み替える。"
+ },
+ "national": [
+  {
+   "name": "中小企業庁",
+   "site": "chusho.meti.go.jp",
+   "list_url": [
+    "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo.html",
+    "https://mirasapo-plus.go.jp/"
+   ]
   },
-  "national": [
-    {"name": "中小企業庁", "site": "chusho.meti.go.jp", "list_url": ["https://www.chusho.meti.go.jp/koukai/hojyokin/kobo.html", "https://mirasapo-plus.go.jp/"]},
-    {"name": "中小企業基盤整備機構", "site": "smrj.go.jp", "list_url": ["https://www.smrj.go.jp/press/2026/index.html", "https://seisansei.smrj.go.jp/subsidy_info/schedule.html"]},
-    {"name": "厚生労働省", "site": "mhlw.go.jp", "list_url": ["https://www.mhlw.go.jp/stf/houdou/houdou_list_202609.html", "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00057.html"]},
-    {"name": "観光庁", "site": "mlit.go.jp/kankocho", "list_url": ["https://www.mlit.go.jp/kankocho/kobo_boshu.html", "https://www.mlit.go.jp/kankocho/kobo_2026_00003.html"]},
-    {"name": "経済産業省・環境共創イニシアチブ", "site": "meti.go.jp / sii.or.jp", "list_url": ["https://www.meti.go.jp/information/publicoffer/kobo.html", "https://sii.or.jp/"]},
-    {"name": "環境省", "site": "env.go.jp", "list_url": "https://www.env.go.jp/press/"}
-  ],
-  "local": {
-    "A_茨城": [
-      {"name": "茨城県", "site": "pref.ibaraki.jp", "list_url": ["https://www.pref.ibaraki.jp/", "https://www.pref.ibaraki.jp/somu/hodo/hodo/pressrelease/toppage.html", "https://www.pref.ibaraki.jp/joseikinshienkin/index.html", "https://www.pref.ibaraki.jp/soshiki/shokorodo/chusho/index.html", "https://www.pref.ibaraki.jp/soshiki/shokorodo/rosei/index.html", "https://www.pref.ibaraki.jp/soshiki/shokorodo/sangi/index.html", "https://www.iis-net.or.jp/"]},
-      {"name": "日立市", "site": "city.hitachi.lg.jp", "list_url": ["https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/index.html", "https://www.city.hitachi.lg.jp/koyotaga/1010320/1010371/index.html"]},
-      {"name": "つくば市", "site": "city.tsukuba.lg.jp", "list_url": "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/index.html"},
-      {"name": "龍ケ崎市", "site": "city.ryugasaki.ibaraki.jp", "list_url": "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html"},
-      {"name": "水戸市", "list_url": ["https://www.city.mito.lg.jp/life/5/27/129/", "https://www.city.mito.lg.jp/life/sub/2/", "https://www.city.mito.lg.jp/site/mito-sougyou/"]},
-      {"name": "ひたちなか市", "list_url": ["https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/index.html", "https://www.city.hitachinaka.lg.jp/business/chushokigyo/index.html", "https://www.city.hitachinaka.lg.jp/business/kankoshinko/1007543/1016602.html"]}
-    ],
-    "B_首都圏": [
-      {"name": "東京都", "site": "metro.tokyo.lg.jp / tokyo-kosha.or.jp", "list_url": ["https://www.tokyo-kosha.or.jp/", "https://www.tokyo-kosha.or.jp/support/josei/index.html", "https://www.sangyo-rodo.metro.tokyo.lg.jp/"]},
-      {"name": "足立区", "site": "city.adachi.tokyo.jp", "list_url": "https://www.city.adachi.tokyo.jp/shigoto/chushokigyo/jose/index.html"},
-      {"name": "神奈川県", "site": "pref.kanagawa.jp", "list_url": ["https://www.pref.kanagawa.jp/prs/list-2026-1-1.html", "https://www.pref.kanagawa.jp/docs/jf2/index.html"]},
-      {"name": "横浜市", "site": "city.yokohama.lg.jp", "list_url": ["https://www.city.yokohama.lg.jp/business/kigyoshien/allNewsList.html", "https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/"]},
-      {"name": "千葉県", "site": "pref.chiba.lg.jp", "list_url": ["https://www.pref.chiba.lg.jp/keisei/zaisei/shiensaku.html", "http://www.pref.chiba.lg.jp/cate/kt/kouhou/houdou/ichiran/"]},
-      {"name": "流山市", "site": "city.nagareyama.chiba.jp", "list_url": ["https://www.city.nagareyama.chiba.jp/newslist.html", "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/index.html"]}
-    ],
-    "C_愛知・その他": [
-      {"name": "愛知県", "site": "pref.aichi.jp"},
-      {"name": "名古屋市", "site": "city.nagoya.jp"},
-      {"name": "一宮市", "site": "city.ichinomiya.aichi.jp"},
-      {"name": "栃木県・那須町", "site": "pref.tochigi.lg.jp / town.nasu.lg.jp"},
-      {"name": "静岡県・河津町", "site": "pref.shizuoka.jp / town.kawazu.shizuoka.jp"},
-      {"name": "福岡県", "site": "pref.fukuoka.lg.jp"}
+  {
+   "name": "中小企業基盤整備機構",
+   "site": "smrj.go.jp",
+   "list_url": [
+    "https://www.smrj.go.jp/press/2026/index.html",
+    "https://seisansei.smrj.go.jp/subsidy_info/schedule.html"
+   ]
+  },
+  {
+   "name": "厚生労働省",
+   "site": "mhlw.go.jp",
+   "list_url": [
+    "https://www.mhlw.go.jp/stf/houdou/houdou_list_202609.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00057.html"
+   ]
+  },
+  {
+   "name": "観光庁",
+   "site": "mlit.go.jp/kankocho",
+   "list_url": [
+    "https://www.mlit.go.jp/kankocho/kobo_boshu.html",
+    "https://www.mlit.go.jp/kankocho/kobo_2026_00003.html"
+   ]
+  },
+  {
+   "name": "経済産業省・環境共創イニシアチブ",
+   "site": "meti.go.jp / sii.or.jp",
+   "list_url": [
+    "https://www.meti.go.jp/information/publicoffer/kobo.html",
+    "https://sii.or.jp/"
+   ]
+  },
+  {
+   "name": "環境省",
+   "site": "env.go.jp",
+   "list_url": "https://www.env.go.jp/press/"
+  }
+ ],
+ "local": {
+  "A_茨城": [
+   {
+    "name": "茨城県",
+    "site": "pref.ibaraki.jp",
+    "list_url": [
+     "https://www.pref.ibaraki.jp/",
+     "https://www.pref.ibaraki.jp/somu/hodo/hodo/pressrelease/toppage.html",
+     "https://www.pref.ibaraki.jp/joseikinshienkin/index.html",
+     "https://www.pref.ibaraki.jp/soshiki/shokorodo/chusho/index.html",
+     "https://www.pref.ibaraki.jp/soshiki/shokorodo/rosei/index.html",
+     "https://www.pref.ibaraki.jp/soshiki/shokorodo/sangi/index.html",
+     "https://www.iis-net.or.jp/"
     ]
-  },
-  "business_domains": ["フォトスタジオ", "ブライダル", "振袖・和装レンタル", "宿泊（旅館・那須コテージ）", "EC", "アプリ開発"],
-  "themes": ["設備投資", "省エネ・脱炭素", "DX・IT・AI導入", "販路開拓", "人材確保・育成", "賃上げ", "観光・宿泊業支援", "店舗改装・空き店舗活用", "事業承継・M&A", "省力化投資"]
+   },
+   {
+    "name": "日立市",
+    "site": "city.hitachi.lg.jp",
+    "list_url": [
+     "https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/index.html",
+     "https://www.city.hitachi.lg.jp/koyotaga/1010320/1010371/index.html"
+    ]
+   },
+   {
+    "name": "つくば市",
+    "site": "city.tsukuba.lg.jp",
+    "list_url": "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/index.html"
+   },
+   {
+    "name": "龍ケ崎市",
+    "site": "city.ryugasaki.ibaraki.jp",
+    "list_url": "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html"
+   },
+   {
+    "name": "水戸市",
+    "list_url": [
+     "https://www.city.mito.lg.jp/life/5/27/129/",
+     "https://www.city.mito.lg.jp/life/sub/2/",
+     "https://www.city.mito.lg.jp/site/mito-sougyou/"
+    ]
+   },
+   {
+    "name": "ひたちなか市",
+    "list_url": [
+     "https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/index.html",
+     "https://www.city.hitachinaka.lg.jp/business/chushokigyo/index.html",
+     "https://www.city.hitachinaka.lg.jp/business/kankoshinko/1007543/1016602.html"
+    ]
+   }
+  ],
+  "B_首都圏": [
+   {
+    "name": "東京都",
+    "site": "metro.tokyo.lg.jp / tokyo-kosha.or.jp",
+    "list_url": [
+     "https://www.tokyo-kosha.or.jp/",
+     "https://www.tokyo-kosha.or.jp/support/josei/index.html",
+     "https://www.sangyo-rodo.metro.tokyo.lg.jp/",
+     "https://www.tokyo-kosha.or.jp/topics/index.html",
+     "https://www.sangyo-rodo.metro.tokyo.lg.jp/information/press/",
+     "https://www.shigotozaidan.or.jp/"
+    ]
+   },
+   {
+    "name": "足立区",
+    "site": "city.adachi.tokyo.jp",
+    "list_url": [
+     "https://www.city.adachi.tokyo.jp/shigoto/chushokigyo/jose/index.html",
+     "https://www.city.adachi.tokyo.jp/shigoto/chushokigyo/index.html",
+     "https://www.city.adachi.tokyo.jp/sangyo/hojokin5.html"
+    ]
+   },
+   {
+    "name": "神奈川県",
+    "site": "pref.kanagawa.jp",
+    "list_url": [
+     "https://www.pref.kanagawa.jp/prs/list-2026-1-1.html",
+     "https://www.pref.kanagawa.jp/docs/jf2/index.html",
+     "https://www.pref.kanagawa.jp/docs/z4r/index.html"
+    ]
+   },
+   {
+    "name": "横浜市",
+    "site": "city.yokohama.lg.jp",
+    "list_url": [
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/allNewsList.html",
+     "https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/",
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/",
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/decarbonization/carbonneutral-josei.html"
+    ]
+   },
+   {
+    "name": "千葉県",
+    "site": "pref.chiba.lg.jp",
+    "list_url": [
+     "https://www.pref.chiba.lg.jp/keisei/zaisei/shiensaku.html",
+     "http://www.pref.chiba.lg.jp/cate/kt/kouhou/houdou/ichiran/",
+     "https://www.ccjc-net.or.jp/"
+    ]
+   },
+   {
+    "name": "流山市",
+    "site": "city.nagareyama.chiba.jp",
+    "list_url": [
+     "https://www.city.nagareyama.chiba.jp/newslist.html",
+     "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/index.html",
+     "https://www.city.nagareyama.chiba.jp/life/1002178/1002183/index.html"
+    ]
+   }
+  ],
+  "C_愛知・その他": [
+   {
+    "name": "愛知県",
+    "site": "pref.aichi.jp"
+   },
+   {
+    "name": "名古屋市",
+    "site": "city.nagoya.jp"
+   },
+   {
+    "name": "一宮市",
+    "site": "city.ichinomiya.aichi.jp"
+   },
+   {
+    "name": "栃木県・那須町",
+    "site": "pref.tochigi.lg.jp / town.nasu.lg.jp"
+   },
+   {
+    "name": "静岡県・河津町",
+    "site": "pref.shizuoka.jp / town.kawazu.shizuoka.jp"
+   },
+   {
+    "name": "福岡県",
+    "site": "pref.fukuoka.lg.jp"
+   }
+  ]
+ },
+ "business_domains": [
+  "フォトスタジオ",
+  "ブライダル",
+  "振袖・和装レンタル",
+  "宿泊（旅館・那須コテージ）",
+  "EC",
+  "アプリ開発"
+ ],
+ "themes": [
+  "設備投資",
+  "省エネ・脱炭素",
+  "DX・IT・AI導入",
+  "販路開拓",
+  "人材確保・育成",
+  "賃上げ",
+  "観光・宿泊業支援",
+  "店舗改装・空き店舗活用",
+  "事業承継・M&A",
+  "省力化投資"
+ ]
 }
