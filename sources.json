@@ -1,9 +1,13 @@
 {
- "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。",
+ "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
  "updated": "2026-09-14",
  "collection_method": {
-  "primary": "各機関の list_url を WebFetch で直接読み、掲載日・制度名・締切を取得する。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため、公開日・補助率・締切の判定には使えない。",
-  "provenance": "WebFetch は会話に一度も出ていないURLを PROVENANCE_REQUIRED で拒否する。list_url はこのファイルを読んだ時点で会話に出るため直接 fetch できる。未知のURLは先に WebSearch で表出させてから WebFetch する。",
+  "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
+  "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
+  "list_url_caution": "【重要・2026-09-14 訂正】このファイルを読んで list_url が画面に表示されても provenance は付かない。『sources.json を読めば直接 fetch できる』という 2026-09-10 の想定は検証で否定された（ファイルに書いて cat したURLは、素性のないURLと同じく失敗する）。list_url は狙うページを知るための台帳として使い、取得は必ず WebSearch 経由で行う。",
+  "crawl_chain": "【2026-09-14 の検証3で確認】一度 WebFetch で開いたページの本文に載っていたURLは、そのまま WebFetch できる（待ちゼロ）。つまり入口の一覧ページさえ WebSearch で開けば、そこからリンクされた個別制度ページは芋づる式に読める。個別ページごとに WebSearch をやり直す必要はない。",
+  "subagent": "サブエージェントは別の会話コンテキストを持つため、親が調べたURLの provenance を引き継がない。サブエージェントにも『必ず WebSearch → WebFetch の順で行う』ことを明示すること。",
+  "no_alternative_fetch": "curl / wget / python の requests など、WebFetch 以外の手段でページを取得することは禁止。取得できないものは取得できないものとして報告する。",
   "maintenance": "list_url が未設定の機関を巡回した日は、有効な一覧ページURLを見つけしだいこのファイルに追記する。404や構造変更で使えなくなったURLも同様に直す。",
   "mhlw_pattern": "厚生労働省の報道発表一覧は https://www.mhlw.go.jp/stf/houdou/houdou_list_YYYYMM.html 形式。巡回月の年月に読み替える。"
  },
