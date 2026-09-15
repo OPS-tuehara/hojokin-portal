@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-15",
+ "updated": "2026-09-16",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -70,7 +70,8 @@
      "https://www.pref.ibaraki.jp/soshiki/shokorodo/chusho/index.html",
      "https://www.pref.ibaraki.jp/soshiki/shokorodo/rosei/index.html",
      "https://www.pref.ibaraki.jp/soshiki/shokorodo/sangi/index.html",
-     "https://www.iis-net.or.jp/"
+     "https://www.iis-net.or.jp/",
+     "https://www.iis-net.or.jp/page?kind=sikin_tyoutatsu"
     ]
    },
    {
@@ -84,12 +85,18 @@
    {
     "name": "つくば市",
     "site": "city.tsukuba.lg.jp",
-    "list_url": "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/index.html"
+    "list_url": [
+     "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/index.html",
+     "https://www.city.tsukuba.lg.jp/jigyosha/oshirase/index.html"
+    ]
    },
    {
     "name": "龍ケ崎市",
     "site": "city.ryugasaki.ibaraki.jp",
-    "list_url": "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html"
+    "list_url": [
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html",
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/2013081400032.html"
+    ]
    },
    {
     "name": "水戸市",
