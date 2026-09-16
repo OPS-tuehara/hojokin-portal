@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-16",
+ "updated": "2026-09-17",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -25,7 +25,8 @@
    "site": "smrj.go.jp",
    "list_url": [
     "https://www.smrj.go.jp/press/2026/index.html",
-    "https://seisansei.smrj.go.jp/subsidy_info/schedule.html"
+    "https://seisansei.smrj.go.jp/subsidy_info/schedule.html",
+    "https://www.smrj.go.jp/procurement/solicitation/"
    ]
   },
   {
@@ -125,7 +126,9 @@
      "https://www.sangyo-rodo.metro.tokyo.lg.jp/",
      "https://www.tokyo-kosha.or.jp/topics/index.html",
      "https://www.sangyo-rodo.metro.tokyo.lg.jp/information/press/",
-     "https://www.shigotozaidan.or.jp/"
+     "https://www.shigotozaidan.or.jp/",
+     "https://www.koyokankyo.shigotozaidan.or.jp/",
+     "https://www.tcvb.or.jp/jp/project/subsidy/"
     ]
    },
    {
@@ -143,7 +146,8 @@
     "list_url": [
      "https://www.pref.kanagawa.jp/prs/list-2026-1-1.html",
      "https://www.pref.kanagawa.jp/docs/jf2/index.html",
-     "https://www.pref.kanagawa.jp/docs/z4r/index.html"
+     "https://www.pref.kanagawa.jp/docs/z4r/index.html",
+     "https://www.pref.kanagawa.jp/prs/"
     ]
    },
    {
@@ -153,7 +157,8 @@
      "https://www.city.yokohama.lg.jp/business/kigyoshien/allNewsList.html",
      "https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/",
      "https://www.city.yokohama.lg.jp/business/kigyoshien/",
-     "https://www.city.yokohama.lg.jp/business/kigyoshien/decarbonization/carbonneutral-josei.html"
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/decarbonization/carbonneutral-josei.html",
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/capex/"
     ]
    },
    {
@@ -162,7 +167,8 @@
     "list_url": [
      "https://www.pref.chiba.lg.jp/keisei/zaisei/shiensaku.html",
      "http://www.pref.chiba.lg.jp/cate/kt/kouhou/houdou/ichiran/",
-     "https://www.ccjc-net.or.jp/"
+     "https://www.ccjc-net.or.jp/",
+     "https://www.ccjc-net.or.jp/category_list.php?frmCd=48-0-0-0-0"
     ]
    },
    {
