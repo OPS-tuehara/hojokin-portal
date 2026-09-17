@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-17",
+ "updated": "2026-09-18",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -16,6 +16,7 @@
    "name": "中小企業庁",
    "site": "chusho.meti.go.jp",
    "list_url": [
+    "https://www.chusho.meti.go.jp/koukai/hojyokin/index.html",
     "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo.html",
     "https://mirasapo-plus.go.jp/"
    ]
@@ -224,7 +225,9 @@
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/index.html",
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/shienhojokin/index.html",
      "https://www.pref.shizuoka.jp/kankosports/kanko/kankoshinko/1040870/index.html",
-     "https://k-kappa.com/"
+     "https://k-kappa.com/",
+     "https://www.town.kawazu.shizuoka.jp/jigyousha/",
+     "https://shimoda-cci.or.jp/shien/hojyokin.html"
     ]
    },
    {
