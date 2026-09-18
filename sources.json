@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-18",
+ "updated": "2026-09-19",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -9,7 +9,8 @@
   "subagent": "サブエージェントは別の会話コンテキストを持つため、親が調べたURLの provenance を引き継がない。サブエージェントにも『必ず WebSearch → WebFetch の順で行う』ことを明示すること。",
   "no_alternative_fetch": "curl / wget / python の requests など、WebFetch 以外の手段でページを取得することは禁止。取得できないものは取得できないものとして報告する。",
   "maintenance": "list_url が未設定の機関を巡回した日は、有効な一覧ページURLを見つけしだいこのファイルに追記する。404や構造変更で使えなくなったURLも同様に直す。",
-  "mhlw_pattern": "厚生労働省の報道発表一覧は https://www.mhlw.go.jp/stf/houdou/houdou_list_YYYYMM.html 形式。巡回月の年月に読み替える。"
+  "mhlw_pattern": "厚生労働省の報道発表一覧は https://www.mhlw.go.jp/stf/houdou/houdou_list_YYYYMM.html 形式。巡回月の年月に読み替える。",
+  "sii_caution": "【2026-09-18 確認】sii.or.jp の一部事業トップ（/zeb08/、/DRchikudenchi_gyousan07r/ 等）はリダイレクトループで取得できない。/public.html や /uploads/*.pdf の公募要領を直接読むと取得できる。"
  },
  "national": [
   {
@@ -73,7 +74,10 @@
      "https://www.pref.ibaraki.jp/soshiki/shokorodo/rosei/index.html",
      "https://www.pref.ibaraki.jp/soshiki/shokorodo/sangi/index.html",
      "https://www.iis-net.or.jp/",
-     "https://www.iis-net.or.jp/page?kind=sikin_tyoutatsu"
+     "https://www.iis-net.or.jp/page?kind=sikin_tyoutatsu",
+     "https://www.pref.ibaraki.jp/shokorodo/chusho/shintyaku/ichiran.html",
+     "https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/ichiran.html",
+     "https://www.pref.ibaraki.jp/news.html"
     ]
    },
    {
@@ -81,7 +85,8 @@
     "site": "city.hitachi.lg.jp",
     "list_url": [
      "https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/index.html",
-     "https://www.city.hitachi.lg.jp/koyotaga/1010320/1010371/index.html"
+     "https://www.city.hitachi.lg.jp/koyotaga/1010320/1010371/index.html",
+     "https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/1019112.html"
     ]
    },
    {
@@ -89,7 +94,8 @@
     "site": "city.tsukuba.lg.jp",
     "list_url": [
      "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/index.html",
-     "https://www.city.tsukuba.lg.jp/jigyosha/oshirase/index.html"
+     "https://www.city.tsukuba.lg.jp/jigyosha/oshirase/index.html",
+     "https://www.city.tsukuba.lg.jp/soshikikarasagasu/keizaibusangyoshinkoka/gyomuannai/2/index.html"
     ]
    },
    {
@@ -97,7 +103,8 @@
     "site": "city.ryugasaki.ibaraki.jp",
     "list_url": [
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html",
-     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/2013081400032.html"
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/2013081400032.html",
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyousien.html"
     ]
    },
    {
@@ -105,7 +112,8 @@
     "list_url": [
      "https://www.city.mito.lg.jp/life/5/27/129/",
      "https://www.city.mito.lg.jp/life/sub/2/",
-     "https://www.city.mito.lg.jp/site/mito-sougyou/"
+     "https://www.city.mito.lg.jp/site/mito-sougyou/",
+     "https://www.city.mito.lg.jp/soshiki/57/"
     ]
    },
    {
@@ -113,7 +121,8 @@
     "list_url": [
      "https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/index.html",
      "https://www.city.hitachinaka.lg.jp/business/chushokigyo/index.html",
-     "https://www.city.hitachinaka.lg.jp/business/kankoshinko/1007543/1016602.html"
+     "https://www.city.hitachinaka.lg.jp/business/kankoshinko/1007543/1016602.html",
+     "https://www.city.hitachinaka.lg.jp/business/chushokigyo/1008273/index.html"
     ]
    }
   ],
