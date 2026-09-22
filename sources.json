@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-22",
+ "updated": "2026-09-23",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -15,7 +15,9 @@
   "tochigi_iin_caution": "【2026-09-20 確認】とちぎ産業振興センター tochigi-iin.or.jp はドメイン全体が robots.txt で拒否され WebFetch できない。栃木県の補助金は県サイト pref.tochigi.lg.jp 側（f03/f01/f06/d02 配下）から辿ること。",
   "nasu_caution": "【2026-09-20 確認】那須町 town.nasu.lg.jp の課別ページ（office1102/section-1.html、office0011/division-1.html）は http↔https のリダイレクトループで取得できない。トップページ新着や /0040/ /0043/ 配下の個別ページは取得できる。",
   "shizuoka_zaidan_caution": "【2026-09-20 確認】静岡県産業振興財団 ric-shizuoka.or.jp はレスポンスが binary data で返り本文を取得できない。静岡県庁 pref.shizuoka.jp 側の制度ページから確認すること。",
-  "aibsc_caution": "【2026-09-20 確認】あいち産業振興機構 aibsc.jp の /support/ 配下はリダイレクトループで取得できない。トップ https://www.aibsc.jp/ の新着情報から辿ること。"
+  "aibsc_caution": "【2026-09-20 確認】あいち産業振興機構 aibsc.jp の /support/ 配下はリダイレクトループで取得できない。トップ https://www.aibsc.jp/ の新着情報から辿ること。",
+  "smrj_redirect_caution": "【2026-09-23 確認】shoryokuka.smrj.go.jp の /ippan/ /catalog/ 配下と sii.or.jp/newsrelease/、mirasapo-plus.go.jp/category/ はリダイレクトループまたは404で取得できない。制度概要は seisansei.smrj.go.jp/subsidy_info/schedule.html や mirasapo-plus.go.jp/subsidy/ 配下、中小企業庁 kobo.html の個別告知ページから読むこと。",
+  "kosha_press_lag": "【2026-09-23 確認】東京都中小企業振興公社 kosha/press.html と topics 配下の一部ページは本文が空または更新が遅れる。公社の新規募集は https://www.metro.tokyo.lg.jp/information/press/2026/09 （都庁報道発表の月次一覧）側で拾うほうが確実。"
  },
  "national": [
   {
@@ -35,7 +37,10 @@
     "https://seisansei.smrj.go.jp/subsidy_info/schedule.html",
     "https://www.smrj.go.jp/procurement/solicitation/",
     "https://www.smrj.go.jp/news/",
-    "https://shoryokuka.smrj.go.jp/"
+    "https://shoryokuka.smrj.go.jp/",
+    "https://growth-100-oku.smrj.go.jp/",
+    "https://shinjigyou-monodukuri.smrj.go.jp/",
+    "https://it-shien.smrj.go.jp/schedule/"
    ]
   },
   {
@@ -48,7 +53,8 @@
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/shokuba_kosodate/ryouritsu01/index.html",
     "https://www.jeed.go.jp/elderly/subsidy/",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html",
-    "https://www.jeed.go.jp/elderly/subsidy/subsidy_keizoku.html"
+    "https://www.jeed.go.jp/elderly/subsidy/subsidy_keizoku.html",
+    "https://www.mhlw.go.jp/stf/newpage_07843.html"
    ]
   },
   {
@@ -58,7 +64,8 @@
     "https://www.mlit.go.jp/kankocho/kobo_boshu.html",
     "https://www.mlit.go.jp/kankocho/kobo.html",
     "https://www.mlit.go.jp/kankocho/kobo_2026_00003.html",
-    "https://kanko-jinzai.go.jp/"
+    "https://kanko-jinzai.go.jp/",
+    "https://kanko-jinzai.go.jp/news/"
    ]
   },
   {
@@ -75,7 +82,8 @@
    "list_url": [
     "https://www.env.go.jp/press/",
     "https://www.env.go.jp/guide/kobo.html",
-    "https://www.env.go.jp/newsindex.html"
+    "https://www.env.go.jp/newsindex.html",
+    "https://www.env.go.jp/earth/earth/ondanka/koubo.html"
    ]
   }
  ],
@@ -168,7 +176,10 @@
      "https://www.tcvb.or.jp/jp/project/subsidy/",
      "https://www.metro.tokyo.lg.jp/information/press/",
      "https://www.tokyo-kosha.or.jp/kosha/press.html",
-     "https://www.shigotozaidan.or.jp/link/Grant_Money_link.html"
+     "https://www.shigotozaidan.or.jp/link/Grant_Money_link.html",
+     "https://www.sangyo-rodo.metro.tokyo.lg.jp/tourism/kakusyu/",
+     "https://www.tokyo-kosha.or.jp/support/josei/setsubijosei/yakushin.html",
+     "https://www.metro.tokyo.lg.jp/information/press/2026/09"
     ]
    },
    {
@@ -190,7 +201,8 @@
      "https://www.pref.kanagawa.jp/docs/jf2/index.html",
      "https://www.pref.kanagawa.jp/docs/z4r/index.html",
      "https://www.pref.kanagawa.jp/prs/",
-     "https://www.pref.kanagawa.jp/menu/5/20/index.html"
+     "https://www.pref.kanagawa.jp/menu/5/20/index.html",
+     "https://www.kipc.or.jp/topics/information/subgrants/"
     ]
    },
    {
@@ -201,7 +213,8 @@
      "https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/",
      "https://www.city.yokohama.lg.jp/business/kigyoshien/",
      "https://www.city.yokohama.lg.jp/business/kigyoshien/decarbonization/carbonneutral-josei.html",
-     "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/capex/"
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/capex/",
+     "https://socialport-y.city.yokohama.lg.jp/subsidy/"
     ]
    },
    {
@@ -220,8 +233,7 @@
     "site": "city.nagareyama.chiba.jp",
     "list_url": [
      "https://www.city.nagareyama.chiba.jp/newslist.html",
-     "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/index.html",
-     "https://www.city.nagareyama.chiba.jp/life/1002178/1002183/index.html"
+     "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/index.html"
     ]
    }
   ],
