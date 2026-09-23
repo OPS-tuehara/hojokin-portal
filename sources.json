@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-23",
+ "updated": "2026-09-24",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -17,7 +17,12 @@
   "shizuoka_zaidan_caution": "【2026-09-20 確認】静岡県産業振興財団 ric-shizuoka.or.jp はレスポンスが binary data で返り本文を取得できない。静岡県庁 pref.shizuoka.jp 側の制度ページから確認すること。",
   "aibsc_caution": "【2026-09-20 確認】あいち産業振興機構 aibsc.jp の /support/ 配下はリダイレクトループで取得できない。トップ https://www.aibsc.jp/ の新着情報から辿ること。",
   "smrj_redirect_caution": "【2026-09-23 確認】shoryokuka.smrj.go.jp の /ippan/ /catalog/ 配下と sii.or.jp/newsrelease/、mirasapo-plus.go.jp/category/ はリダイレクトループまたは404で取得できない。制度概要は seisansei.smrj.go.jp/subsidy_info/schedule.html や mirasapo-plus.go.jp/subsidy/ 配下、中小企業庁 kobo.html の個別告知ページから読むこと。",
-  "kosha_press_lag": "【2026-09-23 確認】東京都中小企業振興公社 kosha/press.html と topics 配下の一部ページは本文が空または更新が遅れる。公社の新規募集は https://www.metro.tokyo.lg.jp/information/press/2026/09 （都庁報道発表の月次一覧）側で拾うほうが確実。"
+  "kosha_press_lag": "【2026-09-23 確認】東京都中小企業振興公社 kosha/press.html と topics 配下の一部ページは本文が空または更新が遅れる。公社の新規募集は https://www.metro.tokyo.lg.jp/information/press/2026/09 （都庁報道発表の月次一覧）側で拾うほうが確実。",
+  "nasu_top_caution": "【2026-09-24 確認】那須町トップ https://www.town.nasu.lg.jp/ は本文にナビゲーションとフッターしか含まれず新着が取れない。新着一覧は https://www.town.nasu.lg.jp/index1.html を WebFetch すること。",
+  "tochigi_houdou_caution": "【2026-09-24 確認】pref.tochigi.lg.jp/houdou/index.html は月次見出しのみで本文一覧が欠落する。栃木県の新規募集は各課 index（f01/f03/f05/f06/d02）と https://www.pref.tochigi.lg.jp/boshuu/index.html から拾うこと。",
+  "joho_fukuoka_caution": "【2026-09-24 確認】福岡県中小企業振興センター joho-fukuoka.or.jp の新着は動的読み込みで日付・個別URLを抽出できない。福岡県の制度は pref.fukuoka.lg.jp/contents/ 配下の個別ページから確認すること。また pref.fukuoka.lg.jp/life/4/43/196/ はリダイレクトループで取得不可。",
+  "aibsc_hojokin_caution": "【2026-09-24 確認】hojokin.aibsc.jp は検索フォームのみで制度一覧が本文に現れない。愛知県の制度は pref.aichi.jp 側（/life/sub/2/24/88/、/site/aichi-pref-iot/ 配下）から確認すること。",
+  "kawazu_caution": "【2026-09-24 確認】河津町「宿泊業の経営力基盤強化事業費補助金」のページは補助率・上限額・受付期間の記載がなく、観光HP kankou.town.kawazu.shizuoka.jp/information/4143/ 側にも期間記載がない。掲載可否の判断には町産業振興課への確認が必要なため今回は見送った。"
  },
  "national": [
   {
@@ -245,7 +250,9 @@
      "https://www.pref.aichi.jp/life/5/24/88/",
      "https://www.pref.aichi.jp/life/sub/2/",
      "https://www.aibsc.jp/",
-     "https://shogakukin-henkan-shien.pref.aichi.jp/subsidy/"
+     "https://shogakukin-henkan-shien.pref.aichi.jp/subsidy/",
+     "https://www.pref.aichi.jp/life/sub/2/24/88/",
+     "https://www.pref.aichi.jp/site/aichi-pref-iot/"
     ]
    },
    {
@@ -274,7 +281,10 @@
      "https://nasu.shokokai-tochigi.or.jp/",
      "https://www.pref.tochigi.lg.jp/d02/kouhou/index.html",
      "https://zerocarbon.pref.tochigi.lg.jp/",
-     "https://www.pref.tochigi.lg.jp/f06/index.html"
+     "https://www.pref.tochigi.lg.jp/f06/index.html",
+     "https://www.pref.tochigi.lg.jp/boshuu/index.html",
+     "https://www.pref.tochigi.lg.jp/f01/index.html",
+     "https://www.town.nasu.lg.jp/index1.html"
     ]
    },
    {
@@ -286,7 +296,8 @@
      "https://www.pref.shizuoka.jp/kankosports/kanko/kankoshinko/1040870/index.html",
      "https://k-kappa.com/",
      "https://www.town.kawazu.shizuoka.jp/jigyousha/",
-     "https://shimoda-cci.or.jp/shien/hojyokin.html"
+     "https://shimoda-cci.or.jp/shien/hojyokin.html",
+     "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/1047031/index.html"
     ]
    },
    {
@@ -296,7 +307,8 @@
      "https://www.pref.fukuoka.lg.jp/soshiki/0601820/index-2.html",
      "https://www.joho-fukuoka.or.jp/",
      "https://www.f-seisanseikojo.jp/",
-     "https://www.crossroadfukuoka.jp/business/"
+     "https://www.crossroadfukuoka.jp/business/",
+     "https://www.pref.fukuoka.lg.jp/contents/cycle-hojo.html"
     ]
    }
   ]
