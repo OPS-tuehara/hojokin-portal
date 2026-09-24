@@ -1,6 +1,22 @@
 {
- "updated": "2026-09-24",
+ "updated": "2026-09-25",
  "items": [
+  {
+   "id": "mhlw-tokutei-konnan-r8",
+   "date": "2026-09-25",
+   "title": "【厚生労働省】特定求職者雇用開発助成金（特定就職困難者コース）（中小企業は高年齢者・母子家庭の母等60万円／身体・知的障害者120万円／重度障害者等240万円、通年受付）",
+   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/tokutei_konnan.html",
+   "source": "厚生労働省",
+   "summary": "ハローワーク等の紹介で60歳以上の高年齢者や障害者などを継続雇用した中小企業に、1〜3年にわたり分割で助成する制度。フォトスタジオの受付や旅館の客室清掃など通年の人員確保に使える。令和8年5月以降、高年齢者はハローワークの個別支援を受けていることが要件。通年受付で締切なし。"
+  },
+  {
+   "id": "mhlw-trial-koyou-ippan-r8",
+   "date": "2026-09-25",
+   "title": "【厚生労働省】トライアル雇用助成金（一般トライアルコース）（1人月額最大4万円・母子家庭の母/父子家庭の父は5万円、最長3か月、通年受付）",
+   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/newpage_16286.html",
+   "source": "厚生労働省",
+   "summary": "職業経験の不足などで就職が困難な求職者をハローワーク等の紹介で原則3か月試行雇用した事業主に、1人月額最大4万円を支給。写真館・ブライダル・振袖レンタルの接客スタッフを未経験者から育てる採用に使える。週30時間以上の就業が条件で、通年受付・締切なし。"
+  },
   {
    "id": "aichi-shogakukin-henkan-shien",
    "date": "2026-09-21",

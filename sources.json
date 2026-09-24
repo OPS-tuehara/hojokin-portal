@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-24",
+ "updated": "2026-09-25",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -22,7 +22,11 @@
   "tochigi_houdou_caution": "【2026-09-24 確認】pref.tochigi.lg.jp/houdou/index.html は月次見出しのみで本文一覧が欠落する。栃木県の新規募集は各課 index（f01/f03/f05/f06/d02）と https://www.pref.tochigi.lg.jp/boshuu/index.html から拾うこと。",
   "joho_fukuoka_caution": "【2026-09-24 確認】福岡県中小企業振興センター joho-fukuoka.or.jp の新着は動的読み込みで日付・個別URLを抽出できない。福岡県の制度は pref.fukuoka.lg.jp/contents/ 配下の個別ページから確認すること。また pref.fukuoka.lg.jp/life/4/43/196/ はリダイレクトループで取得不可。",
   "aibsc_hojokin_caution": "【2026-09-24 確認】hojokin.aibsc.jp は検索フォームのみで制度一覧が本文に現れない。愛知県の制度は pref.aichi.jp 側（/life/sub/2/24/88/、/site/aichi-pref-iot/ 配下）から確認すること。",
-  "kawazu_caution": "【2026-09-24 確認】河津町「宿泊業の経営力基盤強化事業費補助金」のページは補助率・上限額・受付期間の記載がなく、観光HP kankou.town.kawazu.shizuoka.jp/information/4143/ 側にも期間記載がない。掲載可否の判断には町産業振興課への確認が必要なため今回は見送った。"
+  "kawazu_caution": "【2026-09-24 確認】河津町「宿泊業の経営力基盤強化事業費補助金」のページは補助率・上限額・受付期間の記載がなく、観光HP kankou.town.kawazu.shizuoka.jp/information/4143/ 側にも期間記載がない。掲載可否の判断には町産業振興課への確認が必要なため今回は見送った。",
+  "mito_hojokin_caution": "【2026-09-25 確認】水戸市「中小企業振興支援補助金」（https://www.city.mito.lg.jp/page/75067.html）は令和8年度の申請額が予算額に達し全メニュー受付終了。水戸市テレワーク導入促進補助金 page/78022.html は404。水戸市の現行制度は https://www.city.mito.lg.jp/page/51586.html と商工課 https://www.city.mito.lg.jp/soshiki/57/ から確認すること。",
+  "hitachinaka_katsuseika_caution": "【2026-09-25 確認】ひたちなか市「令和8年度中小企業事業活性化補助金」「令和8年度創業支援促進事業補助金」はいずれも予算枠到達で受付終了。市の現行一覧は https://www.city.hitachinaka.lg.jp/business/chushokigyo/index.html が最も網羅的（受付状況も併記）。",
+  "ibaraki_lag_caution": "【2026-09-25 確認】茨城県は月次の報道発表アーカイブ生成が遅く、中小企業課・観光戦略課の新着一覧も数日遅れる。中小企業課 shintyaku/ichiran.html、産業人材育成課 sanjin/ichiran.html、営業戦略部 eigyo/kokusai/shintyaku/ichiran.html、助成・支援金一覧 joseikinshienkin/index.html を併用すること。",
+  "mhlw_koyou_kyufukin_note": "【2026-09-25 確認】厚労省の雇用関係助成金は個別制度ページ（kyufukin/配下）が通年掲載で日付を持たない。取りこぼし確認には kyufukin/index.html のコース一覧を辿るのが確実。人材開発支援助成金のトップは d01-1.html。"
  },
  "national": [
   {
@@ -59,7 +63,9 @@
     "https://www.jeed.go.jp/elderly/subsidy/",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html",
     "https://www.jeed.go.jp/elderly/subsidy/subsidy_keizoku.html",
-    "https://www.mhlw.go.jp/stf/newpage_07843.html"
+    "https://www.mhlw.go.jp/stf/newpage_07843.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/tokutei_konnan.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/newpage_16286.html"
    ]
   },
   {
@@ -111,7 +117,9 @@
      "https://www.pref.ibaraki.jp/news.html",
      "https://www.pref.ibaraki.jp/soshiki/eigyo/kankosenryaku.html",
      "https://www.ibarakiguide.jp/jigyousya/jyosei/jyosei_jigyo.html",
-     "https://www.pref.ibaraki.jp/shokorodo/chusho/keiei/jigyoushoukeinw.html"
+     "https://www.pref.ibaraki.jp/shokorodo/chusho/keiei/jigyoushoukeinw.html",
+     "https://www.pref.ibaraki.jp/eigyo/kokusai/shintyaku/ichiran.html",
+     "https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/index.html"
     ]
    },
    {
@@ -132,7 +140,8 @@
      "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/index.html",
      "https://www.city.tsukuba.lg.jp/jigyosha/oshirase/index.html",
      "https://www.city.tsukuba.lg.jp/soshikikarasagasu/keizaibusangyoshinkoka/gyomuannai/2/index.html",
-     "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/index.html"
+     "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/index.html",
+     "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/1011812.html"
     ]
    },
    {
@@ -142,7 +151,8 @@
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/zigyousyasienn.html",
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/2013081400032.html",
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyousien.html",
-     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/"
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/",
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/sougyousien/ryuugasakishisougyou.html"
     ]
    },
    {
