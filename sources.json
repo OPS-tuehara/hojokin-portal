@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-26",
+ "updated": "2026-09-27",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -21,7 +21,7 @@
   "nasu_top_caution": "【2026-09-24 確認】那須町トップ https://www.town.nasu.lg.jp/ は本文にナビゲーションとフッターしか含まれず新着が取れない。新着一覧は https://www.town.nasu.lg.jp/index1.html を WebFetch すること。",
   "tochigi_houdou_caution": "【2026-09-24 確認】pref.tochigi.lg.jp/houdou/index.html は月次見出しのみで本文一覧が欠落する。栃木県の新規募集は各課 index（f01/f03/f05/f06/d02）と https://www.pref.tochigi.lg.jp/boshuu/index.html から拾うこと。",
   "joho_fukuoka_caution": "【2026-09-24 確認】福岡県中小企業振興センター joho-fukuoka.or.jp の新着は動的読み込みで日付・個別URLを抽出できない。福岡県の制度は pref.fukuoka.lg.jp/contents/ 配下の個別ページから確認すること。また pref.fukuoka.lg.jp/life/4/43/196/ はリダイレクトループで取得不可。",
-  "aibsc_hojokin_caution": "【2026-09-24 確認】hojokin.aibsc.jp は検索フォームのみで制度一覧が本文に現れない。愛知県の制度は pref.aichi.jp 側（/life/sub/2/24/88/、/site/aichi-pref-iot/ 配下）から確認すること。",
+  "aibsc_hojokin_caution": "【2026-09-27 更新】hojokin.aibsc.jp は WebSearch 経由なら取得可能（2026-09-24 の『取得不可』は訂正）。/area/1（国・県）と /area/45（名古屋市）が有用。愛知県庁側は https://www.pref.aichi.jp/life/sub/2/index-2.html（助成金・補助金一覧・更新日付き）が最も網羅的。",
   "kawazu_caution": "【2026-09-24 確認】河津町「宿泊業の経営力基盤強化事業費補助金」のページは補助率・上限額・受付期間の記載がなく、観光HP kankou.town.kawazu.shizuoka.jp/information/4143/ 側にも期間記載がない。掲載可否の判断には町産業振興課への確認が必要なため今回は見送った。",
   "mito_hojokin_caution": "【2026-09-25 確認】水戸市「中小企業振興支援補助金」（https://www.city.mito.lg.jp/page/75067.html）は令和8年度の申請額が予算額に達し全メニュー受付終了。水戸市テレワーク導入促進補助金 page/78022.html は404。水戸市の現行制度は https://www.city.mito.lg.jp/page/51586.html と商工課 https://www.city.mito.lg.jp/soshiki/57/ から確認すること。",
   "hitachinaka_katsuseika_caution": "【2026-09-25 確認】ひたちなか市「令和8年度中小企業事業活性化補助金」「令和8年度創業支援促進事業補助金」はいずれも予算枠到達で受付終了。市の現行一覧は https://www.city.hitachinaka.lg.jp/business/chushokigyo/index.html が最も網羅的（受付状況も併記）。",
@@ -31,7 +31,11 @@
   "esop_robots_caution": "【2026-09-26 確認】厚労省は令和8年度から助成金詳細を電子申請ポータル esop.mhlw.go.jp に集約したが、同ドメインは robots.txt で WebFetch 不可。人材開発支援助成金など金額が取れない制度は mhlw.go.jp 側の制度ページか各都道府県労働局の jsite ページを当たること。雇用関係助成金の網羅確認は kyufukin/index_00057.html（雇用関係）と index_00051.html（労働条件等関係）の2本立てが有効。",
   "enecho_redirect_caution": "【2026-09-26 確認】https://www.enecho.meti.go.jp/appli/public_offer/ は http↔https のリダイレクトループで取得不可。経産省本省 kobo.html は委託公募が大半なので、中小企業向けは中小企業庁 koukai/hojyokin/kobo.html を優先する。環境省 guide/kobo.html は空のことが多く、実質的な情報源は env.go.jp/press/ と執行団体サイト（ETA・JRECO）。",
   "yokohama_allnews_caution": "【2026-09-26 確認】横浜市 business/kigyoshien/allNewsList.html は新着が2件しか出ず取りこぼしが大きい。経済局記者発表の年度一覧 city-info/koho-kocho/press/keizai/2026/index.html と IDEC横浜 idec.or.jp/topics/entry_list.html を併用すること。",
-  "nagareyama_newslist_caution": "【2026-09-26 確認】流山市 newslist.html は直近5〜6日分しか表示されない。3日周期のローテーションでも取りこぼす可能性があるため、支援制度の各カテゴリ子ページ（1052996＝人材確保、1052998＝販路拡大、1052963＝その他 等）を直接巡回すること。足立区は新着に日付が出ないため、制度一覧ページの内容差分で判断する。"
+  "nagareyama_newslist_caution": "【2026-09-26 確認】流山市 newslist.html は直近5〜6日分しか表示されない。3日周期のローテーションでも取りこぼす可能性があるため、支援制度の各カテゴリ子ページ（1052996＝人材確保、1052998＝販路拡大、1052963＝その他 等）を直接巡回すること。足立区は新着に日付が出ないため、制度一覧ページの内容差分で判断する。",
+  "meti_kobo_js_caution": "【2026-09-27 確認】https://www.meti.go.jp/information/publicoffer/kobo.html はJS描画で WebFetch すると本文が常に空。経産省系の主台帳は https://www.chusho.meti.go.jp/koukai/hojyokin/kobo.html と https://www.env.go.jp/earth/earth/ondanka/enetoku/2026/ （令和8年度予算・令和7年度補正の脱炭素化事業一覧）に置き換えること。",
+  "tochigi_boshuu_caution": "【2026-09-27 確認】pref.tochigi.lg.jp/boshuu/index.html は家づくり支援・奨学金・寄附募集しか出ず、事業者向け補助金の台帳として機能しない。栃木県は jigyosha/shinchaku.html（事業者向け新着）、mokuteki/yushi/005003/（商工業の融資・助成一覧）、mokuteki/yushi/005001/（雇用・労働の助成一覧）、d02/carbonneutral/support.html（県17制度＋市町16制度）を使うこと。那須町商工会はトップではなく https://r.goope.jp/srb-09-21/info を直接読む。",
+  "fukuoka_index_html_tip": "【2026-09-27 確認】https://www.pref.fukuoka.lg.jp/life/4/43/196/ はリダイレクトループだが、末尾に index.html を付けた https://www.pref.fukuoka.lg.jp/life/4/43/196/index.html は正常に取得できる（宿泊事業者向け補助金が掲載日・個別URL付きで網羅されている）。福岡県の宿泊系補助金は北九州市・福岡市を除く県内が対象で、かつ『稼ぐ力』応援センターのアドバイザー支援が申請の前提。センター支援の申込期限は補助金締切の約1か月前に設定されるため別途追跡が必要。",
+  "mhlw_pamphlet_tip": "【2026-09-27 確認】厚労省の助成金は制度HTMLページに金額が無いことが多く、金額は mhlw.go.jp/content/ 配下の手引きPDF（例: 001239697.pdf＝人材確保等支援助成金テレワークコース2026年度版）か、各労働局の『令和8年度 雇用・労働分野の助成金のご案内（簡略版）』PDFで確認できる。観光庁の公募トップ kobo.html は年次リンクのみなので kobo_2026_00003.html を直接巡回すること。"
  },
  "national": [
   {
@@ -56,7 +60,10 @@
     "https://shinjigyou-monodukuri.smrj.go.jp/",
     "https://it-shien.smrj.go.jp/schedule/",
     "https://seisansei.smrj.go.jp/subsidy_guide/subsidy_info/",
-    "https://j-net21.smrj.go.jp/news/"
+    "https://j-net21.smrj.go.jp/news/",
+    "https://it-shien.smrj.go.jp/",
+    "https://www.smrj.go.jp/regional_hq/kanto/sme/index.html",
+    "https://labour-saving.smrj.go.jp/"
    ]
   },
   {
@@ -75,7 +82,10 @@
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/newpage_16286.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00051.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000150891.html",
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/chuukou.html"
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/chuukou.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00058.html",
+    "https://www.mhlw.go.jp/seisakunitsuite/joseikin_shoureikin/index.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/telework_zyosei_R3.html"
    ]
   },
   {
@@ -109,7 +119,8 @@
     "https://www.env.go.jp/earth/earth/ondanka/koubo.html",
     "https://www.env.go.jp/press/index.html",
     "https://www.eta.or.jp/",
-    "https://www.jreco.or.jp/koubo_env.html"
+    "https://www.jreco.or.jp/koubo_env.html",
+    "https://www.env.go.jp/earth/earth/ondanka/enetoku/2026/"
    ]
   }
  ],
@@ -289,7 +300,12 @@
      "https://www.aibsc.jp/",
      "https://shogakukin-henkan-shien.pref.aichi.jp/subsidy/",
      "https://www.pref.aichi.jp/life/sub/2/24/88/",
-     "https://www.pref.aichi.jp/site/aichi-pref-iot/"
+     "https://www.pref.aichi.jp/site/aichi-pref-iot/",
+     "https://www.pref.aichi.jp/life/sub/2/index-2.html",
+     "https://www.pref.aichi.jp/life/8/51/185/",
+     "https://www.pref.aichi.jp/site/aichi-pref-iot/list649-2302.html",
+     "https://hojokin.aibsc.jp/area/1",
+     "https://hojokin.aibsc.jp/area/45"
     ]
    },
    {
@@ -297,14 +313,17 @@
     "site": "city.nagoya.jp",
     "list_url": [
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/index.html",
-     "https://www.city.nagoya.jp/jigyou/category/387-1-0-0-0-0-0-0-0-0.html"
+     "https://www.city.nagoya.jp/jigyou/category/387-1-0-0-0-0-0-0-0-0.html",
+     "https://www.city.nagoya.jp/jigyou/boshu/1014251/1014259/index.html",
+     "https://www.nipc.or.jp/new-biz/gaikoku/index.html"
     ]
    },
    {
     "name": "一宮市",
     "site": "city.ichinomiya.aichi.jp",
     "list_url": [
-     "https://www.city.ichinomiya.aichi.jp/katsuryokusouzou/sangyoushinkou/1044297/1044298/index.html"
+     "https://www.city.ichinomiya.aichi.jp/katsuryokusouzou/sangyoushinkou/1044297/1044298/index.html",
+     "https://www.city.ichinomiya.aichi.jp/katsuryokusouzou/sangyoushinkou/1044297/1044298/1010719/index.html"
     ]
    },
    {
@@ -321,7 +340,16 @@
      "https://www.pref.tochigi.lg.jp/f06/index.html",
      "https://www.pref.tochigi.lg.jp/boshuu/index.html",
      "https://www.pref.tochigi.lg.jp/f01/index.html",
-     "https://www.town.nasu.lg.jp/index1.html"
+     "https://www.town.nasu.lg.jp/index1.html",
+     "https://www.pref.tochigi.lg.jp/jigyosha/shinchaku.html",
+     "https://www.pref.tochigi.lg.jp/mokuteki/yushi/005003/index.html",
+     "https://www.pref.tochigi.lg.jp/mokuteki/yushi/005001/index.html",
+     "https://www.pref.tochigi.lg.jp/d02/carbonneutral/support.html",
+     "https://www.pref.tochigi.lg.jp/f03/contents.html",
+     "https://www.town.nasu.lg.jp/0037/genre1-1-001.html",
+     "https://www.town.nasu.lg.jp/0209/genre2-1-001.html",
+     "https://www.town.nasu.lg.jp/0040/genre1-1-001.html",
+     "https://r.goope.jp/srb-09-21/info"
     ]
    },
    {
@@ -334,7 +362,11 @@
      "https://k-kappa.com/",
      "https://www.town.kawazu.shizuoka.jp/jigyousha/",
      "https://shimoda-cci.or.jp/shien/hojyokin.html",
-     "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/1047031/index.html"
+     "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/1047031/index.html",
+     "https://hellonavi.jp/business/news",
+     "https://hellonavi.jp/business/info/grant",
+     "https://www.city.shimoda.shizuoka.jp/category/kurashi_tetsuduki/157638.html",
+     "https://kankou.town.kawazu.shizuoka.jp/information/"
     ]
    },
    {
@@ -345,7 +377,11 @@
      "https://www.joho-fukuoka.or.jp/",
      "https://www.f-seisanseikojo.jp/",
      "https://www.crossroadfukuoka.jp/business/",
-     "https://www.pref.fukuoka.lg.jp/contents/cycle-hojo.html"
+     "https://www.pref.fukuoka.lg.jp/contents/cycle-hojo.html",
+     "https://www.pref.fukuoka.lg.jp/life/4/43/196/index.html",
+     "https://www.pref.fukuoka.lg.jp/life/4/32/index.html",
+     "https://www.crossroadfukuoka.jp/business/news",
+     "https://www.f-seisanseikojo.jp/funds/"
     ]
    }
   ]
