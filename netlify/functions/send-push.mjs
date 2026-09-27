@@ -2,8 +2,12 @@ import { getStore } from "@netlify/blobs";
 import webpush from "web-push";
 import { postChatworkMessage, buildNewsMessage, isChatworkConfigured } from "../lib/chatwork.mjs";
 
-// 毎日 UTC 23:45 = 日本時間 8:45(8:05の新着収集とデプロイの後)
-export const config = { schedule: "45 23 * * *" };
+// 日本時間 8:05 / 8:45 / 9:05 / 9:45 の4回（UTC 23:05, 23:45, 0:05, 0:45）。
+// 収集タスクは 7:15 JST 開始で 20〜45分ほどかかる。通常は 8:45 の回で配信されるが、
+// 収集が長引いて間に合わなかった日は後続の回が同じ日のうちに拾う
+// （2026-09-28 に収集完了 8:47 で 8:45 の配信を2分差で取り逃がした）。
+// 差分は Blobs の last_ids で管理しているため、何回動いても同じ項目が二重に通知されることはない。
+export const config = { schedule: "5,45 23,0 * * *" };
 
 export default async () => {
   const siteUrl = process.env.URL;
