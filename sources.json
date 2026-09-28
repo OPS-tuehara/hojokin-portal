@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-09-28",
+ "updated": "2026-09-29",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -72,7 +72,8 @@
     "https://it-shien.smrj.go.jp/",
     "https://www.smrj.go.jp/regional_hq/kanto/sme/index.html",
     "https://labour-saving.smrj.go.jp/",
-    "https://shinjigyou-shinshutsu.smrj.go.jp/schedule"
+    "https://shinjigyou-shinshutsu.smrj.go.jp/schedule",
+    "https://www.smrj.go.jp/press/"
    ]
   },
   {
@@ -95,7 +96,8 @@
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00058.html",
     "https://www.mhlw.go.jp/seisakunitsuite/joseikin_shoureikin/index.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/telework_zyosei_R3.html",
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/index_00051.html"
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/index_00051.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/000763045.html"
    ]
   },
   {
@@ -118,7 +120,8 @@
     "https://sii.or.jp/shindan07r/public.html",
     "https://syouenehojyokin.sii.or.jp/",
     "https://syouenehojyokin.sii.or.jp/information.html",
-    "https://sii.or.jp/announcement/index.html"
+    "https://sii.or.jp/announcement/index.html",
+    "https://sii.or.jp/setsubi07r/newsrelease.html"
    ]
   },
   {
@@ -240,7 +243,8 @@
      "https://www.tokyo-kosha.or.jp/support/josei/setsubijosei/yakushin.html",
      "https://www.metro.tokyo.lg.jp/information/press/2026/09",
      "https://www.tokyo-kosha.or.jp/support/josei/jigyo/chiikishigen/index.html",
-     "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/"
+     "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/",
+     "https://www.tcvb.or.jp/jp/news/"
     ]
    },
    {
@@ -265,7 +269,8 @@
      "https://www.pref.kanagawa.jp/menu/5/20/index.html",
      "https://www.kipc.or.jp/topics/information/subgrants/",
      "https://startups.pref.kanagawa.jp/supports/relation-grants-and-subsidies/",
-     "https://www.pref.kanagawa.jp/menu/5/20/116/index.html"
+     "https://www.pref.kanagawa.jp/menu/5/20/116/index.html",
+     "https://www.kipc.or.jp/topics/information/hojyosei/"
     ]
    },
    {
