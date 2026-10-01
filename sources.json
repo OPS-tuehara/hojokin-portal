@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-01",
+ "updated": "2026-10-02",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -53,7 +53,13 @@
   "ibaraki_2610_empty": "【2026-10-01 確認】茨城県の報道発表 2026年10月分アーカイブ（somu/hodo/hodo/pressrelease/hodohappyoushiryou/2203/2610top.html）はページ自体は生成済みだが表が全て空。産業戦略部メールマガジンも 2026-09-16 号が最新で下旬号は未反映。県の新着は中小企業課系ページで拾うほうが速い。",
   "mhlw_202610_pending": "【2026-10-01 確認】厚労省 houdou_list_202610.html は10月1日時点でまだ404（月次一覧は月初に遅れて生成される）。当月分が404の間は https://www.mhlw.go.jp/stf/houdou/index.html と前月分 houdou_list_202609.html を併用すること。廃止済みコースの誤報告防止には kyufukin/haishi.html が有効。",
   "ibaraki_misc_blocked": "【2026-10-01 確認】ibarakiguide.jp/jigyousya/（ディレクトリ直下）はリダイレクトループ、/db-kanko/news-category/business は404。kigyou.pref.ibaraki.jp はドメイン全体が ROBOTS_DISALLOWED（robots.txt が HTTP 202 を返す）で企業立地優遇制度ページは取得不可、pref.ibaraki.jp 側から確認すること。",
-  "removed_list_url_note": "【2026-10-01 整理】sii.or.jp/announcement/index.html（内容が2025年8月止まり・大半がSII自身の印刷業者公募）と env.go.jp/earth/earth/ondanka/koubo.html（令和7年12月〜令和8年1月の住宅向け公募を受付中と表示したまま更新停止・誤判定の原因）を台帳から削除した。"
+  "removed_list_url_note": "【2026-10-01 整理】sii.or.jp/announcement/index.html（内容が2025年8月止まり・大半がSII自身の印刷業者公募）と env.go.jp/earth/earth/ondanka/koubo.html（令和7年12月〜令和8年1月の住宅向け公募を受付中と表示したまま更新停止・誤判定の原因）を台帳から削除した。",
+  "websearch_extended_fallback": "【2026-10-02 確認】allowed_domains 指定でも目的ページが出ないことがある（千葉県 koyou/wakamono/syogakukinshien.html は allowed_domains=pref.chiba.lg.jp では表出せず）。その場合は mode=extended で制度名フルの自然文クエリを投げると公式ページが表出する。allowed_domains（短語）→ extended（自然文）の2段構えが有効。",
+  "tokyo_shuekiryoku_note": "【2026-10-02 確認】中小企業収益力強化サポート事業は /recruitment/ が「第1回募集の受付は終了」表示のみで第2回情報が無い。第2回の受付期間・上限額はトップ https://tokyo-shuekiryoku-kyoka.jp/ 側に掲載される。公社のDX系事業は特設サイト iot-robot.jp 配下（/business/ が支援メニュー一覧）が一次情報。",
+  "koyokankyo_pdf_note": "【2026-10-02 確認】東京しごと財団 koyokankyo.shigotozaidan.or.jp の助成金は HTML に助成率・限度額が無い。金額は各事業の boshu/ 配下の募集要項PDF（例: jigyo/es/boshu/es_01.files/ESboshuyoko_yuso.pdf）に記載されている。",
+  "nagareyama_datsutanso_note": "【2026-10-02 確認】流山市地域脱炭素重点対策加速化事業費補助金は、事業者向けメニューが事業所用太陽光（5万円/kW・上限110万円）・業務用蓄電池（1/3・上限85万3千円）・カーシェア用EV／充放電設備のみで、断熱改修・太陽集熱器・家庭用蓄電池は個人（住宅）向け。市の脱炭素貢献パートナー制度「パートナーゴールド」登録が申請の前提。",
+  "adachi_honten_caution": "【2026-10-02 確認】足立区の事業者向け補助金は「区内に本社・本店があり主たる活動実態が区内にある中小企業」が共通要件。本社が区外のグループは対象外になる可能性が高いので、見本市等助成事業補助金（国外2/3・上限75万円）等は掲載前に要件を確認すること。",
+  "chikapa_caution": "【2026-10-02 確認】中小機構のチカパー chikapa.smrj.go.jp/project/ は一覧上の締切表示と個別ページの実態が食い違い、個別企画は2024〜2025年締切の終了済みが大半。掲載候補にする場合は必ず個別企画ページで締切を確認すること。"
  },
  "national": [
   {
@@ -91,7 +97,9 @@
     "https://seisansei.smrj.go.jp/",
     "https://www.smrj.go.jp/regional_hq/kanto/sme/hands-on/index.html",
     "https://www.smrj.go.jp/procurement/solicitation/index.html",
-    "https://it-shien.smrj.go.jp/download/"
+    "https://it-shien.smrj.go.jp/download/",
+    "https://j-net21.smrj.go.jp/news/index.php",
+    "https://mirasapo-plus.go.jp/category/infomation/"
    ]
   },
   {
@@ -148,7 +156,9 @@
     "https://www.enecho.meti.go.jp/appli/public_offer/index.html",
     "https://sii.or.jp/koujou07r/ems_overview.html",
     "https://sii.or.jp/zeb08/jissho_public.html",
-    "https://sii.or.jp/zeb08/shindan_public.html"
+    "https://sii.or.jp/zeb08/shindan_public.html",
+    "https://www.shoeneshindan.jp/",
+    "https://sii.or.jp/shindan07r/"
    ]
   },
   {
@@ -288,7 +298,12 @@
      "https://www.metro.tokyo.lg.jp/information/press/2026/09",
      "https://www.tokyo-kosha.or.jp/support/josei/jigyo/chiikishigen/index.html",
      "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/",
-     "https://www.tcvb.or.jp/jp/news/"
+     "https://www.tcvb.or.jp/jp/news/",
+     "https://iot-robot.jp/business/",
+     "https://tokyo-shuekiryoku-kyoka.jp/",
+     "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/es/boshu/index.html",
+     "https://www.tcvb.or.jp/jp/news/2026/",
+     "https://www.metro.tokyo.lg.jp/information/press/2026/10"
     ]
    },
    {
@@ -314,7 +329,9 @@
      "https://www.kipc.or.jp/topics/information/subgrants/",
      "https://startups.pref.kanagawa.jp/supports/relation-grants-and-subsidies/",
      "https://www.pref.kanagawa.jp/menu/5/20/116/index.html",
-     "https://www.kipc.or.jp/topics/information/hojyosei/"
+     "https://www.kipc.or.jp/topics/information/hojyosei/",
+     "https://www.kipc.or.jp/topics/information/",
+     "https://www.pref.kanagawa.jp/docs/m2w/index.html"
     ]
    },
    {
@@ -328,7 +345,8 @@
      "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/capex/",
      "https://socialport-y.city.yokohama.lg.jp/subsidy/",
      "https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/2026/index.html",
-     "https://www.idec.or.jp/topics/entry_list.html"
+     "https://www.idec.or.jp/topics/entry_list.html",
+     "https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/allNewsList.html"
     ]
    },
    {
@@ -342,7 +360,11 @@
      "https://www.pref.chiba.lg.jp/cate/kt/kouhou/houdou/ichiran/index.html",
      "https://www.pref.chiba.lg.jp/cate/kt/kouhou/houdou/ichiran/2026/202609.html",
      "https://www.pref.chiba.lg.jp/sanshin/digital/digital.html",
-     "https://www.pref.chiba.lg.jp/koyou/projinzai/hojo.html"
+     "https://www.pref.chiba.lg.jp/koyou/projinzai/hojo.html",
+     "https://www.pref.chiba.lg.jp/keishi/sougyou/shikin2.html",
+     "https://www.ccjc-net.or.jp/category_list.php?frmCd=48-1-0-0-0",
+     "https://www.pref.chiba.lg.jp/kankou/shinchaku.html",
+     "https://www.pref.chiba.lg.jp/cate/kt/kouhou/houdou/ichiran/2026/202610.html"
     ]
    },
    {
@@ -353,7 +375,9 @@
      "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/index.html",
      "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052996/index.html",
      "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052998/index.html",
-     "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052963/index.html"
+     "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052963/index.html",
+     "https://www.city.nagareyama.chiba.jp/business/1006712/index.html",
+     "https://www.city.nagareyama.chiba.jp/business/1006712/1048452/index.html"
     ]
    }
   ],
