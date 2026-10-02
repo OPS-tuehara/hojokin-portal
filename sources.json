@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-02",
+ "updated": "2026-10-03",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -59,7 +59,13 @@
   "koyokankyo_pdf_note": "【2026-10-02 確認】東京しごと財団 koyokankyo.shigotozaidan.or.jp の助成金は HTML に助成率・限度額が無い。金額は各事業の boshu/ 配下の募集要項PDF（例: jigyo/es/boshu/es_01.files/ESboshuyoko_yuso.pdf）に記載されている。",
   "nagareyama_datsutanso_note": "【2026-10-02 確認】流山市地域脱炭素重点対策加速化事業費補助金は、事業者向けメニューが事業所用太陽光（5万円/kW・上限110万円）・業務用蓄電池（1/3・上限85万3千円）・カーシェア用EV／充放電設備のみで、断熱改修・太陽集熱器・家庭用蓄電池は個人（住宅）向け。市の脱炭素貢献パートナー制度「パートナーゴールド」登録が申請の前提。",
   "adachi_honten_caution": "【2026-10-02 確認】足立区の事業者向け補助金は「区内に本社・本店があり主たる活動実態が区内にある中小企業」が共通要件。本社が区外のグループは対象外になる可能性が高いので、見本市等助成事業補助金（国外2/3・上限75万円）等は掲載前に要件を確認すること。",
-  "chikapa_caution": "【2026-10-02 確認】中小機構のチカパー chikapa.smrj.go.jp/project/ は一覧上の締切表示と個別ページの実態が食い違い、個別企画は2024〜2025年締切の終了済みが大半。掲載候補にする場合は必ず個別企画ページで締切を確認すること。"
+  "chikapa_caution": "【2026-10-02 確認】中小機構のチカパー chikapa.smrj.go.jp/project/ は一覧上の締切表示と個別ページの実態が食い違い、個別企画は2024〜2025年締切の終了済みが大半。掲載候補にする場合は必ず個別企画ページで締切を確認すること。",
+  "aibsc_support_ok": "【2026-10-03 確認】www.aibsc.jp/support/ 配下（/support/14807/ 等）は WebSearch 経由でもトップ本文から辿った経路でも正常取得できた（2026-09-20 の『/support/ 配下はリダイレクトループ』は訂正）。あいち産業振興機構の新規募集はトップ https://www.aibsc.jp/ の新着→/support/ 個別ページで拾える。なお hojokin.aibsc.jp は制度名の網羅リストとしては有用だが公募期間・締切・掲載日が表示されないため新着判定には使えない。",
+  "fukuoka_196_index_ok": "【2026-10-03 確認】https://www.pref.fukuoka.lg.jp/life/4/43/196/index.html は index.html を明示すればリダイレクトループを回避でき、福岡県の観光関連補助金7制度が日付付きで一覧できる（2026-09-24 の『取得不可』は訂正）。商工業・エネルギー系は https://www.pref.fukuoka.lg.jp/life/4/32/130/index.html が同様に有効。crossroadfukuoka.jp/business/news と joho-fukuoka.or.jp/info.html、ecofukuoka.jp は WebSearch に表出せず到達できないため、県庁側の上記2一覧で代替する。",
+  "mhlw_00051_404": "【2026-10-03 確認】https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00051.html は404。労働条件等関係助成金の一覧は https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/index_00051.html が正しいパス。また厚労省の助成金ページは金額を本文に載せずパンフレットPDF（www.mhlw.go.jp/content/*.pdf）に集約する構成なので、金額確認にはPDFを併読する。",
+  "nasu_tag_viewer": "【2026-10-03 確認】那須町の事業者向け情報は https://www.town.nasu.lg.jp/viewer/tag.html?idSubTop=1&id=11 （『事業者向け』タグ一覧・56件）が最も網羅的で、取得不可の office1102/section-1.html・office0011/division-1.html の代替になる。那須町 /0009/ 配下も http↔https のリダイレクトループで取得不可。那須町商工会トップは本文にお知らせが描画されないため https://r.goope.jp/srb-09-21/info を直接狙う。",
+  "tochigi_d02_support": "【2026-10-03 確認】https://www.pref.tochigi.lg.jp/d02/carbonneutral/support.html は栃木県のカーボンニュートラル支援制度を『制度名＋URL＋受付期間』の表形式で並べる唯一のページで受付中判定が一発でできる。全庁新着は https://www.pref.tochigi.lg.jp/shinchaku/index.html が日付付きで取得でき、jigyosha/shinchaku.html が拾わない環境・農政部局を補完する。",
+  "shizuoka_energy_list": "【2026-10-03 確認】https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/index.html は静岡県の省エネ・再エネ・脱炭素補助金を『募集中／募集予定／募集終了』のステータス付き表形式で掲載しており巡回効率が高い。下田市の制度は市ページと下田商工会議所 shimoda-cci.or.jp/shien/hojyokin.html で記載が食い違うことがあるため、締切は商工会議所側を併読して判断する。"
  },
  "national": [
   {
@@ -116,7 +122,6 @@
     "https://www.mhlw.go.jp/stf/newpage_07843.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/tokutei_konnan.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/newpage_16286.html",
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00051.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000150891.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/chuukou.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00058.html",
@@ -127,7 +132,9 @@
     "https://www.mhlw.go.jp/stf/houdou/houdou_list_202610.html",
     "https://www.mhlw.go.jp/stf/houdou/index.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/haishi.html",
-    "https://www.jeed.go.jp/elderly/subsidy/index.html"
+    "https://www.jeed.go.jp/elderly/subsidy/index.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/part_haken/jigyounushi/career.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/shougai_trial.html"
    ]
   },
   {
@@ -400,7 +407,11 @@
      "https://www.pref.aichi.jp/soshiki/sangyoshinko/",
      "https://www.pref.aichi.jp/soshiki/shugyo/",
      "https://www.pref.aichi.jp/life/5/27/99/",
-     "https://dx-hojo.aibsc.jp/"
+     "https://dx-hojo.aibsc.jp/",
+     "https://www.pref.aichi.jp/soshiki/sangyoshinko/index-2.html",
+     "https://www.pref.aichi.jp/soshiki/ondanka/evphvinfra-subsidy.html",
+     "https://www.pref.aichi.jp/soshiki/ondanka/car-subsidy.html",
+     "https://www.aibsc.jp/support/"
     ]
    },
    {
@@ -415,7 +426,9 @@
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026694.html",
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026425/1035081/index.html",
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026468/index.html",
-     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035070/1035072/index.html"
+     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035070/1035072/index.html",
+     "https://www.city.nagoya.jp/jigyou/category/37-2-39-0-0-0-0-0-0-0.html",
+     "https://www.city.nagoya.jp/jigyou/douro/1026345/1026346.html"
     ]
    },
    {
@@ -427,7 +440,8 @@
      "https://hojokin.aibsc.jp/area/6",
      "https://www.city.ichinomiya.aichi.jp/katsuryokusouzou/sangyoushinkou/1000050/index.html",
      "https://www.city.ichinomiya.aichi.jp/katsuryokusouzou/sangyoushinkou/1044297/1044298/1010591/index.html",
-     "https://www.city.ichinomiya.aichi.jp/katsuryokusouzou/sangyoushinkou/1010102/1044301/index.html"
+     "https://www.city.ichinomiya.aichi.jp/katsuryokusouzou/sangyoushinkou/1010102/1044301/index.html",
+     "https://www.city.ichinomiya.aichi.jp/kankyou/kankyouseisaku/1043982/1043983/1043984/index.html"
     ]
    },
    {
@@ -454,7 +468,10 @@
      "https://www.town.nasu.lg.jp/0209/genre2-1-001.html",
      "https://www.town.nasu.lg.jp/0040/genre1-1-001.html",
      "https://r.goope.jp/srb-09-21/info",
-     "https://www.pref.tochigi.lg.jp/f05/system/honchou/honchou/1216861899504.html"
+     "https://www.pref.tochigi.lg.jp/f05/system/honchou/honchou/1216861899504.html",
+     "https://www.town.nasu.lg.jp/viewer/tag.html?idSubTop=1&id=11",
+     "https://www.pref.tochigi.lg.jp/shinchaku/index.html",
+     "https://www.pref.tochigi.lg.jp/f05/index.html"
     ]
    },
    {
@@ -475,7 +492,9 @@
      "https://www.pref.shizuoka.jp/kankosports/kanko/kankoshinko/1040867/index.html",
      "https://www.pref.shizuoka.jp/kankosports/kanko/kankoseisaku/index.html",
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/1043026.html",
-     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/"
+     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/",
+     "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/index.html",
+     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/158912.html"
     ]
    },
    {
@@ -495,7 +514,10 @@
      "https://www.pref.fukuoka.lg.jp/life/4/32/134/index.html",
      "https://www.pref.fukuoka.lg.jp/life/4/32/130/index.html",
      "https://www.pref.fukuoka.lg.jp/contents/tyuto-hojyo.html",
-     "https://www.ecofukuoka.jp/center/8188.html"
+     "https://www.ecofukuoka.jp/center/8188.html",
+     "https://www.pref.fukuoka.lg.jp/soshiki/9101222/index-2.html",
+     "https://www.pref.fukuoka.lg.jp/soshiki/602005/index-2.html",
+     "https://www.city.fukuoka.lg.jp/keizai/keieishien/business/jigyo_tenkai_support.html"
     ]
    }
   ]
