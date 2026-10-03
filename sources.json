@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-03",
+ "updated": "2026-10-04",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -65,7 +65,9 @@
   "mhlw_00051_404": "【2026-10-03 確認】https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00051.html は404。労働条件等関係助成金の一覧は https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/index_00051.html が正しいパス。また厚労省の助成金ページは金額を本文に載せずパンフレットPDF（www.mhlw.go.jp/content/*.pdf）に集約する構成なので、金額確認にはPDFを併読する。",
   "nasu_tag_viewer": "【2026-10-03 確認】那須町の事業者向け情報は https://www.town.nasu.lg.jp/viewer/tag.html?idSubTop=1&id=11 （『事業者向け』タグ一覧・56件）が最も網羅的で、取得不可の office1102/section-1.html・office0011/division-1.html の代替になる。那須町 /0009/ 配下も http↔https のリダイレクトループで取得不可。那須町商工会トップは本文にお知らせが描画されないため https://r.goope.jp/srb-09-21/info を直接狙う。",
   "tochigi_d02_support": "【2026-10-03 確認】https://www.pref.tochigi.lg.jp/d02/carbonneutral/support.html は栃木県のカーボンニュートラル支援制度を『制度名＋URL＋受付期間』の表形式で並べる唯一のページで受付中判定が一発でできる。全庁新着は https://www.pref.tochigi.lg.jp/shinchaku/index.html が日付付きで取得でき、jigyosha/shinchaku.html が拾わない環境・農政部局を補完する。",
-  "shizuoka_energy_list": "【2026-10-03 確認】https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/index.html は静岡県の省エネ・再エネ・脱炭素補助金を『募集中／募集予定／募集終了』のステータス付き表形式で掲載しており巡回効率が高い。下田市の制度は市ページと下田商工会議所 shimoda-cci.or.jp/shien/hojyokin.html で記載が食い違うことがあるため、締切は商工会議所側を併読して判断する。"
+  "shizuoka_energy_list": "【2026-10-03 確認】https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/index.html は静岡県の省エネ・再エネ・脱炭素補助金を『募集中／募集予定／募集終了』のステータス付き表形式で掲載しており巡回効率が高い。下田市の制度は市ページと下田商工会議所 shimoda-cci.or.jp/shien/hojyokin.html で記載が食い違うことがあるため、締切は商工会議所側を併読して判断する。",
+  "kankocho_boshu": "【2026-10-04 確認】観光庁の「現在募集中」の正確な一覧は https://www.mlit.go.jp/kankocho/kobo_boshu.html が最も信頼できる。年別一覧 kobo_2026_00003.html は採択結果も混在するため、募集中判定には kobo_boshu.html を優先する。",
+  "kokuritsukoen_caution": "【2026-10-04 確認】環境省の国立公園関連補助（利用拠点滞在環境等上質化・多言語解説等整備）は執行団体の北海道環境財団 heco-spc.or.jp 側に公募ページがあり、環境省サイトだけ見ると取りこぼす。"
  },
  "national": [
   {
@@ -105,7 +107,8 @@
     "https://www.smrj.go.jp/procurement/solicitation/index.html",
     "https://it-shien.smrj.go.jp/download/",
     "https://j-net21.smrj.go.jp/news/index.php",
-    "https://mirasapo-plus.go.jp/category/infomation/"
+    "https://mirasapo-plus.go.jp/category/infomation/",
+    "https://it-shien.smrj.go.jp/applicant/subsidy/normal/"
    ]
   },
   {
@@ -165,7 +168,9 @@
     "https://sii.or.jp/zeb08/jissho_public.html",
     "https://sii.or.jp/zeb08/shindan_public.html",
     "https://www.shoeneshindan.jp/",
-    "https://sii.or.jp/shindan07r/"
+    "https://sii.or.jp/shindan07r/",
+    "https://shoeneshindan.jp/guide/",
+    "https://sii.or.jp/koujou07r/newsrelease.html"
    ]
   },
   {
@@ -181,7 +186,9 @@
     "https://www.env.go.jp/earth/earth/ondanka/enetoku/2026/",
     "https://www.env.go.jp/press/202609.html",
     "https://www.env.go.jp/press/earth/index.html",
-    "https://www.env.go.jp/press/202610.html"
+    "https://www.env.go.jp/press/202610.html",
+    "https://www.heco-spc.or.jp/np_hojo/index.html",
+    "https://www.eic.or.jp/eic/topics/2026/"
    ]
   }
  ],
@@ -213,7 +220,11 @@
      "https://www.pref.ibaraki.jp/shokorodo/chusho/keiei/akitenpo.html",
      "https://www.pref.ibaraki.jp/shokorodo/sansei/kikaku/documents/2026zenbun.pdf",
      "https://www.iis-net.or.jp/page?kind=hanro_kakudai",
-     "https://www.pref.ibaraki.jp/somu/hodo/hodo/pressrelease/hodohappyoushiryou/2203/2610top.html"
+     "https://www.pref.ibaraki.jp/somu/hodo/hodo/pressrelease/hodohappyoushiryou/2203/2610top.html",
+     "https://www.pref.ibaraki.jp/shokorodo/sangi/gijutsu/physicalai.html",
+     "https://www.pref.ibaraki.jp/shokorodo/rosei/rodo/gyoumukaizen.html",
+     "https://www.pref.ibaraki.jp/shokorodo/rosei/rodo/projin/projin.html",
+     "https://www.iis-net.or.jp/notice/list?page=1&sort=date_desc&count=20"
     ]
    },
    {
@@ -254,7 +265,8 @@
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/sougyousien/ryuugasakishisougyou.html",
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/sougyousien/2025sougyou.html",
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/sougyousien/index.html",
-     "https://www.city.ryugasaki.ibaraki.jp/kurashi/R8-bukkadaka/index.html"
+     "https://www.city.ryugasaki.ibaraki.jp/kurashi/R8-bukkadaka/index.html",
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/ryuugasakishitennji.html"
     ]
    },
    {
@@ -268,7 +280,8 @@
      "https://www.city.mito.lg.jp/page/75067.html",
      "https://www.city.mito.lg.jp/soshiki/58/",
      "https://www.city.mito.lg.jp/site/kigyouyuuchi/list411.html",
-     "https://www.city.mito.lg.jp/site/kigyouyuuchi/"
+     "https://www.city.mito.lg.jp/site/kigyouyuuchi/",
+     "https://www.city.mito.lg.jp/site/mito-sougyou/1934.html"
     ]
    },
    {
