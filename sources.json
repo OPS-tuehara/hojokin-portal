@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-05",
+ "updated": "2026-10-06",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -76,7 +76,16 @@
   "chiba_shiensaku_note": "【2026-10-05 確認】千葉県は https://www.pref.chiba.lg.jp/keisei/zaisei/shiensaku.html が中小企業向け助成金24制度の集約ページで巡回の基点に最適。公募は県サイトより https://www.ccjc-net.or.jp/ トップの新着（日付付き）のほうが早い。なお https://www.pref.chiba.lg.jp/sanshin/ は302リダイレクトで取得不可（配下の個別ページは取得可）。",
   "kanagawa_kaka_index_note": "【2026-10-05 確認】神奈川県は記者発表一覧より部課別 index.html の新着欄のほうが取りこぼしが少ない（m2w＝商業流通課、z4r＝雇用労政課、jf2＝中小企業支援課、b6m＝観光課）。pref.kanagawa.jp/menu/sub/005002003_info.html と kipc.or.jp/topics/information/hojyosei/ は実質更新がなく巡回不要。",
   "yokohama_press_keizai_note": "【2026-10-05 確認】横浜市は経済局記者発表の年度一覧 https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/2026/index.html が全件（59件）取得でき最も効率が良い。allNewsList.html は不要。また横浜市の助成金はほぼ全てに「脱炭素取組宣言」の実施と「市内に1年（12か月）以上事業所」が要件として課される。",
-  "kankocho_taisho_gaigai": "【2026-10-05 確認】恒久的に対象外と確認済みで再調査不要な制度: 観光庁 MICE施設の受入環境整備事業（ICCA基準の国際会議場施設所有者限定）、観光庁 観光地経営の高度化事業＝人材育成補助金（地方公共団体とその関与下の団体限定）、観光庁 DMO総合支援 専門家派遣事業（登録／候補DMO・地方公共団体限定）、中小企業庁 事業再構築補助金（第13回で新規公募終了）、小規模事業者持続化補助金＜共同・協業型＞（申請者は商工会等の支援機関）、同＜創業型＞（開業1年以内の者限定）、アイヌ中小企業振興対策事業費補助金（北海道限定）。"
+  "kankocho_taisho_gaigai": "【2026-10-05 確認】恒久的に対象外と確認済みで再調査不要な制度: 観光庁 MICE施設の受入環境整備事業（ICCA基準の国際会議場施設所有者限定）、観光庁 観光地経営の高度化事業＝人材育成補助金（地方公共団体とその関与下の団体限定）、観光庁 DMO総合支援 専門家派遣事業（登録／候補DMO・地方公共団体限定）、中小企業庁 事業再構築補助金（第13回で新規公募終了）、小規模事業者持続化補助金＜共同・協業型＞（申請者は商工会等の支援機関）、同＜創業型＞（開業1年以内の者限定）、アイヌ中小企業振興対策事業費補助金（北海道限定）。",
+  "meti_press_robots": "【2026-10-05 確認】meti.go.jp/press/ 配下は robots.txt 取得が HTTP 202 を返すため WebFetch 不可（ROBOTS_DISALLOWED）。経産省の報道発表は中小企業庁 koukai/hojyokin/kobo.html と chusho.meti.go.jp トップ側から拾うこと。",
+  "env_shikkodantai_hub": "【2026-10-05 発見】https://www.env.go.jp/page_00340.html は令和8年度 二酸化炭素排出抑制対策事業費等補助金の『事業名↔執行団体ドメイン』対応表（約33事業）。環境省系を芋づる式に辿るハブとして最も効率が良い。執行団体のポータル https://www.heco-hojo.jp/ は各事業に公募中／終了ステータスと締切日が付くため差分検知が速い。",
+  "sii_division_list": "【2026-10-05 発見】https://sii.or.jp/information/division.html は SII 全事業一覧（13事業・URL付き）でリダイレクトループせず安定取得できる。取得不可の sii.or.jp/newsrelease/ の代替として使うこと。sii.or.jp トップと syouenehojyokin.sii.or.jp トップは新着が本文に展開されず日付入り項目が取れない。",
+  "stale_pages_caution": "【2026-10-05 確認】取得はできるが内容が古く使えないページ: seisansei.smrj.go.jp/news_archive.html（2023年2月止まり）、sii.or.jp/announcement/index.html（2024年8月止まり）。seisansei.smrj.go.jp/news/index.html は HTTP 410、j-net21.smrj.go.jp/snavi/articles は404（snavi2へ移行）。j-net21 の支援情報ヘッドラインは snavi2/results.php?sort=publish_date_default 形式の一覧なら取得可（snavi2/ トップと個別 articles/ は本文が空）。",
+  "shizuoka_icoi_note": "【2026-10-05 発見】伊豆13市町の宿泊事業者向け施策は県庁の通常ページに出ず、伊豆ヘルスケア温泉イノベーションプロジェクトの専用サイト icoi.pref.shizuoka.jp にのみ掲載される。/category/news/ が掲載日付きの新着一覧。静岡県の事業者向け横断新着は pref.shizuoka.jp/jigyousha/index.html、省エネ系の募集中一覧は sangyoshigoto/kigyoshien/energy/1080104.html が実体。",
+  "shimoda_date_caution": "【2026-10-05 確認】下田市 /category/060100syoukougyou/ の一覧は記事タイトルのみで掲載日が出ない。日付判定は下田市トップ city.shimoda.shizuoka.jp/ から行うこと。河津町は町HPより商工会 k-kappa.com トップのほうが早く出る場合がある。",
+  "fukuoka_soshiki_index2": "【2026-10-05 確認】pref.fukuoka.lg.jp/soshiki/<課ID>/ は末尾に index-2.html を付けないとリダイレクトループ。pref.fukuoka.lg.jp/press/ も取得不可。横断確認には contents/tyuto-hojyo.html（現在受付中の県補助金まとめ）が有用。",
+  "shizuoka_koufukakachi_unknown": "【2026-10-05 確認】静岡県『観光地域高付加価値化整備事業費補助金』（pref.shizuoka.jp/kankosports/kanko/kankoseisaku/1082928.html）は宿泊事業者も対象で1計画あたり年66百万円だが、補助率と申請締切が県HPにも取扱要領PDFにも記載がない。掲載には観光政策課 054-221-3617 への確認が必要。",
+  "watch_next": "【2026-10-05 申し送り】次回以降の最優先ウォッチ: (1) SII 省エネ・非化石転換補助金 4次公募が『2026年10月上旬開始予定』で詳細未公表（syouenehojyokin.sii.or.jp/information.html と sii.or.jp/setsubi07r/newsrelease.html）。空調・照明・給湯更新で金額インパクトが最大。(2) 観光庁 観光地・観光産業における省力化投資補助事業（補助率1/2・上限1,000万円・旅館業法許可事業者限定）は令和8年度が5/29終了。例年3月下旬開始なので次年度公募を待つ（kanko-jinzai.go.jp）。(3) 下田市 観光施設バリアフリー化促進支援事業費補助金（1/2・1施設上限500万円）は令和9年度分の取組意向調査が 2026-09-28 締切で終了。意向調査未提出だと原則対象外なので、毎年9月に下田市商工観光課を確認すること。"
  },
  "national": [
   {
@@ -88,7 +97,8 @@
     "https://mirasapo-plus.go.jp/",
     "https://www.chusho.meti.go.jp/koukai/hojyokin/saitaku.html",
     "https://www.chusho.meti.go.jp/",
-    "https://www.chusho.meti.go.jp/old_info.html"
+    "https://www.chusho.meti.go.jp/old_info.html",
+    "https://www.chusho.meti.go.jp/pamflet/support.html"
    ]
   },
   {
@@ -118,7 +128,9 @@
     "https://j-net21.smrj.go.jp/news/index.php",
     "https://mirasapo-plus.go.jp/category/infomation/",
     "https://it-shien.smrj.go.jp/applicant/subsidy/normal/",
-    "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo.html"
+    "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo.html",
+    "https://j-net21.smrj.go.jp/snavi2/results.php?page=1&sort=publish_date_default&period=1&displaysort=DESC&displaycount=10&navitype=is-number",
+    "https://jgoodtech3.smrj.go.jp/smcompany/"
    ]
   },
   {
@@ -148,7 +160,8 @@
     "https://www.jeed.go.jp/elderly/subsidy/index.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/part_haken/jigyounushi/career.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/shougai_trial.html",
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/sankokinsangyourenkeijinzaikakuhotou_00001.html"
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/sankokinsangyourenkeijinzaikakuhotou_00001.html",
+    "https://www.jeed.go.jp/disability/subsidy/index.html"
    ]
   },
   {
@@ -183,7 +196,10 @@
     "https://sii.or.jp/shindan07r/",
     "https://shoeneshindan.jp/guide/",
     "https://sii.or.jp/koujou07r/newsrelease.html",
-    "https://www.shindan-net.jp/service/shindan"
+    "https://www.shindan-net.jp/service/shindan",
+    "https://sii.or.jp/information/division.html",
+    "https://www.shindan-net.jp/news/",
+    "https://www.shindan-net.jp/service/shindan/"
    ]
   },
   {
@@ -201,7 +217,12 @@
     "https://www.env.go.jp/press/earth/index.html",
     "https://www.env.go.jp/press/202610.html",
     "https://www.heco-spc.or.jp/np_hojo/index.html",
-    "https://www.eic.or.jp/eic/topics/2026/"
+    "https://www.eic.or.jp/eic/topics/2026/",
+    "https://www.env.go.jp/page_00340.html",
+    "https://www.heco-hojo.jp/",
+    "https://www.eta.or.jp/offering.php",
+    "https://www.env.go.jp/earth/earth/ondanka/koubo.html",
+    "https://esg-lease.or.jp/"
    ]
   }
  ],
@@ -454,7 +475,8 @@
      "https://www.pref.aichi.jp/soshiki/sangyoshinko/index-2.html",
      "https://www.pref.aichi.jp/soshiki/ondanka/evphvinfra-subsidy.html",
      "https://www.pref.aichi.jp/soshiki/ondanka/car-subsidy.html",
-     "https://www.aibsc.jp/support/"
+     "https://www.aibsc.jp/support/",
+     "https://www.pref.aichi.jp/life/5/24/"
     ]
    },
    {
@@ -471,7 +493,9 @@
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026468/index.html",
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035070/1035072/index.html",
      "https://www.city.nagoya.jp/jigyou/category/37-2-39-0-0-0-0-0-0-0.html",
-     "https://www.city.nagoya.jp/jigyou/douro/1026345/1026346.html"
+     "https://www.city.nagoya.jp/jigyou/douro/1026345/1026346.html",
+     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035079/index.html",
+     "https://www.city.nagoya.jp/jigyou/category/387-1-8-1-0-0-0-0-0-0.html"
     ]
    },
    {
@@ -514,7 +538,10 @@
      "https://www.pref.tochigi.lg.jp/f05/system/honchou/honchou/1216861899504.html",
      "https://www.town.nasu.lg.jp/viewer/tag.html?idSubTop=1&id=11",
      "https://www.pref.tochigi.lg.jp/shinchaku/index.html",
-     "https://www.pref.tochigi.lg.jp/f05/index.html"
+     "https://www.pref.tochigi.lg.jp/f05/index.html",
+     "https://www.pref.tochigi.lg.jp/sangyou/shinchaku.html",
+     "https://www.pref.tochigi.lg.jp/d02/kouhou/platform.html",
+     "https://www.town.nasu.lg.jp/viewer/tag.html?idSubTop=1&id=13"
     ]
    },
    {
@@ -537,7 +564,13 @@
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/1043026.html",
      "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/",
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/index.html",
-     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/158912.html"
+     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/158912.html",
+     "https://icoi.pref.shizuoka.jp/category/news/",
+     "https://www.pref.shizuoka.jp/jigyousha/index.html",
+     "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/1080104.html",
+     "https://www.city.shimoda.shizuoka.jp/",
+     "https://www.pref.shizuoka.jp/kankosports/kanko/kankoseisaku/1082928.html",
+     "https://www.pref.shizuoka.jp/sangyoshigoto/shokogyoservice/1040783/1062954.html"
     ]
    },
    {
@@ -560,7 +593,9 @@
      "https://www.ecofukuoka.jp/center/8188.html",
      "https://www.pref.fukuoka.lg.jp/soshiki/9101222/index-2.html",
      "https://www.pref.fukuoka.lg.jp/soshiki/602005/index-2.html",
-     "https://www.city.fukuoka.lg.jp/keizai/keieishien/business/jigyo_tenkai_support.html"
+     "https://www.city.fukuoka.lg.jp/keizai/keieishien/business/jigyo_tenkai_support.html",
+     "https://www.pref.fukuoka.lg.jp/soshiki/621105/index-2.html",
+     "https://www.city.fukuoka.lg.jp/keizai/keieishien/"
     ]
    }
   ]
