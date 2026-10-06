@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-06",
+ "updated": "2026-10-07",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -85,7 +85,13 @@
   "shimoda_date_caution": "【2026-10-05 確認】下田市 /category/060100syoukougyou/ の一覧は記事タイトルのみで掲載日が出ない。日付判定は下田市トップ city.shimoda.shizuoka.jp/ から行うこと。河津町は町HPより商工会 k-kappa.com トップのほうが早く出る場合がある。",
   "fukuoka_soshiki_index2": "【2026-10-05 確認】pref.fukuoka.lg.jp/soshiki/<課ID>/ は末尾に index-2.html を付けないとリダイレクトループ。pref.fukuoka.lg.jp/press/ も取得不可。横断確認には contents/tyuto-hojyo.html（現在受付中の県補助金まとめ）が有用。",
   "shizuoka_koufukakachi_unknown": "【2026-10-05 確認】静岡県『観光地域高付加価値化整備事業費補助金』（pref.shizuoka.jp/kankosports/kanko/kankoseisaku/1082928.html）は宿泊事業者も対象で1計画あたり年66百万円だが、補助率と申請締切が県HPにも取扱要領PDFにも記載がない。掲載には観光政策課 054-221-3617 への確認が必要。",
-  "watch_next": "【2026-10-05 申し送り】次回以降の最優先ウォッチ: (1) SII 省エネ・非化石転換補助金 4次公募が『2026年10月上旬開始予定』で詳細未公表（syouenehojyokin.sii.or.jp/information.html と sii.or.jp/setsubi07r/newsrelease.html）。空調・照明・給湯更新で金額インパクトが最大。(2) 観光庁 観光地・観光産業における省力化投資補助事業（補助率1/2・上限1,000万円・旅館業法許可事業者限定）は令和8年度が5/29終了。例年3月下旬開始なので次年度公募を待つ（kanko-jinzai.go.jp）。(3) 下田市 観光施設バリアフリー化促進支援事業費補助金（1/2・1施設上限500万円）は令和9年度分の取組意向調査が 2026-09-28 締切で終了。意向調査未提出だと原則対象外なので、毎年9月に下田市商工観光課を確認すること。"
+  "watch_next": "【2026-10-05 申し送り】次回以降の最優先ウォッチ: (1) SII 省エネ・非化石転換補助金 4次公募が『2026年10月上旬開始予定』で詳細未公表（syouenehojyokin.sii.or.jp/information.html と sii.or.jp/setsubi07r/newsrelease.html）。空調・照明・給湯更新で金額インパクトが最大。(2) 観光庁 観光地・観光産業における省力化投資補助事業（補助率1/2・上限1,000万円・旅館業法許可事業者限定）は令和8年度が5/29終了。例年3月下旬開始なので次年度公募を待つ（kanko-jinzai.go.jp）。(3) 下田市 観光施設バリアフリー化促進支援事業費補助金（1/2・1施設上限500万円）は令和9年度分の取組意向調査が 2026-09-28 締切で終了。意向調査未提出だと原則対象外なので、毎年9月に下田市商工観光課を確認すること。",
+  "ibaraki_robots_random_caution": "【2026-10-07 確認】pref.ibaraki.jp は同一URLでも robots.txt の取得失敗（ROBOTS_DISALLOWED）がランダムに発生し、joseikinshienkin/index.html・soshiki/shokorodo/sanjin/ichiran.html・soshiki/shokorodo/kokukankou/index.html などが取れない日がある。代替として中小企業課 shokorodo/chusho/shintyaku/ichiran.html、技術革新課 soshiki/shokorodo/sangi/index.html、営業戦略部 eigyo/kokusai/shintyaku/ichiran.html、および iis-net.or.jp の notice/list・news/list を使う。eigyo/global/shintyaku/ichiran.html は robots で不可。",
+  "mito_kanko_caution": "【2026-10-07 確認】水戸市は観光課 soshiki/58/ 配下（site/kankouinfo/ 配下）に商工課系の一覧には出てこない補助金がある（体験型観光プログラム創出事業補助金＝site/kankouinfo/32950.html）。商工課 soshiki/57/ と観光課 soshiki/58/ の両方を巡回すること。全庁新着 soshiki/list1-4.html は反映が遅い。page/78022.html（テレワーク導入促進補助金）と site/mito-sougyou/4893.html は404。",
+  "hitachinaka_shogyo_caution": "【2026-10-07 確認】ひたちなか市は business/shogyo/1017113/（商業振興＞事業者支援）配下にchushokigyo/index.html には載らない制度がある（空き店舗チャレンジショップ事業＝business/shogyo/1017113/1002780.html）。全庁新着は newslist.html が有効。",
+  "smrj_seisansei_news_410": "【2026-10-07 確認】seisansei.smrj.go.jp/news/ は HTTP 410 で恒久的に消滅。代替は seisansei.smrj.go.jp/subsidy_info/schedule.html（年度の補助金スケジュールを1ページで俯瞰できる）。chusho.meti.go.jp/keiei/kyoka/old_info.html は本文が空で使えない（/keiei/shokibo/old_info.html は有効）。",
+  "domain_limited_search_tip": "【2026-10-07 確認】WebSearch に出にくい一覧ページ（sii.or.jp、pref.ibaraki.jp、city.* 等）は allowed_domains でドメインを限定して検索すると目的のURLが表出しやすく、WebFetch の provenance を確実に確保できる。狙うページが出ない場合は、表出した上位ページを WebFetch し、その本文に載ったリンクを辿る（crawl_chain）。",
+  "sii_setsubi_cycle": "【2026-10-07 確認】省エネ・非化石転換補助金（設備単位型 sii.or.jp/setsubi07r/、工場・事業場型 /koujou07r/）は年4回公募で、4次公募が毎年10月上旬開始・10月末締切。overview4.html 等の公募情報ページには補助率・上限額が載らないため、uploads/ 配下の公募要領PDF か特設サイト syouenehojyokin.sii.or.jp を併読する。"
  },
  "national": [
   {
@@ -130,7 +136,9 @@
     "https://it-shien.smrj.go.jp/applicant/subsidy/normal/",
     "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo.html",
     "https://j-net21.smrj.go.jp/snavi2/results.php?page=1&sort=publish_date_default&period=1&displaysort=DESC&displaycount=10&navitype=is-number",
-    "https://jgoodtech3.smrj.go.jp/smcompany/"
+    "https://jgoodtech3.smrj.go.jp/smcompany/",
+    "https://shinjigyou-monodukuri.smrj.go.jp/news",
+    "https://www.smrj.go.jp/news/index.html"
    ]
   },
   {
@@ -258,7 +266,11 @@
      "https://www.pref.ibaraki.jp/shokorodo/sangi/gijutsu/physicalai.html",
      "https://www.pref.ibaraki.jp/shokorodo/rosei/rodo/gyoumukaizen.html",
      "https://www.pref.ibaraki.jp/shokorodo/rosei/rodo/projin/projin.html",
-     "https://www.iis-net.or.jp/notice/list?page=1&sort=date_desc&count=20"
+     "https://www.iis-net.or.jp/notice/list?page=1&sort=date_desc&count=20",
+     "https://www.pref.ibaraki.jp/shokorodo/sansei/content/anime.html",
+     "https://www.pref.ibaraki.jp/shokorodo/sansei/kikaku/guidbook.html",
+     "https://www.iis-net.or.jp/notice/list",
+     "https://www.iis-net.or.jp/news/list"
     ]
    },
    {
@@ -272,7 +284,9 @@
      "https://www.city.hitachi.lg.jp/sangyo_business/koyo_shugyo_shien/1005704.html",
      "https://www.city.hitachi.lg.jp/newslist.html",
      "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002896/1002897.html",
-     "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002916/1002918.html"
+     "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002916/1002918.html",
+     "https://www.city.hitachi.lg.jp/sangyo_business/koyo_shugyo_shien/index.html",
+     "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002916/1002923.html"
     ]
    },
    {
@@ -300,7 +314,8 @@
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/sougyousien/2025sougyou.html",
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/sougyousien/index.html",
      "https://www.city.ryugasaki.ibaraki.jp/kurashi/R8-bukkadaka/index.html",
-     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/ryuugasakishitennji.html"
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/ryuugasakishitennji.html",
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/oshirase/ibarakitinnage.html"
     ]
    },
    {
@@ -327,7 +342,10 @@
      "https://www.city.hitachinaka.lg.jp/business/chushokigyo/1008273/index.html",
      "https://www.city.hitachinaka.lg.jp/business/chushokigyo/1007216/index.html",
      "https://www.city.hitachinaka.lg.jp/business/kankoshinko/1007543/index.html",
-     "https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/1002754.html"
+     "https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/1002754.html",
+     "https://www.city.hitachinaka.lg.jp/newslist.html",
+     "https://www.city.hitachinaka.lg.jp/business/shogyo/index.html",
+     "https://www.city.hitachinaka.lg.jp/business/shogyo/1017113/index.html"
     ]
    }
   ],
