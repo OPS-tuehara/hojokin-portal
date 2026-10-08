@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-08",
+ "updated": "2026-10-09",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -102,7 +102,10 @@
   "kosha_bcp_short_window": "【2026-10-07 確認】東京都中小企業振興公社のBCP実践促進助成金・サイバーセキュリティ対策促進助成金は年3回・各回1週間のみの超短期受付（第2回=2026/9/9〜9/15、第3回=2027/1/8〜1/15予定）。1月初旬の巡回で必ず確認する。",
   "kanko_shoryokuka_watch": "【2026-10-07 確認】観光庁「観光地・観光産業における省力化投資補助事業」は令和8年度一次公募の計画申請が2026/5/29で終了し二次公募は未定。宿泊事業者（旅館業法許可者）対象で那須コテージ・旅館に直結するため https://kanko-jinzai.go.jp/news/ を毎回確認する価値が高い。",
   "smrj_env_support_blocked": "【2026-10-07 確認】sme-envsupport.smrj.go.jp（経営環境変化に対する適応診断事業の特設サイト）は ROBOTS_DISALLOWED で取得不可。制度内容は www.smrj.go.jp/news/ 側のお知らせから確認する。",
-  "mhlw_same_url_courses": "【2026-10-07 留意】厚労省の両立支援等助成金の各コースは ryouritsu01/index.html、キャリアアップ助成金の各コースは career.html と、いずれも複数コースが同一URLを共有する。news.json のURL重複禁止ルールに当たるため、同一URLの別コースは追加できない。追加したい場合は当該コースの支給要領PDF等の固有URLを確認のうえ使う。"
+  "mhlw_same_url_courses": "【2026-10-07 留意】厚労省の両立支援等助成金の各コースは ryouritsu01/index.html、キャリアアップ助成金の各コースは career.html と、いずれも複数コースが同一URLを共有する。news.json のURL重複禁止ルールに当たるため、同一URLの別コースは追加できない。追加したい場合は当該コースの支給要領PDF等の固有URLを確認のうえ使う。",
+  "domain_scoped_search": "【2026-10-09 確認】自治体サイトの深い階層のHTMLページが通常のWebSearchで表出せずPDFばかり返る場合、WebSearch の allowed_domains にそのドメインのみを指定すると台帳ページが一発で表出する。一宮市・あいち産業振興機構で実測。",
+  "aibsc_hojokin_db": "【2026-10-09 確認】あいち産業振興機構の補助金DB hojokin.aibsc.jp が愛知圏の最も網羅的な台帳（/area/1=国・愛知県、/area/45=名古屋市、/area/6=一宮市）。ただし締切・受付状況は載っていないため個別ページの WebFetch が必須。旧URL aibsc.jp/joho/joseikin/country/index.html は hojokin.aibsc.jp へ302リダイレクトする。",
+  "unfetchable_domains": "【2026-10-09 時点】WebFetch できないことが確認済みのドメイン・URL: tochigi-iin.or.jp（robots拒否・ドメイン全体）、siz-kankyou.com（robots拒否）、j-net21.smrj.go.jp の snavi/snavi2 一覧（動的描画でCLIENT_ERROR）、seisansei.smrj.go.jp/news/（CLIENT_ERROR）、enecho.meti.go.jp/appli/public_offer/（本文が空）、sii.or.jp/newsrelease/（SERVER_ERROR）。"
  },
  "national": [
   {
@@ -149,7 +152,10 @@
     "https://j-net21.smrj.go.jp/snavi2/results.php?page=1&sort=publish_date_default&period=1&displaysort=DESC&displaycount=10&navitype=is-number",
     "https://jgoodtech3.smrj.go.jp/smcompany/",
     "https://shinjigyou-monodukuri.smrj.go.jp/news",
-    "https://www.smrj.go.jp/news/index.html"
+    "https://www.smrj.go.jp/news/index.html",
+    "https://www.smrj.go.jp/sme/index.html",
+    "https://chikapa.smrj.go.jp/project/",
+    "https://www.smrj.go.jp/org/info/solicitation/index.html"
    ]
   },
   {
@@ -180,7 +186,8 @@
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/part_haken/jigyounushi/career.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/shougai_trial.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/sankokinsangyourenkeijinzaikakuhotou_00001.html",
-    "https://www.jeed.go.jp/disability/subsidy/index.html"
+    "https://www.jeed.go.jp/disability/subsidy/index.html",
+    "https://www.jeed.go.jp/disability/subsidy/pamphlet.html"
    ]
   },
   {
@@ -218,7 +225,8 @@
     "https://www.shindan-net.jp/service/shindan",
     "https://sii.or.jp/information/division.html",
     "https://www.shindan-net.jp/news/",
-    "https://www.shindan-net.jp/service/shindan/"
+    "https://www.shindan-net.jp/service/shindan/",
+    "https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/support/"
    ]
   },
   {
@@ -243,7 +251,10 @@
     "https://www.env.go.jp/earth/earth/ondanka/koubo.html",
     "https://esg-lease.or.jp/",
     "https://www.env.go.jp/page_01777.html",
-    "https://www.env.go.jp/earth/earth/ondanka/enetoku/application/"
+    "https://www.env.go.jp/earth/earth/ondanka/enetoku/application/",
+    "https://ondankataisaku.env.go.jp/carbon_neutral/news/",
+    "https://www.eic.or.jp/news/",
+    "https://www.eic.or.jp/eic/topics/2026/st_r08/1st/"
    ]
   }
  ],
@@ -515,7 +526,9 @@
      "https://www.pref.aichi.jp/soshiki/ondanka/evphvinfra-subsidy.html",
      "https://www.pref.aichi.jp/soshiki/ondanka/car-subsidy.html",
      "https://www.aibsc.jp/support/",
-     "https://www.pref.aichi.jp/life/5/24/"
+     "https://www.pref.aichi.jp/life/5/24/",
+     "https://hojokin.aibsc.jp/",
+     "https://www.pref.aichi.jp/soshiki/shugyo/ouen.html"
     ]
    },
    {
@@ -534,7 +547,10 @@
      "https://www.city.nagoya.jp/jigyou/category/37-2-39-0-0-0-0-0-0-0.html",
      "https://www.city.nagoya.jp/jigyou/douro/1026345/1026346.html",
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035079/index.html",
-     "https://www.city.nagoya.jp/jigyou/category/387-1-8-1-0-0-0-0-0-0.html"
+     "https://www.city.nagoya.jp/jigyou/category/387-1-8-1-0-0-0-0-0-0.html",
+     "https://www.city.nagoya.jp/jigyou/boshu/index.html",
+     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026463/index.html",
+     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035094/index.html"
     ]
    },
    {
@@ -580,7 +596,12 @@
      "https://www.pref.tochigi.lg.jp/f05/index.html",
      "https://www.pref.tochigi.lg.jp/sangyou/shinchaku.html",
      "https://www.pref.tochigi.lg.jp/d02/kouhou/platform.html",
-     "https://www.town.nasu.lg.jp/viewer/tag.html?idSubTop=1&id=13"
+     "https://www.town.nasu.lg.jp/viewer/tag.html?idSubTop=1&id=13",
+     "https://www.pref.tochigi.lg.jp/d02/saieneshouene/yuushihojyokin.html",
+     "https://www.pref.tochigi.lg.jp/sangyou/kankoushisaku/shinkou/index.html",
+     "https://www.town.nasu.lg.jp/viewer/list-notice.html?idSubTop=1&id=1",
+     "https://www.town.nasu.lg.jp/0208/genre2-1-001.html",
+     "https://www.town.nasu.lg.jp/0213/genre2-1-001.html"
     ]
    },
    {
@@ -609,7 +630,9 @@
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/1080104.html",
      "https://www.city.shimoda.shizuoka.jp/",
      "https://www.pref.shizuoka.jp/kankosports/kanko/kankoseisaku/1082928.html",
-     "https://www.pref.shizuoka.jp/sangyoshigoto/shokogyoservice/1040783/1062954.html"
+     "https://www.pref.shizuoka.jp/sangyoshigoto/shokogyoservice/1040783/1062954.html",
+     "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/shienhojokin/1077696/index.html",
+     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/index.html"
     ]
    },
    {
@@ -634,7 +657,9 @@
      "https://www.pref.fukuoka.lg.jp/soshiki/602005/index-2.html",
      "https://www.city.fukuoka.lg.jp/keizai/keieishien/business/jigyo_tenkai_support.html",
      "https://www.pref.fukuoka.lg.jp/soshiki/621105/index-2.html",
-     "https://www.city.fukuoka.lg.jp/keizai/keieishien/"
+     "https://www.city.fukuoka.lg.jp/keizai/keieishien/",
+     "https://www.pref.fukuoka.lg.jp/life/4/32/index-2.html",
+     "https://www.pref.fukuoka.lg.jp/life/4/43/index.html"
     ]
    }
   ]
