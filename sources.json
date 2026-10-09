@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-09",
+ "updated": "2026-10-10",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -155,7 +155,9 @@
     "https://www.smrj.go.jp/news/index.html",
     "https://www.smrj.go.jp/sme/index.html",
     "https://chikapa.smrj.go.jp/project/",
-    "https://www.smrj.go.jp/org/info/solicitation/index.html"
+    "https://www.smrj.go.jp/org/info/solicitation/index.html",
+    "https://it-shien.smrj.go.jp/news/",
+    "https://chikapa.smrj.go.jp/trial/"
    ]
   },
   {
@@ -294,7 +296,13 @@
      "https://www.pref.ibaraki.jp/shokorodo/sansei/content/anime.html",
      "https://www.pref.ibaraki.jp/shokorodo/sansei/kikaku/guidbook.html",
      "https://www.iis-net.or.jp/notice/list",
-     "https://www.iis-net.or.jp/news/list"
+     "https://www.iis-net.or.jp/news/list",
+     "https://www.pref.ibaraki.jp/shokorodo/sansei/kikaku/20161129kikaku_mail.html",
+     "https://www.pref.ibaraki.jp/shokorodo/chusho/keiei/challengefund/top.html",
+     "https://www.iis-net.or.jp/page?kind=challenge_kikin_bosyu",
+     "https://yell.pref.ibaraki.jp/work-style-reform/certification.html",
+     "https://www.pref.ibaraki.jp/seikatsukankyo/kansei/chikyu/setsuden/seminar.html",
+     "https://www.ibarakiguide.jp/news.php"
     ]
    },
    {
@@ -310,7 +318,9 @@
      "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002896/1002897.html",
      "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002916/1002918.html",
      "https://www.city.hitachi.lg.jp/sangyo_business/koyo_shugyo_shien/index.html",
-     "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002916/1002923.html"
+     "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002916/1002923.html",
+     "https://www.city.hitachi.lg.jp/index.html",
+     "https://www.city.hitachi.lg.jp/bunkakoryu_sports/kanko/1011332/index.html"
     ]
    },
    {
@@ -323,7 +333,8 @@
      "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/index.html",
      "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/1011810/1011812.html",
      "https://www.city.tsukuba.lg.jp/soshikikarasagasu/keizaibusangyoshinkoka/gyomuannai/index.html",
-     "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/soudansseminar/index.html"
+     "https://www.city.tsukuba.lg.jp/jigyosha/shigoto/sangyo/soudansseminar/index.html",
+     "https://www.city.tsukuba.lg.jp/jigyosha/index.html"
     ]
    },
    {
@@ -339,7 +350,10 @@
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/sougyousien/index.html",
      "https://www.city.ryugasaki.ibaraki.jp/kurashi/R8-bukkadaka/index.html",
      "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/ryuugasakishitennji.html",
-     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/oshirase/ibarakitinnage.html"
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/oshirase/ibarakitinnage.html",
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/oshirase/index.html",
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/local10000.html",
+     "https://www.city.ryugasaki.ibaraki.jp/jigyosha/sangyo/kigyoyushi/index.html"
     ]
    },
    {
@@ -354,7 +368,10 @@
      "https://www.city.mito.lg.jp/soshiki/58/",
      "https://www.city.mito.lg.jp/site/kigyouyuuchi/list411.html",
      "https://www.city.mito.lg.jp/site/kigyouyuuchi/",
-     "https://www.city.mito.lg.jp/site/mito-sougyou/1934.html"
+     "https://www.city.mito.lg.jp/site/mito-sougyou/1934.html",
+     "https://www.city.mito.lg.jp/soshiki/list1-1.html",
+     "https://www.city.mito.lg.jp/life/sub/2/index-2.html",
+     "https://www.city.mito.lg.jp/soshiki/list5-1.html"
     ]
    },
    {
@@ -369,7 +386,8 @@
      "https://www.city.hitachinaka.lg.jp/business/sangyo/1007213/1002754.html",
      "https://www.city.hitachinaka.lg.jp/newslist.html",
      "https://www.city.hitachinaka.lg.jp/business/shogyo/index.html",
-     "https://www.city.hitachinaka.lg.jp/business/shogyo/1017113/index.html"
+     "https://www.city.hitachinaka.lg.jp/business/shogyo/1017113/index.html",
+     "https://www.city.hitachinaka.lg.jp/business/index.html"
     ]
    }
   ],
