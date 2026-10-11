@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-11",
+ "updated": "2026-10-12",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -15,7 +15,7 @@
   "tochigi_iin_caution": "【2026-09-20 確認】とちぎ産業振興センター tochigi-iin.or.jp はドメイン全体が robots.txt で拒否され WebFetch できない。栃木県の補助金は県サイト pref.tochigi.lg.jp 側（f03/f01/f06/d02 配下）から辿ること。",
   "nasu_caution": "【2026-09-20 確認】那須町 town.nasu.lg.jp の課別ページ（office1102/section-1.html、office0011/division-1.html）は http↔https のリダイレクトループで取得できない。トップページ新着や /0040/ /0043/ 配下の個別ページは取得できる。",
   "shizuoka_zaidan_caution": "【2026-09-20 確認】静岡県産業振興財団 ric-shizuoka.or.jp はレスポンスが binary data で返り本文を取得できない。静岡県庁 pref.shizuoka.jp 側の制度ページから確認すること。",
-  "aibsc_caution": "【2026-09-20 確認】あいち産業振興機構 aibsc.jp の /support/ 配下はリダイレクトループで取得できない。トップ https://www.aibsc.jp/ の新着情報から辿ること。",
+  "aibsc_caution": "【2026-10-11 再確認】あいち産業振興機構 aibsc.jp の /support/ 配下は、現在はおおむね正常に取得できる（/support/14481/ のみ dx-consortium.aibsc.jp へ302）。トップ https://www.aibsc.jp/ の新着情報から個別ページを辿るのが有効。一方 hojokin.aibsc.jp は WebSearch の検索結果に全く表出しないため巡回対象から外すのが現実的。",
   "smrj_redirect_caution": "【2026-09-30 確認】shoryokuka.smrj.go.jp の配下（/ippan/、/catalog/）および sii.or.jp の /newsrelease/、/saieneheisetsu07r/ もリダイレクトループで取得できない。トップまたは中小企業庁の公募ページ経由で情報を取ること。",
   "kosha_press_lag": "【2026-09-23 確認】東京都中小企業振興公社 kosha/press.html と topics 配下の一部ページは本文が空または更新が遅れる。公社の新規募集は https://www.metro.tokyo.lg.jp/information/press/2026/09 （都庁報道発表の月次一覧）側で拾うほうが確実。",
   "nasu_top_caution": "【2026-09-24 確認】那須町トップ https://www.town.nasu.lg.jp/ は本文にナビゲーションとフッターしか含まれず新着が取れない。新着一覧は https://www.town.nasu.lg.jp/index1.html を WebFetch すること。",
@@ -105,7 +105,11 @@
   "mhlw_same_url_courses": "【2026-10-07 留意】厚労省の両立支援等助成金の各コースは ryouritsu01/index.html、キャリアアップ助成金の各コースは career.html と、いずれも複数コースが同一URLを共有する。news.json のURL重複禁止ルールに当たるため、同一URLの別コースは追加できない。追加したい場合は当該コースの支給要領PDF等の固有URLを確認のうえ使う。",
   "domain_scoped_search": "【2026-10-09 確認】自治体サイトの深い階層のHTMLページが通常のWebSearchで表出せずPDFばかり返る場合、WebSearch の allowed_domains にそのドメインのみを指定すると台帳ページが一発で表出する。一宮市・あいち産業振興機構で実測。",
   "aibsc_hojokin_db": "【2026-10-09 確認】あいち産業振興機構の補助金DB hojokin.aibsc.jp が愛知圏の最も網羅的な台帳（/area/1=国・愛知県、/area/45=名古屋市、/area/6=一宮市）。ただし締切・受付状況は載っていないため個別ページの WebFetch が必須。旧URL aibsc.jp/joho/joseikin/country/index.html は hojokin.aibsc.jp へ302リダイレクトする。",
-  "unfetchable_domains": "【2026-10-09 時点】WebFetch できないことが確認済みのドメイン・URL: tochigi-iin.or.jp（robots拒否・ドメイン全体）、siz-kankyou.com（robots拒否）、j-net21.smrj.go.jp の snavi/snavi2 一覧（動的描画でCLIENT_ERROR）、seisansei.smrj.go.jp/news/（CLIENT_ERROR）、enecho.meti.go.jp/appli/public_offer/（本文が空）、sii.or.jp/newsrelease/（SERVER_ERROR）。"
+  "unfetchable_domains": "【2026-10-09 時点】WebFetch できないことが確認済みのドメイン・URL: tochigi-iin.or.jp（robots拒否・ドメイン全体）、siz-kankyou.com（robots拒否）、j-net21.smrj.go.jp の snavi/snavi2 一覧（動的描画でCLIENT_ERROR）、seisansei.smrj.go.jp/news/（CLIENT_ERROR）、enecho.meti.go.jp/appli/public_offer/（本文が空）、sii.or.jp/newsrelease/（SERVER_ERROR）。",
+  "shimoda_kawazu_caution": "【2026-10-11 確認】下田市 city.shimoda.shizuoka.jp と河津町 town.kawazu.shizuoka.jp は公式サイトのHTMLカテゴリ一覧が WebSearch に表出しにくい。要綱PDF（city.shimoda.shizuoka.jp/file/<日本語ファイル名>.pdf、town.kawazu.shizuoka.jp/wp/wp-content/uploads/<年>/<月>/<ローマ字>.pdf）を検索で直接狙うと取得できる。ただし下田市の一部PDFは CLIENT_ERROR で取得不能。",
+  "fukuoka_pattern": "【2026-10-11 確認】福岡県の観光系補助金は crossroadfukuoka.jp/business/topics/hojyokin に年度横断の一覧があり、各制度の令和8年度版は pref.fukuoka.lg.jp/contents/<スラッグ>2026.html または <スラッグ>-r8.html で見つかる。",
+  "jnet21_caution": "【2026-10-11 確認】j-net21.smrj.go.jp の snavi/snavi2/articles 配下は JS 描画のため WebFetch で本文が取れない。制度名だけ拾って公式ページを再検索する使い方にとどめる。",
+  "national_entry_pages": "【2026-10-11 確認】national の入口として実測で確実に読めたのは chusho.meti.go.jp/koukai/hojyokin/index.html（公募一覧・掲載日付き）、seisansei.smrj.go.jp/subsidy_info/schedule.html（生産性革命系の締切一覧）、mlit.go.jp/kankocho/kobo_boshu.html と kobo_2026_00003.html、env.go.jp/press/（月次の報道発表一覧）、smrj.go.jp/index.html、mhlw.go.jp/stf/houdou/index.html → houdou_list_YYYYMM.html の7系統。"
  },
  "national": [
   {
@@ -158,7 +162,8 @@
     "https://www.smrj.go.jp/org/info/solicitation/index.html",
     "https://it-shien.smrj.go.jp/news/",
     "https://chikapa.smrj.go.jp/trial/",
-    "https://www.smrj.go.jp/news/2026/index.html"
+    "https://www.smrj.go.jp/news/2026/index.html",
+    "https://www.smrj.go.jp/index.html"
    ]
   },
   {
@@ -190,7 +195,8 @@
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/shougai_trial.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/sankokinsangyourenkeijinzaikakuhotou_00001.html",
     "https://www.jeed.go.jp/disability/subsidy/index.html",
-    "https://www.jeed.go.jp/disability/subsidy/pamphlet.html"
+    "https://www.jeed.go.jp/disability/subsidy/pamphlet.html",
+    "https://www.mhlw.go.jp/stf/houdou/houdou_list_202611.html"
    ]
   },
   {
@@ -204,7 +210,8 @@
     "https://kanko-jinzai.go.jp/news/",
     "https://www.mlit.go.jp/kankocho/",
     "https://kanko-haioku.go.jp",
-    "https://www.mlit.go.jp/kankocho/yosan_choutatst/kobo_index.html"
+    "https://www.mlit.go.jp/kankocho/yosan_choutatst/kobo_index.html",
+    "https://www.mlit.go.jp/kankocho/shisaku/sangyou/syukuhakushisetsushien.html"
    ]
   },
   {
@@ -547,7 +554,9 @@
      "https://www.aibsc.jp/support/",
      "https://www.pref.aichi.jp/life/5/24/",
      "https://hojokin.aibsc.jp/",
-     "https://www.pref.aichi.jp/soshiki/shugyo/ouen.html"
+     "https://www.pref.aichi.jp/soshiki/shugyo/ouen.html",
+     "https://aichinow.pref.aichi.jp/biz/",
+     "https://www.pref.aichi.jp/life/5/20/"
     ]
    },
    {
@@ -569,7 +578,9 @@
      "https://www.city.nagoya.jp/jigyou/category/387-1-8-1-0-0-0-0-0-0.html",
      "https://www.city.nagoya.jp/jigyou/boshu/index.html",
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026463/index.html",
-     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035094/index.html"
+     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035094/index.html",
+     "https://www.city.nagoya.jp/jigyou/boshu/1014251/index.html",
+     "https://www.city.nagoya.jp/houdou/3003942/3003949/index.html"
     ]
    },
    {
@@ -620,7 +631,8 @@
      "https://www.pref.tochigi.lg.jp/sangyou/kankoushisaku/shinkou/index.html",
      "https://www.town.nasu.lg.jp/viewer/list-notice.html?idSubTop=1&id=1",
      "https://www.town.nasu.lg.jp/0208/genre2-1-001.html",
-     "https://www.town.nasu.lg.jp/0213/genre2-1-001.html"
+     "https://www.town.nasu.lg.jp/0213/genre2-1-001.html",
+     "https://www.pref.tochigi.lg.jp/f04/sokushinkyou.html"
     ]
    },
    {
@@ -651,7 +663,8 @@
      "https://www.pref.shizuoka.jp/kankosports/kanko/kankoseisaku/1082928.html",
      "https://www.pref.shizuoka.jp/sangyoshigoto/shokogyoservice/1040783/1062954.html",
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/shienhojokin/1077696/index.html",
-     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/index.html"
+     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/index.html",
+     "https://www.pref.shizuoka.jp/1049221.html"
     ]
    },
    {
@@ -678,7 +691,10 @@
      "https://www.pref.fukuoka.lg.jp/soshiki/621105/index-2.html",
      "https://www.city.fukuoka.lg.jp/keizai/keieishien/",
      "https://www.pref.fukuoka.lg.jp/life/4/32/index-2.html",
-     "https://www.pref.fukuoka.lg.jp/life/4/43/index.html"
+     "https://www.pref.fukuoka.lg.jp/life/4/43/index.html",
+     "https://www.pref.fukuoka.lg.jp/life/4/index-2.html",
+     "https://www.crossroadfukuoka.jp/business/topics/hojyokin",
+     "https://www.city.fukuoka.lg.jp/keizai/kankou-s/"
     ]
    }
   ]
