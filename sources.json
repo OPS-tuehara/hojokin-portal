@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-12",
+ "updated": "2026-10-13",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -109,7 +109,8 @@
   "shimoda_kawazu_caution": "【2026-10-11 確認】下田市 city.shimoda.shizuoka.jp と河津町 town.kawazu.shizuoka.jp は公式サイトのHTMLカテゴリ一覧が WebSearch に表出しにくい。要綱PDF（city.shimoda.shizuoka.jp/file/<日本語ファイル名>.pdf、town.kawazu.shizuoka.jp/wp/wp-content/uploads/<年>/<月>/<ローマ字>.pdf）を検索で直接狙うと取得できる。ただし下田市の一部PDFは CLIENT_ERROR で取得不能。",
   "fukuoka_pattern": "【2026-10-11 確認】福岡県の観光系補助金は crossroadfukuoka.jp/business/topics/hojyokin に年度横断の一覧があり、各制度の令和8年度版は pref.fukuoka.lg.jp/contents/<スラッグ>2026.html または <スラッグ>-r8.html で見つかる。",
   "jnet21_caution": "【2026-10-11 確認】j-net21.smrj.go.jp の snavi/snavi2/articles 配下は JS 描画のため WebFetch で本文が取れない。制度名だけ拾って公式ページを再検索する使い方にとどめる。",
-  "national_entry_pages": "【2026-10-11 確認】national の入口として実測で確実に読めたのは chusho.meti.go.jp/koukai/hojyokin/index.html（公募一覧・掲載日付き）、seisansei.smrj.go.jp/subsidy_info/schedule.html（生産性革命系の締切一覧）、mlit.go.jp/kankocho/kobo_boshu.html と kobo_2026_00003.html、env.go.jp/press/（月次の報道発表一覧）、smrj.go.jp/index.html、mhlw.go.jp/stf/houdou/index.html → houdou_list_YYYYMM.html の7系統。"
+  "national_entry_pages": "【2026-10-11 確認】national の入口として実測で確実に読めたのは chusho.meti.go.jp/koukai/hojyokin/index.html（公募一覧・掲載日付き）、seisansei.smrj.go.jp/subsidy_info/schedule.html（生産性革命系の締切一覧）、mlit.go.jp/kankocho/kobo_boshu.html と kobo_2026_00003.html、env.go.jp/press/（月次の報道発表一覧）、smrj.go.jp/index.html、mhlw.go.jp/stf/houdou/index.html → houdou_list_YYYYMM.html の7系統。",
+  "ibaraki_pref_outage": "【2026-10-13 確認】www.pref.ibaraki.jp は2026-10-09 17:00以降システム障害でほぼ全HTMLページが臨時ページに差し替わっている。PDF（/documents/*.pdf）とiis-net.or.jp、ifc.ibaraki.jp は正常。復旧までは県の調査はPDFと産業戦略部お知らせ sangyo_{YYMMDD}.pdf（毎月15日前後発行）を起点にすること。復旧後に10月分プレスリリース 2610top.html の再巡回が必要。"
  },
  "national": [
   {
@@ -122,7 +123,8 @@
     "https://www.chusho.meti.go.jp/koukai/hojyokin/saitaku.html",
     "https://www.chusho.meti.go.jp/",
     "https://www.chusho.meti.go.jp/old_info.html",
-    "https://www.chusho.meti.go.jp/pamflet/support.html"
+    "https://www.chusho.meti.go.jp/pamflet/support.html",
+    "https://r6.jizokukahojokin.info/sogyo/"
    ]
   },
   {
@@ -163,7 +165,11 @@
     "https://it-shien.smrj.go.jp/news/",
     "https://chikapa.smrj.go.jp/trial/",
     "https://www.smrj.go.jp/news/2026/index.html",
-    "https://www.smrj.go.jp/index.html"
+    "https://www.smrj.go.jp/index.html",
+    "https://chikapa.smrj.go.jp/kikaku/project/",
+    "https://chikapa.smrj.go.jp/advise/index.html",
+    "https://it-sodan.smrj.go.jp/",
+    "https://www.smrj.go.jp/sme/risk_disaster/enhancement/planning_support/index.html"
    ]
   },
   {
@@ -196,7 +202,9 @@
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/sankokinsangyourenkeijinzaikakuhotou_00001.html",
     "https://www.jeed.go.jp/disability/subsidy/index.html",
     "https://www.jeed.go.jp/disability/subsidy/pamphlet.html",
-    "https://www.mhlw.go.jp/stf/houdou/houdou_list_202611.html"
+    "https://www.mhlw.go.jp/stf/houdou/houdou_list_202611.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00059.html",
+    "https://www.mhlw.go.jp/content/11600000/001245615.pdf"
    ]
   },
   {
@@ -264,7 +272,8 @@
     "https://www.env.go.jp/earth/earth/ondanka/enetoku/application/",
     "https://ondankataisaku.env.go.jp/carbon_neutral/news/",
     "https://www.eic.or.jp/news/",
-    "https://www.eic.or.jp/eic/topics/2026/st_r08/1st/"
+    "https://www.eic.or.jp/eic/topics/2026/st_r08/1st/",
+    "https://www.env.go.jp/press/index.php"
    ]
   }
  ],
@@ -310,7 +319,11 @@
      "https://www.iis-net.or.jp/page?kind=challenge_kikin_bosyu",
      "https://yell.pref.ibaraki.jp/work-style-reform/certification.html",
      "https://www.pref.ibaraki.jp/seikatsukankyo/kansei/chikyu/setsuden/seminar.html",
-     "https://www.ibarakiguide.jp/news.php"
+     "https://www.ibarakiguide.jp/news.php",
+     "https://www.iis-net.or.jp/page?kind=venture_senmonka",
+     "https://ifc.ibaraki.jp/all-news/",
+     "https://www.pref.ibaraki.jp/shokorodo/sangi/sougyou_venture3.html",
+     "https://www.pref.ibaraki.jp/shokorodo/sansei/kinyu/shosei/yushi/yushitop.html"
     ]
    },
    {
@@ -328,7 +341,8 @@
      "https://www.city.hitachi.lg.jp/sangyo_business/koyo_shugyo_shien/index.html",
      "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002916/1002923.html",
      "https://www.city.hitachi.lg.jp/index.html",
-     "https://www.city.hitachi.lg.jp/bunkakoryu_sports/kanko/1011332/index.html"
+     "https://www.city.hitachi.lg.jp/bunkakoryu_sports/kanko/1011332/index.html",
+     "https://www-source.city.hitachi.lg.jp/_res/projects/default_project/_page_/001/006/723/r8sien.pdf"
     ]
    },
    {
@@ -379,7 +393,8 @@
      "https://www.city.mito.lg.jp/site/mito-sougyou/1934.html",
      "https://www.city.mito.lg.jp/soshiki/list1-1.html",
      "https://www.city.mito.lg.jp/life/sub/2/index-2.html",
-     "https://www.city.mito.lg.jp/soshiki/list5-1.html"
+     "https://www.city.mito.lg.jp/soshiki/list5-1.html",
+     "https://www.city.mito.lg.jp/life/sub/2/27/129/"
     ]
    },
    {
@@ -395,7 +410,8 @@
      "https://www.city.hitachinaka.lg.jp/newslist.html",
      "https://www.city.hitachinaka.lg.jp/business/shogyo/index.html",
      "https://www.city.hitachinaka.lg.jp/business/shogyo/1017113/index.html",
-     "https://www.city.hitachinaka.lg.jp/business/index.html"
+     "https://www.city.hitachinaka.lg.jp/business/index.html",
+     "https://www.city.hitachinaka.lg.jp/business/koyo/index.html"
     ]
    }
   ],
