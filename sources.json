@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-13",
+ "updated": "2026-10-14",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -110,7 +110,10 @@
   "fukuoka_pattern": "【2026-10-11 確認】福岡県の観光系補助金は crossroadfukuoka.jp/business/topics/hojyokin に年度横断の一覧があり、各制度の令和8年度版は pref.fukuoka.lg.jp/contents/<スラッグ>2026.html または <スラッグ>-r8.html で見つかる。",
   "jnet21_caution": "【2026-10-11 確認】j-net21.smrj.go.jp の snavi/snavi2/articles 配下は JS 描画のため WebFetch で本文が取れない。制度名だけ拾って公式ページを再検索する使い方にとどめる。",
   "national_entry_pages": "【2026-10-11 確認】national の入口として実測で確実に読めたのは chusho.meti.go.jp/koukai/hojyokin/index.html（公募一覧・掲載日付き）、seisansei.smrj.go.jp/subsidy_info/schedule.html（生産性革命系の締切一覧）、mlit.go.jp/kankocho/kobo_boshu.html と kobo_2026_00003.html、env.go.jp/press/（月次の報道発表一覧）、smrj.go.jp/index.html、mhlw.go.jp/stf/houdou/index.html → houdou_list_YYYYMM.html の7系統。",
-  "ibaraki_pref_outage": "【2026-10-13 確認】www.pref.ibaraki.jp は2026-10-09 17:00以降システム障害でほぼ全HTMLページが臨時ページに差し替わっている。PDF（/documents/*.pdf）とiis-net.or.jp、ifc.ibaraki.jp は正常。復旧までは県の調査はPDFと産業戦略部お知らせ sangyo_{YYMMDD}.pdf（毎月15日前後発行）を起点にすること。復旧後に10月分プレスリリース 2610top.html の再巡回が必要。"
+  "ibaraki_pref_outage": "【2026-10-13 確認】www.pref.ibaraki.jp は2026-10-09 17:00以降システム障害でほぼ全HTMLページが臨時ページに差し替わっている。PDF（/documents/*.pdf）とiis-net.or.jp、ifc.ibaraki.jp は正常。復旧までは県の調査はPDFと産業戦略部お知らせ sangyo_{YYMMDD}.pdf（毎月15日前後発行）を起点にすること。復旧後に10月分プレスリリース 2610top.html の再巡回が必要。",
+  "eic_caution": "【2026-10-14 確認】環境省の二酸化炭素排出抑制対策事業（ストレージパリティ、地域レジリエンス等）の執行団体は一般財団法人環境イノベーション情報機構。www.eic.or.jp/news/ は検索に表出しないが、eic.or.jp/eic/topics/2026/ が年度分の公募一覧として安定して取得できる。",
+  "robots_disallowed": "【2026-10-14 確認】sme-envsupport.smrj.go.jp と siz-kankyou.com は robots.txt で WebFetch が拒否される（ROBOTS_DISALLOWED）。再試行せず、親サイト（smrj.go.jp/news、env.go.jp/press）側で情報を追うこと。",
+  "kanko_nenji_ichiran": "【2026-10-14 確認】観光庁の公募は mlit.go.jp/kankocho/kobo.html 配下の年次一覧（2026年は kobo_2026_00003.html）に「募集中／募集終了／採択結果」のラベル付きで集約されており、1ページの取得で全件の受付状況を判定できる。"
  },
  "national": [
   {
@@ -124,7 +127,8 @@
     "https://www.chusho.meti.go.jp/",
     "https://www.chusho.meti.go.jp/old_info.html",
     "https://www.chusho.meti.go.jp/pamflet/support.html",
-    "https://r6.jizokukahojokin.info/sogyo/"
+    "https://r6.jizokukahojokin.info/sogyo/",
+    "https://j-net21.smrj.go.jp/snavi/support/support.xml"
    ]
   },
   {
@@ -204,7 +208,9 @@
     "https://www.jeed.go.jp/disability/subsidy/pamphlet.html",
     "https://www.mhlw.go.jp/stf/houdou/houdou_list_202611.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00059.html",
-    "https://www.mhlw.go.jp/content/11600000/001245615.pdf"
+    "https://www.mhlw.go.jp/content/11600000/001245615.pdf",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/package_00007.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/shienjigyou/03.html"
    ]
   },
   {
@@ -219,7 +225,8 @@
     "https://www.mlit.go.jp/kankocho/",
     "https://kanko-haioku.go.jp",
     "https://www.mlit.go.jp/kankocho/yosan_choutatst/kobo_index.html",
-    "https://www.mlit.go.jp/kankocho/shisaku/sangyou/syukuhakushisetsushien.html"
+    "https://www.mlit.go.jp/kankocho/shisaku/sangyou/syukuhakushisetsushien.html",
+    "https://www.mlit.go.jp/kankocho/page06_00013.html"
    ]
   },
   {
@@ -244,7 +251,11 @@
     "https://sii.or.jp/information/division.html",
     "https://www.shindan-net.jp/news/",
     "https://www.shindan-net.jp/service/shindan/",
-    "https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/support/"
+    "https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/support/",
+    "https://syouenehojyokin.sii.or.jp/about-type/setsubi.html",
+    "https://syouenehojyokin.sii.or.jp/about-type/kojyo.html",
+    "https://www.shindan-net.jp/news",
+    "https://www.shindan-net.jp/service/stepup/"
    ]
   },
   {
@@ -273,7 +284,9 @@
     "https://ondankataisaku.env.go.jp/carbon_neutral/news/",
     "https://www.eic.or.jp/news/",
     "https://www.eic.or.jp/eic/topics/2026/st_r08/1st/",
-    "https://www.env.go.jp/press/index.php"
+    "https://www.env.go.jp/press/index.php",
+    "https://eic.or.jp/eic/topics/2026/",
+    "https://www.gaj.or.jp/eie/shift/"
    ]
   }
  ],
@@ -462,7 +475,8 @@
      "https://www.city.adachi.tokyo.jp/subsidy.html",
      "https://www.city.adachi.tokyo.jp/shigoto/chushokigyo/oshirase/index.html",
      "https://www.city.adachi.tokyo.jp/chusho/shigoto/shuro/kigyomukejosei.html",
-     "https://www.city.adachi.tokyo.jp/s-shinko/shigoto/chushokigyo/yushi-shuttenjose.html"
+     "https://www.city.adachi.tokyo.jp/s-shinko/shigoto/chushokigyo/yushi-shuttenjose.html",
+     "https://www.city.adachi.tokyo.jp/sangyo/30merumaga.html"
     ]
    },
    {
@@ -481,7 +495,8 @@
      "https://www.kipc.or.jp/topics/information/",
      "https://www.pref.kanagawa.jp/docs/m2w/index.html",
      "https://www.pref.kanagawa.jp/docs/b6m/index.html",
-     "https://www.kipc.or.jp/"
+     "https://www.kipc.or.jp/",
+     "https://www.pref.kanagawa.jp/docs/v6g/cnt/f534259/index.html"
     ]
    },
    {
@@ -524,7 +539,9 @@
      "https://www.ccjc-net.or.jp/category_list.php?frmCd=48-1-2-0-0",
      "https://maruchiba.jp/corporate/topics/index.html",
      "https://www.pref.chiba.lg.jp/ontai/hojo/datsutanso-sokushin.html",
-     "https://www.ccjc-net.or.jp/new_list.php"
+     "https://www.ccjc-net.or.jp/new_list.php",
+     "https://www.pref.chiba.lg.jp/keisei/genkist/kanrenseisaku.html",
+     "https://www.pref.chiba.lg.jp/keisei/shinchaku.html"
     ]
    },
    {
