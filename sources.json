@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-14",
+ "updated": "2026-10-15",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -12,7 +12,7 @@
   "mhlw_pattern": "厚生労働省の報道発表一覧は https://www.mhlw.go.jp/stf/houdou/houdou_list_YYYYMM.html 形式。巡回月の年月に読み替える。",
   "sii_caution": "【2026-09-18 確認】sii.or.jp の一部事業トップ（/zeb08/、/DRchikudenchi_gyousan07r/ 等）はリダイレクトループで取得できない。/public.html や /uploads/*.pdf の公募要領を直接読むと取得できる。",
   "metro_press_caution": "【2026-09-20 確認】東京都産業労働局 sangyo-rodo.metro.tokyo.lg.jp の個別報道発表ページは本文が空で返る。件名は一覧で拾い、本文は https://www.metro.tokyo.lg.jp/information/press/ 側の同一発表URLを WebFetch して読むこと。",
-  "tochigi_iin_caution": "【2026-09-20 確認】とちぎ産業振興センター tochigi-iin.or.jp はドメイン全体が robots.txt で拒否され WebFetch できない。栃木県の補助金は県サイト pref.tochigi.lg.jp 側（f03/f01/f06/d02 配下）から辿ること。",
+  "tochigi_iin_caution": "【2026-10-15 確認】とちぎ産業振興センター tochigi-iin.or.jp は robots.txt でクローラを拒否しており WebFetch が ROBOTS_DISALLOWED で失敗する。同センター所管事業は栃木県本体サイト（pref.tochigi.lg.jp）側の案内ページを経由して確認すること。",
   "nasu_caution": "【2026-09-20 確認】那須町 town.nasu.lg.jp の課別ページ（office1102/section-1.html、office0011/division-1.html）は http↔https のリダイレクトループで取得できない。トップページ新着や /0040/ /0043/ 配下の個別ページは取得できる。",
   "shizuoka_zaidan_caution": "【2026-09-20 確認】静岡県産業振興財団 ric-shizuoka.or.jp はレスポンスが binary data で返り本文を取得できない。静岡県庁 pref.shizuoka.jp 側の制度ページから確認すること。",
   "aibsc_caution": "【2026-10-11 再確認】あいち産業振興機構 aibsc.jp の /support/ 配下は、現在はおおむね正常に取得できる（/support/14481/ のみ dx-consortium.aibsc.jp へ302）。トップ https://www.aibsc.jp/ の新着情報から個別ページを辿るのが有効。一方 hojokin.aibsc.jp は WebSearch の検索結果に全く表出しないため巡回対象から外すのが現実的。",
@@ -108,12 +108,13 @@
   "unfetchable_domains": "【2026-10-09 時点】WebFetch できないことが確認済みのドメイン・URL: tochigi-iin.or.jp（robots拒否・ドメイン全体）、siz-kankyou.com（robots拒否）、j-net21.smrj.go.jp の snavi/snavi2 一覧（動的描画でCLIENT_ERROR）、seisansei.smrj.go.jp/news/（CLIENT_ERROR）、enecho.meti.go.jp/appli/public_offer/（本文が空）、sii.or.jp/newsrelease/（SERVER_ERROR）。",
   "shimoda_kawazu_caution": "【2026-10-11 確認】下田市 city.shimoda.shizuoka.jp と河津町 town.kawazu.shizuoka.jp は公式サイトのHTMLカテゴリ一覧が WebSearch に表出しにくい。要綱PDF（city.shimoda.shizuoka.jp/file/<日本語ファイル名>.pdf、town.kawazu.shizuoka.jp/wp/wp-content/uploads/<年>/<月>/<ローマ字>.pdf）を検索で直接狙うと取得できる。ただし下田市の一部PDFは CLIENT_ERROR で取得不能。",
   "fukuoka_pattern": "【2026-10-11 確認】福岡県の観光系補助金は crossroadfukuoka.jp/business/topics/hojyokin に年度横断の一覧があり、各制度の令和8年度版は pref.fukuoka.lg.jp/contents/<スラッグ>2026.html または <スラッグ>-r8.html で見つかる。",
-  "jnet21_caution": "【2026-10-11 確認】j-net21.smrj.go.jp の snavi/snavi2/articles 配下は JS 描画のため WebFetch で本文が取れない。制度名だけ拾って公式ページを再検索する使い方にとどめる。",
+  "jnet21_caution": "【2026-10-15 確認】J-Net21（j-net21.smrj.go.jp）の記事個別URL（/snavi/articles/* 等）はJavaScript描画のため WebFetch では検索ツールのトップページが返り本文を取得できない。一覧は中小企業庁「公開中の補助金」index.html で代替する。",
   "national_entry_pages": "【2026-10-11 確認】national の入口として実測で確実に読めたのは chusho.meti.go.jp/koukai/hojyokin/index.html（公募一覧・掲載日付き）、seisansei.smrj.go.jp/subsidy_info/schedule.html（生産性革命系の締切一覧）、mlit.go.jp/kankocho/kobo_boshu.html と kobo_2026_00003.html、env.go.jp/press/（月次の報道発表一覧）、smrj.go.jp/index.html、mhlw.go.jp/stf/houdou/index.html → houdou_list_YYYYMM.html の7系統。",
   "ibaraki_pref_outage": "【2026-10-13 確認】www.pref.ibaraki.jp は2026-10-09 17:00以降システム障害でほぼ全HTMLページが臨時ページに差し替わっている。PDF（/documents/*.pdf）とiis-net.or.jp、ifc.ibaraki.jp は正常。復旧までは県の調査はPDFと産業戦略部お知らせ sangyo_{YYMMDD}.pdf（毎月15日前後発行）を起点にすること。復旧後に10月分プレスリリース 2610top.html の再巡回が必要。",
   "eic_caution": "【2026-10-14 確認】環境省の二酸化炭素排出抑制対策事業（ストレージパリティ、地域レジリエンス等）の執行団体は一般財団法人環境イノベーション情報機構。www.eic.or.jp/news/ は検索に表出しないが、eic.or.jp/eic/topics/2026/ が年度分の公募一覧として安定して取得できる。",
   "robots_disallowed": "【2026-10-14 確認】sme-envsupport.smrj.go.jp と siz-kankyou.com は robots.txt で WebFetch が拒否される（ROBOTS_DISALLOWED）。再試行せず、親サイト（smrj.go.jp/news、env.go.jp/press）側で情報を追うこと。",
-  "kanko_nenji_ichiran": "【2026-10-14 確認】観光庁の公募は mlit.go.jp/kankocho/kobo.html 配下の年次一覧（2026年は kobo_2026_00003.html）に「募集中／募集終了／採択結果」のラベル付きで集約されており、1ページの取得で全件の受付状況を判定できる。"
+  "kanko_nenji_ichiran": "【2026-10-14 確認】観光庁の公募は mlit.go.jp/kankocho/kobo.html 配下の年次一覧（2026年は kobo_2026_00003.html）に「募集中／募集終了／採択結果」のラベル付きで集約されており、1ページの取得で全件の受付状況を判定できる。",
+  "chusho_index_recommend": "【2026-10-15 確認】中小企業庁 https://www.chusho.meti.go.jp/koukai/hojyokin/index.html は公募中・公募予定の国の補助金が掲載日付きで一覧でき、WebFetch 1回で網羅できるため national 巡回の起点に推奨。"
  },
  "national": [
   {
@@ -613,7 +614,9 @@
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026463/index.html",
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035094/index.html",
      "https://www.city.nagoya.jp/jigyou/boshu/1014251/index.html",
-     "https://www.city.nagoya.jp/houdou/3003942/3003949/index.html"
+     "https://www.city.nagoya.jp/houdou/3003942/3003949/index.html",
+     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026471/1026677.html",
+     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026685/1049345.html"
     ]
    },
    {
@@ -665,7 +668,8 @@
      "https://www.town.nasu.lg.jp/viewer/list-notice.html?idSubTop=1&id=1",
      "https://www.town.nasu.lg.jp/0208/genre2-1-001.html",
      "https://www.town.nasu.lg.jp/0213/genre2-1-001.html",
-     "https://www.pref.tochigi.lg.jp/f04/sokushinkyou.html"
+     "https://www.pref.tochigi.lg.jp/f04/sokushinkyou.html",
+     "https://www.pref.tochigi.lg.jp/f03/bcp/r8_jigyoukeizokuryokukyouka.html"
     ]
    },
    {
@@ -697,7 +701,8 @@
      "https://www.pref.shizuoka.jp/sangyoshigoto/shokogyoservice/1040783/1062954.html",
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/shienhojokin/1077696/index.html",
      "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/index.html",
-     "https://www.pref.shizuoka.jp/1049221.html"
+     "https://www.pref.shizuoka.jp/1049221.html",
+     "https://www.town.kawazu.shizuoka.jp/jigyousha/keieiryokukibankyoukajigyou/"
     ]
    },
    {
