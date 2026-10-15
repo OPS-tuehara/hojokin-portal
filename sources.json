@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-15",
+ "updated": "2026-10-16",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -114,7 +114,13 @@
   "eic_caution": "【2026-10-14 確認】環境省の二酸化炭素排出抑制対策事業（ストレージパリティ、地域レジリエンス等）の執行団体は一般財団法人環境イノベーション情報機構。www.eic.or.jp/news/ は検索に表出しないが、eic.or.jp/eic/topics/2026/ が年度分の公募一覧として安定して取得できる。",
   "robots_disallowed": "【2026-10-14 確認】sme-envsupport.smrj.go.jp と siz-kankyou.com は robots.txt で WebFetch が拒否される（ROBOTS_DISALLOWED）。再試行せず、親サイト（smrj.go.jp/news、env.go.jp/press）側で情報を追うこと。",
   "kanko_nenji_ichiran": "【2026-10-14 確認】観光庁の公募は mlit.go.jp/kankocho/kobo.html 配下の年次一覧（2026年は kobo_2026_00003.html）に「募集中／募集終了／採択結果」のラベル付きで集約されており、1ページの取得で全件の受付状況を判定できる。",
-  "chusho_index_recommend": "【2026-10-15 確認】中小企業庁 https://www.chusho.meti.go.jp/koukai/hojyokin/index.html は公募中・公募予定の国の補助金が掲載日付きで一覧でき、WebFetch 1回で網羅できるため national 巡回の起点に推奨。"
+  "chusho_index_recommend": "【2026-10-15 確認】中小企業庁 https://www.chusho.meti.go.jp/koukai/hojyokin/index.html は公募中・公募予定の国の補助金が掲載日付きで一覧でき、WebFetch 1回で網羅できるため national 巡回の起点に推奨。",
+  "ibaraki_system_shougai_261015": "【2026-10-15〜16 確認】www.pref.ibaraki.jp が広範囲でシステム障害中。HTTP 200 を返しながら本文が「現在、システム障害のため、茨城県のホームページを臨時のページで表示しています／現在、情報はありません。」だけの臨時ページに差し替わる。特に /soshiki/ 配下と shintyaku/ichiran.html 系の新着台帳がほぼ全滅し、個別制度ページはページ単位でランダムに正常／臨時が分かれる。同一URLの再試行では改善しない。復旧後に ibaraki-energy-shift.html（いばらきエネルギーシフト促進事業補助金）、sanjin/tyuusyoukigyou.html（中小企業人材育成支援事業補助金）、rodo/shogakukinhenkan/shien.html（企業支援型奨学金返還支援）、keieikakushin/20210427.html（M&A促進奨励金）、kikaku/guidbook.html（支援施策活用ガイドブック）を最優先で再クロールすること。障害中は www.iis-net.or.jp トップが県・国・財団の補助金情報を掲載日付きで集約しており台帳の代替として最も有効。",
+  "iis_net_www_required": "【2026-10-16 確認】iis-net.or.jp は www 無しだと ROBOTS_DISALLOWED。必ず www.iis-net.or.jp を使う。トップページは『お知らせ』『新着情報』が掲載日付きで並び、A_茨城巡回の起点として最も効率が良い。",
+  "ibaraki_joseikin_404": "【2026-10-16 確認】www.pref.ibaraki.jp/joseikinshienkin/index.html は CLIENT_ERROR かつ WebSearch に一度も表出しないため台帳から削除した。www.pref.ibaraki.jp/bosyu.html も CLIENT_ERROR。www.ibarakiguide.jp/jigyousya/jyosei/（ディレクトリ直下）は SERVER_ERROR で、jyosei_jigyo.html のようにファイル名まで指定する必要がある。",
+  "jnet21_snavi_articles_error": "【2026-10-16 確認】j-net21.smrj.go.jp/snavi/articles?category[]=2（支援情報の検索）は WebSearch に表出するが WebFetch は CLIENT_ERROR。J-Net21 は snavi2/results.php 形式の一覧のみ取得可という既知の制約が続いている。",
+  "kankocho_shoryokuka_1ji_closed": "【2026-10-16 確認】観光庁『観光地・観光産業における省力化投資補助事業』（mlit.go.jp/kankocho/kobo06_00042.html）は宿泊事業者限定で自社に適合するが、1次公募は 2026-05-29 17時で締切済み。2次公募は1次の申請状況を見て検討とされ未公表。次年度・2次公募の告知をウォッチ対象とする。",
+  "heco_hojo_261016": "【2026-10-16 確認】heco-hojo.jp トップの『公募中』5事業（断熱リフォーム＝住宅向け、ハイブリッド・天然ガストラック／バス、再エネ由来水素、水素ステーション、空港・港湾脱炭素化）はいずれも自社事業と不一致。対象者・締切・補助率はトップに出ないため各事業ページを開く必要がある。"
  },
  "national": [
   {
@@ -299,7 +305,6 @@
     "list_url": [
      "https://www.pref.ibaraki.jp/",
      "https://www.pref.ibaraki.jp/somu/hodo/hodo/pressrelease/toppage.html",
-     "https://www.pref.ibaraki.jp/joseikinshienkin/index.html",
      "https://www.pref.ibaraki.jp/soshiki/shokorodo/chusho/index.html",
      "https://www.pref.ibaraki.jp/soshiki/shokorodo/rosei/index.html",
      "https://www.pref.ibaraki.jp/soshiki/shokorodo/sangi/index.html",
@@ -337,7 +342,9 @@
      "https://www.iis-net.or.jp/page?kind=venture_senmonka",
      "https://ifc.ibaraki.jp/all-news/",
      "https://www.pref.ibaraki.jp/shokorodo/sangi/sougyou_venture3.html",
-     "https://www.pref.ibaraki.jp/shokorodo/sansei/kinyu/shosei/yushi/yushitop.html"
+     "https://www.pref.ibaraki.jp/shokorodo/sansei/kinyu/shosei/yushi/yushitop.html",
+     "https://www.pref.ibaraki.jp/seikatsukankyo/kansei/chikyu/ibaraki-energy-shift.html",
+     "https://www.pref.ibaraki.jp/seikatsukankyo/kansei/chikyu/hojokin.html"
     ]
    },
    {
@@ -356,7 +363,8 @@
      "https://www.city.hitachi.lg.jp/sangyo_business/sangyoshinko/1002916/1002923.html",
      "https://www.city.hitachi.lg.jp/index.html",
      "https://www.city.hitachi.lg.jp/bunkakoryu_sports/kanko/1011332/index.html",
-     "https://www-source.city.hitachi.lg.jp/_res/projects/default_project/_page_/001/006/723/r8sien.pdf"
+     "https://www-source.city.hitachi.lg.jp/_res/projects/default_project/_page_/001/006/723/r8sien.pdf",
+     "https://www.city.hitachi.lg.jp/bunkakoryu_sports/kanko/1019944/index.html"
     ]
    },
    {
@@ -408,7 +416,8 @@
      "https://www.city.mito.lg.jp/soshiki/list1-1.html",
      "https://www.city.mito.lg.jp/life/sub/2/index-2.html",
      "https://www.city.mito.lg.jp/soshiki/list5-1.html",
-     "https://www.city.mito.lg.jp/life/sub/2/27/129/"
+     "https://www.city.mito.lg.jp/life/sub/2/27/129/",
+     "https://www.city.mito.lg.jp/site/kigyouyuuchi/4055.html"
     ]
    },
    {
