@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-16",
+ "updated": "2026-10-17",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -120,7 +120,8 @@
   "ibaraki_joseikin_404": "【2026-10-16 確認】www.pref.ibaraki.jp/joseikinshienkin/index.html は CLIENT_ERROR かつ WebSearch に一度も表出しないため台帳から削除した。www.pref.ibaraki.jp/bosyu.html も CLIENT_ERROR。www.ibarakiguide.jp/jigyousya/jyosei/（ディレクトリ直下）は SERVER_ERROR で、jyosei_jigyo.html のようにファイル名まで指定する必要がある。",
   "jnet21_snavi_articles_error": "【2026-10-16 確認】j-net21.smrj.go.jp/snavi/articles?category[]=2（支援情報の検索）は WebSearch に表出するが WebFetch は CLIENT_ERROR。J-Net21 は snavi2/results.php 形式の一覧のみ取得可という既知の制約が続いている。",
   "kankocho_shoryokuka_1ji_closed": "【2026-10-16 確認】観光庁『観光地・観光産業における省力化投資補助事業』（mlit.go.jp/kankocho/kobo06_00042.html）は宿泊事業者限定で自社に適合するが、1次公募は 2026-05-29 17時で締切済み。2次公募は1次の申請状況を見て検討とされ未公表。次年度・2次公募の告知をウォッチ対象とする。",
-  "heco_hojo_261016": "【2026-10-16 確認】heco-hojo.jp トップの『公募中』5事業（断熱リフォーム＝住宅向け、ハイブリッド・天然ガストラック／バス、再エネ由来水素、水素ステーション、空港・港湾脱炭素化）はいずれも自社事業と不一致。対象者・締切・補助率はトップに出ないため各事業ページを開く必要がある。"
+  "heco_hojo_261016": "【2026-10-16 確認】heco-hojo.jp トップの『公募中』5事業（断熱リフォーム＝住宅向け、ハイブリッド・天然ガストラック／バス、再エネ由来水素、水素ステーション、空港・港湾脱炭素化）はいずれも自社事業と不一致。対象者・締切・補助率はトップに出ないため各事業ページを開く必要がある。",
+  "chusho_403_2026-10-17": "2026-10-17 再確認: www.chusho.meti.go.jp は引き続き HTTP 403。mirasapo-plus.go.jp トップ／各 infomation 記事は取得可。"
  },
  "national": [
   {
