@@ -126,7 +126,11 @@
   "chusho_403_status": "【2026-10-18 再確認】www.chusho.meti.go.jp の HTTP 403 は未解消。代替経路は mirasapo-plus.go.jp と各補助金の専用サイト（it-shien / shoryokuka / shinjigyou-monodukuri / shoukei-mahojokin / r6.jizokukahojokin.info 等）で全件カバーできる。巡回のたびに1回だけ 403 の解消を試すこと。",
   "metro_press_id_caution": "【2026-10-18 確認】sangyo-rodo.metro.tokyo.lg.jp の報道発表IDは www.metro.tokyo.lg.jp/information/press/ 側のIDと対応していない。IDを読み替えると無関係な発表が返るため、一覧で件名を拾ったあとは件名で WebSearch して事業の特設ページを開くこと。",
   "kosha_topics_empty": "【2026-10-18 確認】tokyo-kosha.or.jp の /topics/ 配下（link_*.html 形式の外部リンク専用ページ）は本文が空で返る。件名は公社トップの新着で拾い、本文は /support/josei/ 配下の事業ページか事業ごとの特設サイト（iot-robot.jp、wakajo-shotengai.com、jyokatsu-project.jp 等）を直接狙うこと。",
-  "pref_ibaraki_outage": "【2026-10-18 確認】www.pref.ibaraki.jp がシステム障害で臨時ページのみを表示し、制度ページを取得できない状態だった。復旧後に A_茨城 の巡回で取りこぼしがないか確認すること。"
+  "pref_ibaraki_outage": "【2026-10-18 確認】www.pref.ibaraki.jp がシステム障害で臨時ページのみを表示し、制度ページを取得できない状態だった。復旧後に A_茨城 の巡回で取りこぼしがないか確認すること。",
+  "tochigi_zerocarbon_caution": "【2026-10-18 確認】栃木県の脱炭素ポータル zerocarbon.pref.tochigi.lg.jp はドメイン全体が HTTP 403 で取得できない（/news/、/renewable-energy/、/syouenesetsubi/ いずれも403）。掲載制度は pref.tochigi.lg.jp/d02/carbonneutral/support.html 側で代替確認すること。",
+  "nasu_category_pages": "【2026-10-18 確認】那須町は /0037/genre1-1-001.html（商工業）とその下位カテゴリ /0208/（お知らせ）/0209/（商業関連支援制度）/0210/（工業関連）/0211/（CSR）/0212/（創業支援）/0213/（雇用関係）/0214/（制度融資）の各 genre2-1-001.html が一覧として機能し、/index1.html より網羅的。観光は /0040/genre1-1-001.html。",
+  "pdf_fallback": "【2026-10-18 確認】WebFetch がPDF本文をバイナリのまま返して読めない場合、WebFetch がローカル保存したファイルを Read ツールでページ画像として読むか、pdftotext でテキスト化すると内容を確認できる。日本語ファイル名のPDFはそもそも取得できないため、この回避策は使えない。",
+  "ichinomiya_josei_index": "【2026-10-18 確認】一宮市は「事業者のための支援」一覧（/katsuryokusouzou/sangyoushinkou/1044297/1044298/index.html）に雇用・労政系が載っておらず、その配下の「各種助成金・奨励金のご案内」（.../1010719/index.html）に障害者特別雇用奨励金・退職金共済加入促進補助金・奨学金返還サポート補助金がまとまっている。両方を見ること。"
  },
  "national": [
   {
@@ -650,7 +654,8 @@
      "https://www.city.nagoya.jp/jigyou/boshu/1014251/index.html",
      "https://www.city.nagoya.jp/houdou/3003942/3003949/index.html",
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026471/1026677.html",
-     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026685/1049345.html"
+     "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026685/1049345.html",
+     "https://www.city.nagoya.jp/jigyou/boshu/1014251/1014252.html"
     ]
    },
    {
@@ -703,7 +708,11 @@
      "https://www.town.nasu.lg.jp/0208/genre2-1-001.html",
      "https://www.town.nasu.lg.jp/0213/genre2-1-001.html",
      "https://www.pref.tochigi.lg.jp/f04/sokushinkyou.html",
-     "https://www.pref.tochigi.lg.jp/f03/bcp/r8_jigyoukeizokuryokukyouka.html"
+     "https://www.pref.tochigi.lg.jp/f03/bcp/r8_jigyoukeizokuryokukyouka.html",
+     "https://www.pref.tochigi.lg.jp/f03/advice/keieikaizen.html",
+     "https://www.pref.tochigi.lg.jp/f03/r6_startup_sien.html",
+     "https://www.town.nasu.lg.jp/0212/genre2-1-001.html",
+     "https://www.town.nasu.lg.jp/0214/genre2-1-001.html"
     ]
    },
    {
@@ -766,7 +775,9 @@
      "https://www.pref.fukuoka.lg.jp/life/4/43/index.html",
      "https://www.pref.fukuoka.lg.jp/life/4/index-2.html",
      "https://www.crossroadfukuoka.jp/business/topics/hojyokin",
-     "https://www.city.fukuoka.lg.jp/keizai/kankou-s/"
+     "https://www.city.fukuoka.lg.jp/keizai/kankou-s/",
+     "https://www.pref.fukuoka.lg.jp/contents/supportdesk.html",
+     "https://www.pref.fukuoka.lg.jp/contents/inboundkyouryokuten.html"
     ]
    }
   ]
