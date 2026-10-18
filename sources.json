@@ -121,7 +121,12 @@
   "jnet21_snavi_articles_error": "【2026-10-16 確認】j-net21.smrj.go.jp/snavi/articles?category[]=2（支援情報の検索）は WebSearch に表出するが WebFetch は CLIENT_ERROR。J-Net21 は snavi2/results.php 形式の一覧のみ取得可という既知の制約が続いている。",
   "kankocho_shoryokuka_1ji_closed": "【2026-10-16 確認】観光庁『観光地・観光産業における省力化投資補助事業』（mlit.go.jp/kankocho/kobo06_00042.html）は宿泊事業者限定で自社に適合するが、1次公募は 2026-05-29 17時で締切済み。2次公募は1次の申請状況を見て検討とされ未公表。次年度・2次公募の告知をウォッチ対象とする。",
   "heco_hojo_261016": "【2026-10-16 確認】heco-hojo.jp トップの『公募中』5事業（断熱リフォーム＝住宅向け、ハイブリッド・天然ガストラック／バス、再エネ由来水素、水素ステーション、空港・港湾脱炭素化）はいずれも自社事業と不一致。対象者・締切・補助率はトップに出ないため各事業ページを開く必要がある。",
-  "chusho_403_2026-10-17": "2026-10-17 再確認: www.chusho.meti.go.jp は引き続き HTTP 403。mirasapo-plus.go.jp トップ／各 infomation 記事は取得可。"
+  "chusho_403_2026-10-17": "2026-10-17 再確認: www.chusho.meti.go.jp は引き続き HTTP 403。mirasapo-plus.go.jp トップ／各 infomation 記事は取得可。",
+  "kanto_meti_caution": "【2026-10-18 確認】関東経済産業局 www.kanto.meti.go.jp は HTTP 403 で取得できない（中小企業庁 www.chusho.meti.go.jp と同様）。同局の事業は主催・共催団体や業界団体の告知ページ側から確認すること。",
+  "chusho_403_status": "【2026-10-18 再確認】www.chusho.meti.go.jp の HTTP 403 は未解消。代替経路は mirasapo-plus.go.jp と各補助金の専用サイト（it-shien / shoryokuka / shinjigyou-monodukuri / shoukei-mahojokin / r6.jizokukahojokin.info 等）で全件カバーできる。巡回のたびに1回だけ 403 の解消を試すこと。",
+  "metro_press_id_caution": "【2026-10-18 確認】sangyo-rodo.metro.tokyo.lg.jp の報道発表IDは www.metro.tokyo.lg.jp/information/press/ 側のIDと対応していない。IDを読み替えると無関係な発表が返るため、一覧で件名を拾ったあとは件名で WebSearch して事業の特設ページを開くこと。",
+  "kosha_topics_empty": "【2026-10-18 確認】tokyo-kosha.or.jp の /topics/ 配下（link_*.html 形式の外部リンク専用ページ）は本文が空で返る。件名は公社トップの新着で拾い、本文は /support/josei/ 配下の事業ページか事業ごとの特設サイト（iot-robot.jp、wakajo-shotengai.com、jyokatsu-project.jp 等）を直接狙うこと。",
+  "pref_ibaraki_outage": "【2026-10-18 確認】www.pref.ibaraki.jp がシステム障害で臨時ページのみを表示し、制度ページを取得できない状態だった。復旧後に A_茨城 の巡回で取りこぼしがないか確認すること。"
  },
  "national": [
   {
@@ -474,7 +479,14 @@
      "https://www.hataraku.metro.tokyo.lg.jp/seiki-koyo/kigyou/anteika/index.html",
      "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/skillup/skillup.html",
      "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/nenshunokabetoppa/nenshunokabe-toppaR8.html",
-     "https://www.tcvb.or.jp/jp/project/infra/adviser/"
+     "https://www.tcvb.or.jp/jp/project/infra/adviser/",
+     "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/telework/",
+     "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/jinzaikakuho/boshu/",
+     "https://iot-robot.jp/business/dxtotalsupportsubsidy/",
+     "https://jyokatsu-project.jp/",
+     "https://wakajo-shotengai.com/",
+     "https://www.tokyo-digitalfirststep.metro.tokyo.lg.jp/",
+     "https://www.hataraku.metro.tokyo.lg.jp/koyoetc/koyoetc/atsusa/index.html"
     ]
    },
    {
@@ -488,7 +500,9 @@
      "https://www.city.adachi.tokyo.jp/shigoto/chushokigyo/oshirase/index.html",
      "https://www.city.adachi.tokyo.jp/chusho/shigoto/shuro/kigyomukejosei.html",
      "https://www.city.adachi.tokyo.jp/s-shinko/shigoto/chushokigyo/yushi-shuttenjose.html",
-     "https://www.city.adachi.tokyo.jp/sangyo/30merumaga.html"
+     "https://www.city.adachi.tokyo.jp/sangyo/30merumaga.html",
+     "https://www.city.adachi.tokyo.jp/s-shinko/shigoto/chushokigyo/",
+     "https://www.city.adachi.tokyo.jp/chusho/shigoto/chushokigyo/"
     ]
    },
    {
@@ -508,7 +522,10 @@
      "https://www.pref.kanagawa.jp/docs/m2w/index.html",
      "https://www.pref.kanagawa.jp/docs/b6m/index.html",
      "https://www.kipc.or.jp/",
-     "https://www.pref.kanagawa.jp/docs/v6g/cnt/f534259/index.html"
+     "https://www.pref.kanagawa.jp/docs/v6g/cnt/f534259/index.html",
+     "https://www.pref.kanagawa.jp/docs/ap4/cnt/f7226/index.html",
+     "https://www.pref.kanagawa.jp/docs/z4r/kaigo/ninsyou.html",
+     "https://www.pref.kanagawa.jp/docs/m2w/tokubetsukoatsu2023.html"
     ]
    },
    {
@@ -528,7 +545,9 @@
      "https://www.city.yokohama.lg.jp/business/kigyoshien/decarbonization/index.html",
      "https://www.city.yokohama.lg.jp/business/koyo-syugyo/hataraku/gaikokujin.html",
      "https://socialport-y.city.yokohama.lg.jp/subsidy/subsidy-yokohama/",
-     "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/shienmenu.html"
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/shienmenu.html",
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/decarbonization/datsutansosengen.html",
+     "https://datsutanso.idec.or.jp/"
     ]
    },
    {
@@ -553,7 +572,10 @@
      "https://www.pref.chiba.lg.jp/ontai/hojo/datsutanso-sokushin.html",
      "https://www.ccjc-net.or.jp/new_list.php",
      "https://www.pref.chiba.lg.jp/keisei/genkist/kanrenseisaku.html",
-     "https://www.pref.chiba.lg.jp/keisei/shinchaku.html"
+     "https://www.pref.chiba.lg.jp/keisei/shinchaku.html",
+     "https://chiba-datsutanso.pref.chiba.lg.jp/",
+     "https://www.pref.chiba.lg.jp/koyou/projinzai/index.html",
+     "https://chiba-dx.jp/"
     ]
    },
    {
@@ -569,7 +591,8 @@
      "https://www.city.nagareyama.chiba.jp/business/1006712/1048452/index.html",
      "https://www.city.nagareyama.chiba.jp/business/index.html",
      "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052999/index.html",
-     "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052997/index.html"
+     "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052997/index.html",
+     "https://www.city.nagareyama.chiba.jp/tourism/1013052/1013053.html"
     ]
    }
   ],
