@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-22",
+ "updated": "2026-10-23",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -188,7 +188,22 @@
   "churn_90day_261022": "【2026-10-22 構造的な申し送り】今回 (b) で追加したつくば市『情報発信支援（PR TIMES）』（公開日2024-04-09）と那須町『ふるさと納税お礼品募集』（更新日2024-05-02）は、いずれも随時受付で締切が無く公開日が2年以上前のため、追加後30日の保留期間が切れる 2026-11-21 ごろに90日ルールで自動削除される見込み。現在も有効な制度なので、運用者が90日ルールの扱いを見直すか、毎回 (b) で再追加するかを決める必要がある。",
   "kankocho_shoryokuka_2ji_261022": "【2026-10-22 確認】観光庁『観光地・観光産業における省力化投資補助事業』の2次公募はなお未実施。kobo06_00082.html（最終更新2026-06-30）に『なお、現時点で追加公募の予定はございません。』と明記され、特設サイト kanko-jinzai.go.jp/news/ の最新10件（最新2026-10-15のセミナー案内）にも告知なし。一次公募は2026-05-29 17:00 締切済み。",
   "storage_parity_261022": "【2026-10-22 確認】環境省ストレージパリティ事業の三次公募はなお未告知。執行団体 www.eic.or.jp/eic/topics/ のストレージパリティ関連の最新項目は 2026-09-24『【R8】一次公募の採択結果』で、三次の予告も無い。二次（〜2026-10-02正午）で止まったまま。",
-  "sii_4ji_kakutei_261022": "【2026-10-22 確定】SII 省エネ・非化石転換補助金 4次公募は開始済み（公募期間 2026-10-05〜10-30）。枠別の補助率・上限額は syouenehojyokin.sii.or.jp/about-type/setsubi.html と /about-type/kojyo.html の本文表で確定できる（設備単位型 従来枠1/3以内・1億円、GXメーカー強化枠1/3以内・3億円、トップ性能枠 更新1/2以内・新設1/5以内・3億円、電化脱炭素燃転型1/2以内・3億円〜5億円、工場・事業場型 先進枠 中小2/3以内）。watch_next (1) はこれで解決。"
+  "sii_4ji_kakutei_261022": "【2026-10-22 確定】SII 省エネ・非化石転換補助金 4次公募は開始済み（公募期間 2026-10-05〜10-30）。枠別の補助率・上限額は syouenehojyokin.sii.or.jp/about-type/setsubi.html と /about-type/kojyo.html の本文表で確定できる（設備単位型 従来枠1/3以内・1億円、GXメーカー強化枠1/3以内・3億円、トップ性能枠 更新1/2以内・新設1/5以内・3億円、電化脱炭素燃転型1/2以内・3億円〜5億円、工場・事業場型 先進枠 中小2/3以内）。watch_next (1) はこれで解決。",
+  "ibaraki_outage_261023": "【2026-10-23 確認】www.pref.ibaraki.jp のシステム障害は未復旧。親が shokorodo/chusho/shintyaku/ichiran.html を WebSearch 経由で開いたが『現在、システム障害のため、茨城県のホームページを臨時のページで表示しています。』『緊急情報：現在、情報はありません。』のみで本文なし。臨時ページの最終更新表示は『2026年10月21日 15:00現在』。正常本文が返ったURLは0件。復旧後に回収すべきページは ibaraki_outage_261018 の記載どおり。代替巡回は www.iis-net.or.jp と ifc.ibaraki.jp。",
+  "chusho_403_261023": "【2026-10-23 確認】www.chusho.meti.go.jp の HTTP 403 は未解消（koukai/hojyokin/kobo.html を1回試行し403、本文は一切返らない）。代替は seisansei.smrj.go.jp/subsidy_info/schedule.html を第一候補に、各補助金の専用サイト（it-shien / shoryokuka / shinjigyou-monodukuri / r6.jizokukahojokin.info）で全件カバーできた。",
+  "sii_503_kaishou_261023": "【2026-10-23 確定・親が自分で確認】sii.or.jp 本体の HTTP 503（sii_503_261022）は解消した。https://sii.or.jp/ をWebFetchして公募中6事業（省エネ・非化石転換 工場事業場型／設備単位型 10/5〜10/30、脱炭素ビルリノベ 〜11/30、業務産業用蓄電 〜10/30、DR IoT化 〜11/27、系統用蓄電システム 9/4〜11/4）が公募期間付きで一覧できた。経産省系の台帳としてトップページを第一候補に戻してよい。なお系統用蓄電システム等導入支援事業は系統用蓄電池事業者向けで当グループの事業には使えないため不掲載。",
+  "eic_503_261023": "【2026-10-23 新規障害】www.eic.or.jp（環境イノベーション情報機構）がドメイン全体で HTTP 503。/eic/topics/2026/、/eic/topics/2026/st_r08/1st/、/eic/topics/2025/st_r07/2nd/ の3パスすべてで503。同機構は環境省ストレージパリティ事業の執行団体なので、同事業の三次公募の有無は現在WebFetchでは確認できない（推測で書かないこと）。",
+  "heco_hojo_302_261023": "【2026-10-23 確認】www.heco-hojo.jp はトップ（/ と /index.html の両方）が HTTP 302 で http://error.technowave.ne.jp/ に飛ばされ本文が取れない。サブパス（/reform/ 等）はWebSearchに表出するので、トップ経由の一覧取得は諦めて事業名を直接検索すること。",
+  "carbon_neutral_403_261023": "【2026-10-23 確認】www.env.go.jp/earth/earth/ondanka/enetoku/2026/ は carbon-neutral.env.go.jp/subsidy-contract/list/ へ301リダイレクトし、リダイレクト先は HTTP 403。環境省の脱炭素事業の横断一覧は取得不可のまま。代替は env.go.jp/press/202610.html と各執行団体（eta.or.jp/offering.php・esg-lease.or.jp・siz-kankyou.com は正常、eic.or.jp と heco-hojo.jp は不可）。",
+  "webfetch_pdf_pdftotext_261023": "【2026-10-23 確立・標準手順】WebFetch がPDFを『FlateDecode圧縮のため本文が読めない』と返した場合でも、レスポンス末尾に実体の保存先（/root/.claude/projects/.../tool-results/webfetch-*.pdf）が示される。これに pdftotext -layout をかければ日本語本文が完全に取れる（curl等での再取得ではないので取得手段の制約に抵触しない）。この二段構えで、JEED『障害者介助等助成金』パンフレットから職場支援員助成金の支給月額（中小企業：一般労働者4万円／短時間2万円／特定短時間1万円、最大2年・精神障害者3年、委嘱は訪問面談1回1万円・月上限4万円）、持続化補助金第20回の公募要領、観光庁・環境省の公募要領を確定できた。金額が本文に無くPDFにしかない制度（厚労省の雇用関係助成金パンフレット等）はこの手順で確定すること。",
+  "siz_kankyou_robots_kaishou_261023": "【2026-10-23 訂正】siz-kankyou.com は robots拒否（robots_blocked の記載）ではなく正常に取得できた。/2026co2/teitansokenzai3/ と公募要領PDF /wp-content/uploads/2026/10/r8teitanso3_yoryo.pdf の双方を取得でき、低炭素型建材活用新築ZEB支援事業 三次公募の枠別補助率（事務所等以外＝ホテル・旅館等は『ZEB』55%／Nearly ZEB 38%／ZEB Ready 30%／ZEB Oriented 30%、上限5億円）が確定できる。環境省の執行団体サイトとして有効。",
+  "smrj_envsupport_503_261023": "【2026-10-23 新規】sme-envsupport.smrj.go.jp（中小機構『経営環境変化に対する適応診断事業』特設サイト）が HTTP 503（2回試行）。このため同事業の費用（無料か有料か）・定員・申込方法は未確認のまま。既掲載 smrj-tekio-shindan-2026 の記述を補強したい場合は復旧後に再確認すること。",
+  "mhlw_202611_404_261023": "【2026-10-23 確認】houdou_list_202611.html はまだ HTTP 404。厚労省の10/16以降の報道発表16件・新着情報60件のいずれにも助成金・補助金・公募の新規案件はなく、表彰3件はすべて受賞者発表で応募窓口なし。雇用関係助成金の制度名の全一覧は kyufukin/index_00059.html に揃う（トップと index_00007.html はバナー画像のみで制度名がテキストで取れない）。",
+  "tochigi_jigyosha_shinchaku_261023": "【2026-10-23 発見・栃木県の起点を変更】https://www.pref.tochigi.lg.jp/jigyosha/shinchaku.html は事業者向け新着100件を日付付きで一括取得でき、jigyosha/index.html より圧倒的に網羅的。本文に相対URLが全件載るので以降は芋づる式にWebFetch可。なお d02/carbonneutral/support.html は表の基準日が2026-05-19 のままで古く（『受付中』表記が実際には締切済みの制度がある）、個別ページでの裏取りが必須。d02 配下の環境系ページは更新日表示が内容と一致しないことがあり（jikasyouhitaiyoukou_zigyousya.html は表示2025-07-08だが内容は令和8年度）、日付での新着判定に使えない。",
+  "fukuoka_city_ledger_261023": "【2026-10-23 発見】https://www.city.fukuoka.lg.jp/business/keiyaku-kobo/others.html は福岡市『その他事業者向け募集情報』で31件が掲載日付きで返り、福岡市の新着判定の起点として有効。脱炭素系の補助金は https://www.city.fukuoka.lg.jp/kankyo/j-suishin/genre/0001.html が一覧。crossroadfukuoka.jp/business/topics/hojyokin は本日 HTTP 503（既知の到達困難に加え hojyokin 側も不安定）。",
+  "local_c_gaigai_261023": "【2026-10-23 確定・再調査不要】C群で対象外・終了と確認した制度: 福岡市 事業所の再エネ設備導入支援事業（太陽光5万円/kW・上限500万円だが2026-08-19 13:30で予算到達により受付終了）、福岡市 次世代自動車普及支援（事業者はFCV60万円のみ対象でEVは個人限定、個人分は8/10終了）、福岡市 中小企業奨学金返還支援（本店・本社が市内）、福岡県 奨学金返還助成（本社が県内）、福岡県 事業承継に向けた中小企業収益力強化補助金（今後5年以内の事業承継予定が要件）、下田市 宿泊業の経営力基盤強化事業費補助金（下田市内に宿泊施設が必要）、静岡県 中小企業GX経営推進事業費補助金（令和8年度公募終了）、静岡県 中小企業等収益力向上事業費補助金（賃上げ環境整備枠6/30・成長加速化枠7/21で終了）、名古屋市 中小企業省エネルギー設備等導入補助（8/31受付終了）、栃木県 ゼロカーボン企業表彰（8/21締切・賞金なし）、あいち産業振興機構 よろず支援拠点サポーター募集（支援人材の有償委嘱募集）、愛知県 中小企業脱炭素経営支援事業SBT（公募告知なし・県内本社5社限定）。",
+  "local_c_watch_261023": "【2026-10-23 要監視】福岡県宿泊事業者生産性向上支援補助金 第3期は告知なし（第2期9/30締切済み、/life/4/43/196/index.html に記載なし）。河津町小規模事業者事業継続支援補助金 3次も告知なし（商工会 k-kappa.com/news/ の最新は2026-10-08のプレミアム商品券）。栃木県 脱炭素社会づくり促進事業費補助金はB枠（空調・LED）が6/8で受付終了、A枠（ボイラー燃料転換・10/30まで）の申請状況により11月2日以降にB枠再募集の可能性があるため11月初旬に要確認。下田市 観光施設バリアフリー化促進支援事業費補助金の令和9年度分は個別ページに到達できず未確認。愛知県の無料伴走型省エネ診断は aichi-decarbon-pf.html に実施実績の記載はあるが申込ページ（chiikigurumi-decarbonization.html）が404で、掲載には地球温暖化対策課052-954-6242への確認が必要。",
+  "national_a_261023": "【2026-10-23 確認】national の(a)新規公開分は0件。10/16以降の新規公募は環境省 低炭素型建材活用新築ZEB 三次（10/16）、愛知県 特別高圧 第8期（10/16）、栃木県 サーキュラーエコノミー追加募集（10/19）で、いずれも10/19〜10/22の実行で既に掲載済み。中小機構 FASTAR 第16期（10/20公募開始・無料伴走支援）は創業5年以内のプレシード〜アーリー期限定で対象外、持続化補助金〈一般型 災害支援枠（熊本地震）〉2次（10/19開始）は被災地限定のため不掲載。収集の故障ではない。"
  },
  "national": [
   {
@@ -256,7 +271,8 @@
     "https://shinjigyou-monodukuri.smrj.go.jp/overview",
     "https://seisansei.smrj.go.jp/subsidy_info/succession_subsidy.html",
     "https://seisansei.smrj.go.jp/subsidy_info/it_subsidy.html",
-    "https://it-shien.smrj.go.jp/applicant/subsidy/"
+    "https://it-shien.smrj.go.jp/applicant/subsidy/",
+    "https://www.smrj.go.jp/incubation/solicitation/index.html"
    ]
   },
   {
@@ -293,7 +309,8 @@
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00059.html",
     "https://www.mhlw.go.jp/content/11600000/001245615.pdf",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/package_00007.html",
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/shienjigyou/03.html"
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/shienjigyou/03.html",
+    "https://www.jeed.go.jp/disability/subsidy/kaijo_joseikin/index.html"
    ]
   },
   {
@@ -342,7 +359,9 @@
     "https://www.shindan-net.jp/service/stepup/",
     "https://shoeneshindan.jp/",
     "https://sii.or.jp/rishihokyu08/",
-    "https://shoeneshindan.jp/guide/news/"
+    "https://shoeneshindan.jp/guide/news/",
+    "https://bl-renos.jp/r8/about/",
+    "https://sii.or.jp/DRchikudenchi_gyousan07r/public.html"
    ]
   },
   {
@@ -377,7 +396,9 @@
     "https://www.eta.or.jp/offering/2026/psc/index.php",
     "https://www.eta.or.jp/offering/2026/psc_research/index.php",
     "https://www.env.go.jp/press/policy/index.html",
-    "https://www.eic.or.jp/eic/topics/"
+    "https://www.eic.or.jp/eic/topics/",
+    "https://siz-kankyou.com/2026co2/teitansokenzai3/",
+    "https://esg-lease.or.jp/system-introduction/"
    ]
   }
  ],
@@ -805,7 +826,9 @@
      "https://www.town.nasu.lg.jp/0212/genre2-1-001.html",
      "https://www.town.nasu.lg.jp/0214/genre2-1-001.html",
      "https://www.pref.tochigi.lg.jp/mokuteki/yushi/index.html",
-     "https://www.pref.tochigi.lg.jp/jigyosha/index.html"
+     "https://www.pref.tochigi.lg.jp/jigyosha/index.html",
+     "https://www.pref.tochigi.lg.jp/d05/circuler_business.html",
+     "https://www.pref.tochigi.lg.jp/f06/chinagekannkyouseibihojokin.html"
     ]
    },
    {
@@ -873,7 +896,10 @@
      "https://www.city.fukuoka.lg.jp/keizai/kankou-s/",
      "https://www.pref.fukuoka.lg.jp/contents/supportdesk.html",
      "https://www.pref.fukuoka.lg.jp/contents/inboundkyouryokuten.html",
-     "https://www.pref.fukuoka.lg.jp/life/4/32/134/"
+     "https://www.pref.fukuoka.lg.jp/life/4/32/134/",
+     "https://www.city.fukuoka.lg.jp/business/keiyaku-kobo/others.html",
+     "https://www.city.fukuoka.lg.jp/kankyo/j-suishin/genre/0001.html",
+     "https://www.city.fukuoka.lg.jp/kankyo/j-suishin/hp/shoenesetsubi_reiwa_6.html"
     ]
    }
   ]
