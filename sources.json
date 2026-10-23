@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -203,7 +203,18 @@
   "fukuoka_city_ledger_261023": "【2026-10-23 発見】https://www.city.fukuoka.lg.jp/business/keiyaku-kobo/others.html は福岡市『その他事業者向け募集情報』で31件が掲載日付きで返り、福岡市の新着判定の起点として有効。脱炭素系の補助金は https://www.city.fukuoka.lg.jp/kankyo/j-suishin/genre/0001.html が一覧。crossroadfukuoka.jp/business/topics/hojyokin は本日 HTTP 503（既知の到達困難に加え hojyokin 側も不安定）。",
   "local_c_gaigai_261023": "【2026-10-23 確定・再調査不要】C群で対象外・終了と確認した制度: 福岡市 事業所の再エネ設備導入支援事業（太陽光5万円/kW・上限500万円だが2026-08-19 13:30で予算到達により受付終了）、福岡市 次世代自動車普及支援（事業者はFCV60万円のみ対象でEVは個人限定、個人分は8/10終了）、福岡市 中小企業奨学金返還支援（本店・本社が市内）、福岡県 奨学金返還助成（本社が県内）、福岡県 事業承継に向けた中小企業収益力強化補助金（今後5年以内の事業承継予定が要件）、下田市 宿泊業の経営力基盤強化事業費補助金（下田市内に宿泊施設が必要）、静岡県 中小企業GX経営推進事業費補助金（令和8年度公募終了）、静岡県 中小企業等収益力向上事業費補助金（賃上げ環境整備枠6/30・成長加速化枠7/21で終了）、名古屋市 中小企業省エネルギー設備等導入補助（8/31受付終了）、栃木県 ゼロカーボン企業表彰（8/21締切・賞金なし）、あいち産業振興機構 よろず支援拠点サポーター募集（支援人材の有償委嘱募集）、愛知県 中小企業脱炭素経営支援事業SBT（公募告知なし・県内本社5社限定）。",
   "local_c_watch_261023": "【2026-10-23 要監視】福岡県宿泊事業者生産性向上支援補助金 第3期は告知なし（第2期9/30締切済み、/life/4/43/196/index.html に記載なし）。河津町小規模事業者事業継続支援補助金 3次も告知なし（商工会 k-kappa.com/news/ の最新は2026-10-08のプレミアム商品券）。栃木県 脱炭素社会づくり促進事業費補助金はB枠（空調・LED）が6/8で受付終了、A枠（ボイラー燃料転換・10/30まで）の申請状況により11月2日以降にB枠再募集の可能性があるため11月初旬に要確認。下田市 観光施設バリアフリー化促進支援事業費補助金の令和9年度分は個別ページに到達できず未確認。愛知県の無料伴走型省エネ診断は aichi-decarbon-pf.html に実施実績の記載はあるが申込ページ（chiikigurumi-decarbonization.html）が404で、掲載には地球温暖化対策課052-954-6242への確認が必要。",
-  "national_a_261023": "【2026-10-23 確認】national の(a)新規公開分は0件。10/16以降の新規公募は環境省 低炭素型建材活用新築ZEB 三次（10/16）、愛知県 特別高圧 第8期（10/16）、栃木県 サーキュラーエコノミー追加募集（10/19）で、いずれも10/19〜10/22の実行で既に掲載済み。中小機構 FASTAR 第16期（10/20公募開始・無料伴走支援）は創業5年以内のプレシード〜アーリー期限定で対象外、持続化補助金〈一般型 災害支援枠（熊本地震）〉2次（10/19開始）は被災地限定のため不掲載。収集の故障ではない。"
+  "national_a_261023": "【2026-10-23 確認】national の(a)新規公開分は0件。10/16以降の新規公募は環境省 低炭素型建材活用新築ZEB 三次（10/16）、愛知県 特別高圧 第8期（10/16）、栃木県 サーキュラーエコノミー追加募集（10/19）で、いずれも10/19〜10/22の実行で既に掲載済み。中小機構 FASTAR 第16期（10/20公募開始・無料伴走支援）は創業5年以内のプレシード〜アーリー期限定で対象外、持続化補助金〈一般型 災害支援枠（熊本地震）〉2次（10/19開始）は被災地限定のため不掲載。収集の故障ではない。",
+  "ibaraki_outage_261024": "【2026-10-24 確認・親が自分で取得】www.pref.ibaraki.jp のシステム障害は依然未復旧。親が soshiki/shokorodo/index.html を WebSearch 経由で開き『現在、システム障害のため、茨城県のホームページを臨時のページで表示しています。』のみを取得（最終更新表示『2026年10月21日15:00現在』で 10-23 から変化なし）。local担当サブエージェントが shokorodo/chusho/shintyaku/ichiran.html で同一の臨時ページを確認。障害期間（2026-10-15以降）の取りこぼし回収は本日も未了。代替は www.iis-net.or.jp（正常）。県制度は龍ケ崎市など市町村の転載ページからも一部拾える（例: jigyosha/sangyo/oshirase/ibarakitinnage.html が『いばらき賃上げ支援金・いばらき業務改善奨励金』を 2026-10-18 更新で掲載）。",
+  "chusho_403_261024": "【2026-10-24 確認】www.chusho.meti.go.jp の HTTP 403 は未解消（koukai/hojyokin/kobo.html を1回試行し403）。代替の mirasapo-plus.go.jp/category/infomation/、seisansei.smrj.go.jp/subsidy_info/schedule.html、it-shien / shoryokuka / shinjigyou-monodukuri の各専用サイトで national は全件カバーできた。",
+  "eic_heco_kaishou_261024": "【2026-10-24 解消確認】eic_503_261023 と heco_hojo_302_261023 はいずれも解消。www.eic.or.jp はトップおよび /eic/topics/2026/resi_r08/4th/ が正常取得でき（一部文字化けあり）、www.heco-hojo.jp もトップが正常に開いて公募中5事業（断熱リフォーム／トラック・バス／水素利活用／水素ステーション／空港・港湾）の一覧が読める。いずれも環境省執行団体の台帳として再び使用可。",
+  "enecho_403_261024": "【2026-10-24 新規】www.enecho.meti.go.jp/appli/public_offer/index.html が HTTP 403。enecho_redirect_caution の『index.html を明示すれば取得できる』（2026-10-01）は今回は不成立で、リダイレクトループではなく403だった。経産省系の台帳は sii.or.jp トップを第一候補とする。",
+  "seisansei_news_410_kaishou_261024": "【2026-10-24 訂正】seisansei.smrj.go.jp/news/ の HTTP 410（smrj_seisansei_news_410、2026-10-07）は現在は解消。https 版 /news/index.html は302で追従されないが、http://seisansei.smrj.go.jp/news/ なら261件の新着が取得できる。中小機構の公募告知の差分検知に使える。",
+  "jeed_leaflet_zengaku_261024": "【2026-10-24 確立】JEED 障害者雇用納付金関係助成金の金額は個別HTMLページには一切載らず（個別ページは様式ダウンロードのみ）、https://www.jeed.go.jp/disability/subsidy/q2k4vk000001wtq5-att/rib4fd0000005z4x.pdf （各種助成金一覧及び概要のリーフレット・令和8年度4月版）に全助成金の助成率・支給限度額・支給期間が一覧表で載る。WebFetch→pdftotext -layout で完全に読める。パンフレット一覧の台帳は /disability/subsidy/pamphlet.html。",
+  "seicho_kasokuka_date_conflict_261024": "【2026-10-24 確認】中小企業成長加速化補助金3次の締切は、中小機構 seisansei.smrj.go.jp/subsidy_info/schedule.html（更新日2026-10-19）が 2026-11-12 15時、mirasapo-plus のお知らせ見出しが『9/29〜10/29』で食い違う。news.json は 11/12 を採用（中小機構の表が新しい）。確定には専用サイト growth-100-oku.smrj.go.jp を開くこと。",
+  "national_a_261024": "【2026-10-24 確認】national の(a)新規公開分は0件。12機関すべての一覧ページを取得できており収集の故障ではない。10/17以降に実際に公開された公募は、環境省 低炭素型建材活用新築ZEB 三次（10/16）、環境省 地域レジリエンス四次（10/13）、SII 省エネ・非化石転換4次（10/5）等で、いずれも 10/19〜10/23 の実行で既に掲載済み。厚労省 報道発表10/19〜10/23 の13件、環境省 10/19〜10/23 の新規公募3件（地域共生型廃棄物発電三次／CCU導入促進二次／つながる自然共生サイト参加者募集）はいずれも業種不適合または金銭補助なしで不掲載。houdou_list_202611.html はなお404。",
+  "local_a_gaigai_261024": "【2026-10-24 確定・再調査不要】A群で受付終了・対象外と確認した制度: 日立市 中小企業AIサービス実証支援事業補助金（9/30締切済）、日立市 物価高騰対策（くらし応援商品券取扱店7/31・飲食店応援給付金6/30で終了）、龍ケ崎市 事業者等物価高騰対策支援金（9/30消印で受付終了）、水戸市 中小企業振興支援補助金（予算到達で全メニュー受付終了）、ひたちなか市 令和8年度中小企業事業活性化補助金（予算枠到達で受付終了・一覧の表示は誤り）、ひたちなか市 令和8年度創業支援促進事業補助金（受付終了）、ひたちなか市 観光庁補助事業2件（6/18・7/17締切済）、水戸市 創業期支援補助金（創業後3年未満限定でグループは対象外）。",
+  "shoryokuka_ippan_9kai_261024": "【2026-10-24 要監視】中小企業省力化投資補助金〈一般型〉は第8回が 2026-10-16 17時で締切済み、第9回は shoryokuka.smrj.go.jp トップに『公募開始2026年11月上旬（予定）・申請受付12月上旬〜12月下旬（予定）』とのみ記載。申請窓口が未開設のため今回は不掲載。11月上旬の巡回で必ず確認すること（カタログ注文型 shoryokuka-catalog-2026 は随時受付中で掲載済み）。",
+  "kanto_meti_403_261024": "【2026-10-24 再確認】www.kanto.meti.go.jp は依然 HTTP 403（seisaku/chiiki_brand/branding_mission2026_ibaraki.html を2回試行、いずれも403）。MISSION 2026 茨城版は news.json の mission2026-ibaraki（2026-10-08）で掲載済みのため実害なし。関東経済産業局の案件は iis-net.or.jp 等の転載で拾う。"
  },
  "national": [
   {
@@ -272,7 +283,11 @@
     "https://seisansei.smrj.go.jp/subsidy_info/succession_subsidy.html",
     "https://seisansei.smrj.go.jp/subsidy_info/it_subsidy.html",
     "https://it-shien.smrj.go.jp/applicant/subsidy/",
-    "https://www.smrj.go.jp/incubation/solicitation/index.html"
+    "https://www.smrj.go.jp/incubation/solicitation/index.html",
+    "http://seisansei.smrj.go.jp/news/",
+    "https://seisansei.smrj.go.jp/subsidy_info/sustainability_subsidy.html",
+    "https://seisansei.smrj.go.jp/subsidy_info/business_manufacturing_subsidy.html",
+    "https://seisansei.smrj.go.jp/subsidy_info/laborsaving_subsidy.html"
    ]
   },
   {
@@ -310,7 +325,12 @@
     "https://www.mhlw.go.jp/content/11600000/001245615.pdf",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/package_00007.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/shienjigyou/03.html",
-    "https://www.jeed.go.jp/disability/subsidy/kaijo_joseikin/index.html"
+    "https://www.jeed.go.jp/disability/subsidy/kaijo_joseikin/index.html",
+    "https://www.jeed.go.jp/disability/subsidy/shisetsu_joseikin/index.html",
+    "https://www.jeed.go.jp/disability/subsidy/shokubatekiou_joseikin/sub04_kigyouzaisekigata_shokubatekiou.html",
+    "https://www.jeed.go.jp/disability/subsidy/q2k4vk000001wtq5-att/rib4fd0000005z4x.pdf",
+    "https://www.jeed.go.jp/disability/subsidy/tsukin_joseikin/index.html",
+    "https://www.jeed.go.jp/disability/subsidy/s_noukai_joseikin/index.html"
    ]
   },
   {
@@ -361,7 +381,8 @@
     "https://sii.or.jp/rishihokyu08/",
     "https://shoeneshindan.jp/guide/news/",
     "https://bl-renos.jp/r8/about/",
-    "https://sii.or.jp/DRchikudenchi_gyousan07r/public.html"
+    "https://sii.or.jp/DRchikudenchi_gyousan07r/public.html",
+    "https://sii.or.jp/setsubi07r/overview4.html"
    ]
   },
   {
@@ -398,7 +419,9 @@
     "https://www.env.go.jp/press/policy/index.html",
     "https://www.eic.or.jp/eic/topics/",
     "https://siz-kankyou.com/2026co2/teitansokenzai3/",
-    "https://esg-lease.or.jp/system-introduction/"
+    "https://esg-lease.or.jp/system-introduction/",
+    "https://www.eic.or.jp/eic/topics/2026/resi_r08/4th/",
+    "https://siz-kankyou.com/2026co2/"
    ]
   }
  ],
