@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-10-24",
+ "updated": "2026-10-25",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -214,7 +214,17 @@
   "national_a_261024": "【2026-10-24 確認】national の(a)新規公開分は0件。12機関すべての一覧ページを取得できており収集の故障ではない。10/17以降に実際に公開された公募は、環境省 低炭素型建材活用新築ZEB 三次（10/16）、環境省 地域レジリエンス四次（10/13）、SII 省エネ・非化石転換4次（10/5）等で、いずれも 10/19〜10/23 の実行で既に掲載済み。厚労省 報道発表10/19〜10/23 の13件、環境省 10/19〜10/23 の新規公募3件（地域共生型廃棄物発電三次／CCU導入促進二次／つながる自然共生サイト参加者募集）はいずれも業種不適合または金銭補助なしで不掲載。houdou_list_202611.html はなお404。",
   "local_a_gaigai_261024": "【2026-10-24 確定・再調査不要】A群で受付終了・対象外と確認した制度: 日立市 中小企業AIサービス実証支援事業補助金（9/30締切済）、日立市 物価高騰対策（くらし応援商品券取扱店7/31・飲食店応援給付金6/30で終了）、龍ケ崎市 事業者等物価高騰対策支援金（9/30消印で受付終了）、水戸市 中小企業振興支援補助金（予算到達で全メニュー受付終了）、ひたちなか市 令和8年度中小企業事業活性化補助金（予算枠到達で受付終了・一覧の表示は誤り）、ひたちなか市 令和8年度創業支援促進事業補助金（受付終了）、ひたちなか市 観光庁補助事業2件（6/18・7/17締切済）、水戸市 創業期支援補助金（創業後3年未満限定でグループは対象外）。",
   "shoryokuka_ippan_9kai_261024": "【2026-10-24 要監視】中小企業省力化投資補助金〈一般型〉は第8回が 2026-10-16 17時で締切済み、第9回は shoryokuka.smrj.go.jp トップに『公募開始2026年11月上旬（予定）・申請受付12月上旬〜12月下旬（予定）』とのみ記載。申請窓口が未開設のため今回は不掲載。11月上旬の巡回で必ず確認すること（カタログ注文型 shoryokuka-catalog-2026 は随時受付中で掲載済み）。",
-  "kanto_meti_403_261024": "【2026-10-24 再確認】www.kanto.meti.go.jp は依然 HTTP 403（seisaku/chiiki_brand/branding_mission2026_ibaraki.html を2回試行、いずれも403）。MISSION 2026 茨城版は news.json の mission2026-ibaraki（2026-10-08）で掲載済みのため実害なし。関東経済産業局の案件は iis-net.or.jp 等の転載で拾う。"
+  "kanto_meti_403_261024": "【2026-10-24 再確認】www.kanto.meti.go.jp は依然 HTTP 403（seisaku/chiiki_brand/branding_mission2026_ibaraki.html を2回試行、いずれも403）。MISSION 2026 茨城版は news.json の mission2026-ibaraki（2026-10-08）で掲載済みのため実害なし。関東経済産業局の案件は iis-net.or.jp 等の転載で拾う。",
+  "ibaraki_outage_261025": "【2026-10-25 確認・親が自分で取得】www.pref.ibaraki.jp のシステム障害は依然未復旧。親が WebSearch 経由で shokorodo/chusho/shintyaku/ichiran.html を開き『現在、システム障害のため、茨城県のホームページを臨時のページで表示しています。』のみを取得（最終更新表示は『2026年10月21日15:00現在』で 10-24 から変化なし）。障害期間（2026-10-15以降）の取りこぼし回収は本日も未了。代替は www.iis-net.or.jp（正常）。",
+  "hataraku_metro_maintenance_261025": "【2026-10-25 新規】www.hataraku.metro.tokyo.lg.jp（TOKYOはたらくネット）が『現在、緊急のメンテナンス中です。』を返し本文が取得できない。東京都の雇用環境系奨励金（暑さに配慮した職場環境づくり支援奨励金・働きやすい職場環境づくり推進奨励金・カスハラ防止対策奨励金等）の受付回ごとの期間はこのサイトにしか無いため、メンテナンス中は allowed_domains=www.hataraku.metro.tokyo.lg.jp の WebSearch の要約で回次と期間を確認するか、東京しごと財団 koyokankyo.shigotozaidan.or.jp 側で代替すること。",
+  "seicho_kasokuka_kakutei_261025": "【2026-10-25 確定・親が裏取り】seicho_kasokuka_date_conflict_261024 の食い違いを解決。growth-100-oku.smrj.go.jp（100億企業成長ポータル）で、成長加速化補助金3次公募の申請受付は 2026-09-29〜2026-11-12 15:00（当初の 10-29 15:00 から延長）で確定。mirasapo-plus の『9/29〜10/29』は延長前の古い記載。あわせて、3次に応募するには『100億宣言』の公表が申請時までに必要で、公表に2〜3週間かかるため宣言の申請は 2026-10-26 までにという案内がポータルに出ている。令和7年度補正予算分はこの3次公募で終了見込み。",
+  "gyomukaizen_shimekiri_261025": "【2026-10-25 確定・親が公式PDFで裏取り】業務改善助成金（中小企業最低賃金引上げ支援対策費補助金）令和8年度の申請期間は『令和8年9月1日〜申請事業場の都道府県の地域別最低賃金の発効日の前日 又は 令和8年11月30日のいずれか早い日』。令和8年度地域別最低賃金全国一覧 https://www.mhlw.go.jp/content/11200000/001753404.pdf （WebFetch→pdftotext）の発効日は 茨城 10/18・栃木 10/1・千葉 10/1・東京 10/1・神奈川 10/1・愛知 10/1・静岡 10/15・福岡 10/4 で、小野写真館グループの全8拠点が 2026-10-17 までに申請期限を過ぎている。このため news.json の mhlw-gyomukaizen-r8 を削除した。厚労省ページ自体には『受付終了』の記載が出ないので、この助成金は毎年10月中旬に都道府県別の発効日で自動的に締切となる点に注意。令和9年度は9月1日受付開始の見込みで、8月までに設備投資計画を準備する必要がある。",
+  "local_b_site_shogai_261025": "【2026-10-25 発生・重要】B群巡回時に首都圏の主要サイトが同時多発的に障害。www.tokyo-kosha.or.jp（東京都中小企業振興公社）はトップ・下層・PDFすべて HTTP 502、www.tcvb.or.jp（東京観光財団）は HTTP 503、www.koyokankyo.shigotozaidan.or.jp（東京しごと財団・雇用環境整備）は HTTP 502、iot-robot.jp も 502。www.tokyo-aff.or.jp（東京都農林水産振興財団）は HTTP 200 だが本文は『緊急セキュリティ対応のためサイト公開を一時停止中』のみ。www.ccjc-net.or.jp（千葉県産業振興センター）も HTTP 200 で『システムメンテナンスのためホームページの公開を一時停止』のみ。いずれもサイト側障害（プロキシは正常）。この日は東京都のしごと財団系・公社系の制度詳細は www.metro.tokyo.lg.jp/information/press/ の報道発表本文で代替した。次回巡回で公社トップの新着・東京観光財団の補助金一覧39件・しごと財団の募集要項更新・千葉県産業振興センターの新着を必ず再確認すること。",
+  "meti_publicoffer_403_261025": "【2026-10-25 新規】www.meti.go.jp/information/publicoffer/kobo.html が HTTP 403。meti_kobo_js_caution / meti_kobo_empty の『JS描画で本文が空』から状態が変化し、本文を1バイトも取得できない。経産省の公募台帳は sii.or.jp トップ＋ sii.or.jp/information/division.html（事業部一覧）で代替する。あわせて sii.or.jp/zeb08/public.html は HTTP 404 で、令和8年度 ZEB実証事業／ZEB化診断・計画策定支援事業の公募状況は未確認のまま。",
+  "kankocho_jinzai_gaigai_261025": "【2026-10-25 確定・再調査不要】観光庁『観光地経営の高度化事業（人材育成補助金）』三次公募（補助率1/2・上限1,000万円・下限200万円・10/30 17時必着）は、公募要領 https://www.mlit.go.jp/kankocho/content/002011107.pdf を親が pdftotext で読み、補助対象事業者が『(1)地方公共団体 (2)地方公共団体の関与の元で人材育成に取り組む者（観光協会・商工会議所・コンベンションビューロー・大学・高校等）』と確定。民間企業の単独申請は不可で自治体の関与が前提のため不掲載とした。同様に 環境省『地域レジリエンス…四次公募』も申請者が『地方公共団体』と『それと共同申請する民間企業』に限られ、MICE施設受入環境整備は国際会議実績のある会議場施設の所有者・運営者限定で対象外。",
+  "zeb_teitanso_kakutei_261025": "【2026-10-25 確定・親が公募要領で裏取り】低炭素型建材活用新築ZEB支援事業 三次公募の補助率は、用途『事務所等以外』（対象用途表に『ホテル等＝ホテル、旅館等』『集会所等』『物品販売業を営む店舗等』『飲食店等』を明記）で『ZEB』55%／Nearly ZEB 38%／ZEB Ready 30%／ZEB Oriented 30%、各上限5億円。『事務所等』は30/25/21%でZEB Orientedは対象外。民間所有の場合、事務所等以外は延べ面積1万㎡未満に限る。一次エネルギー消費量は30%以上削減（事務所等・学校等は40%以上）。低炭素型建材はかかり増し経費の1/2、GX率先実行宣言を行う場合は2/3。news.json の env-teitanso-kenzai-zeb-3ji-r8 の『補助率・上限額は要確認』をこの数値に更新した。",
+  "soui_challenge_nittei_kakudai_261025": "【2026-10-25 確定・親が裏取り】東京都『経営力強化に向けた創意工夫チャレンジ促進事業（賃上げ重点コース）』は 2026-10-20 の都報道発表（/information/press/2026/10/2026102009）で日程が前倒し拡大された。第3回=11/16〜12/14（変更前12/1〜12/14）、追加募集回=令和9年1/4〜1/14（新設）、第4回=2/15〜3/12（変更前3/1〜3/12）。助成率3/4以内（小規模4/5以内・計画未達2/3以内）・上限600万円・採択企業へ無料アドバイザー派遣最大2回は変更なし。公社サイトが502で読めない日は都の報道発表側で日程を確認できる好例。",
+  "mhlw_202611_404_261025": "【2026-10-25 確認】houdou_list_202611.html はなお HTTP 404。厚労省の10/15以降の報道発表・新着に事業主向け助成金の新規案件はなく、令和八年熊本地震災害特例の産業雇用安定助成金は被災地限定で対象外。『中高年の活躍支援』特設サイト（newpage_76610.html）は求職者個人向けで事業主向け助成金の記載なし。"
  },
  "national": [
   {
@@ -287,7 +297,8 @@
     "http://seisansei.smrj.go.jp/news/",
     "https://seisansei.smrj.go.jp/subsidy_info/sustainability_subsidy.html",
     "https://seisansei.smrj.go.jp/subsidy_info/business_manufacturing_subsidy.html",
-    "https://seisansei.smrj.go.jp/subsidy_info/laborsaving_subsidy.html"
+    "https://seisansei.smrj.go.jp/subsidy_info/laborsaving_subsidy.html",
+    "https://shoryokuka.smrj.go.jp/catalog/"
    ]
   },
   {
@@ -330,7 +341,10 @@
     "https://www.jeed.go.jp/disability/subsidy/shokubatekiou_joseikin/sub04_kigyouzaisekigata_shokubatekiou.html",
     "https://www.jeed.go.jp/disability/subsidy/q2k4vk000001wtq5-att/rib4fd0000005z4x.pdf",
     "https://www.jeed.go.jp/disability/subsidy/tsukin_joseikin/index.html",
-    "https://www.jeed.go.jp/disability/subsidy/s_noukai_joseikin/index.html"
+    "https://www.jeed.go.jp/disability/subsidy/s_noukai_joseikin/index.html",
+    "https://www.mhlw.go.jp/stf/new-info/index.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/index.html",
+    "https://www.mhlw.go.jp/content/11200000/001753404.pdf"
    ]
   },
   {
@@ -347,7 +361,11 @@
     "https://www.mlit.go.jp/kankocho/yosan_choutatst/kobo_index.html",
     "https://www.mlit.go.jp/kankocho/shisaku/sangyou/syukuhakushisetsushien.html",
     "https://www.mlit.go.jp/kankocho/page06_00013.html",
-    "https://www.mlit.go.jp/kankocho/kobo06_00085.html"
+    "https://www.mlit.go.jp/kankocho/kobo06_00085.html",
+    "https://www.mlit.go.jp/kankocho/kobo08_00055.html",
+    "https://www.mlit.go.jp/kankocho/kobo06_00072.html",
+    "https://www.mlit.go.jp/kankocho/kobo09_00053.html",
+    "https://kanko-jinzai.go.jp/news/2601/"
    ]
   },
   {
@@ -382,7 +400,11 @@
     "https://shoeneshindan.jp/guide/news/",
     "https://bl-renos.jp/r8/about/",
     "https://sii.or.jp/DRchikudenchi_gyousan07r/public.html",
-    "https://sii.or.jp/setsubi07r/overview4.html"
+    "https://sii.or.jp/setsubi07r/overview4.html",
+    "https://sii.or.jp/newsrelease/",
+    "https://sii.or.jp/koujou07r/overview4.html",
+    "https://sii.or.jp/setsubi07r/",
+    "https://sii.or.jp/koujou07r/"
    ]
   },
   {
@@ -421,7 +443,11 @@
     "https://siz-kankyou.com/2026co2/teitansokenzai3/",
     "https://esg-lease.or.jp/system-introduction/",
     "https://www.eic.or.jp/eic/topics/2026/resi_r08/4th/",
-    "https://siz-kankyou.com/2026co2/"
+    "https://siz-kankyou.com/2026co2/",
+    "https://www.eic.or.jp/eic/",
+    "https://www.heco-spc.or.jp/posts",
+    "https://www.eta.or.jp/index.php",
+    "https://siz-kankyou.com/wp-content/uploads/2026/10/r8teitanso3_yoryo.pdf"
    ]
   }
  ],
@@ -621,7 +647,8 @@
      "https://www.hataraku.metro.tokyo.lg.jp/koyoetc/koyoetc/atsusa/index.html",
      "https://www.tokyo-aff.or.jp/site/forest/99819.html",
      "https://iot-robot.jp/business/dxsubsidy/",
-     "https://www.metro.tokyo.lg.jp/information/press/2026/10?page=2"
+     "https://www.metro.tokyo.lg.jp/information/press/2026/10?page=2",
+     "https://www.metro.tokyo.lg.jp/information/press?page=2"
     ]
    },
    {
@@ -660,7 +687,9 @@
      "https://www.pref.kanagawa.jp/docs/v6g/cnt/f534259/index.html",
      "https://www.pref.kanagawa.jp/docs/ap4/cnt/f7226/index.html",
      "https://www.pref.kanagawa.jp/docs/z4r/kaigo/ninsyou.html",
-     "https://www.pref.kanagawa.jp/docs/m2w/tokubetsukoatsu2023.html"
+     "https://www.pref.kanagawa.jp/docs/m2w/tokubetsukoatsu2023.html",
+     "https://www.pref.kanagawa.jp/docs/z4r/tayounazinzai_syoureikin/2026.html",
+     "https://www.pref.kanagawa.jp/docs/z4r/chinginupshien.html"
     ]
    },
    {
@@ -730,7 +759,8 @@
      "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052997/index.html",
      "https://www.city.nagareyama.chiba.jp/tourism/1013052/1013053.html",
      "https://www.city.nagareyama.chiba.jp/business/1006712/1052961/1052999/1006716.html",
-     "https://www.city.nagareyama.chiba.jp/business/1006712/1055112.html"
+     "https://www.city.nagareyama.chiba.jp/business/1006712/1055112.html",
+     "https://www.city.nagareyama.chiba.jp/business/1006712/1055469.html"
     ]
    }
   ],
