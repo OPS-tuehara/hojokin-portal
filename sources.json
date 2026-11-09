@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -469,7 +469,22 @@
   "national_b2_261109": "【2026-11-09 national の結果】(a) 新規公開分は0件。中小企業庁・中小機構・厚労省・JEED・観光庁・SII・環境省のいずれも直近10日の新規公募がなく、令和8年度予算分の公募は10月中旬〜下旬でほぼ出し切られ、11月は採択結果公表フェーズに移行している（前日に拾った環境省プラスチック Good Reduce Practice 2026 が11月唯一の新規公募）。採用した(b)はチカパー CAMPFIRE の1件。対象外と確定したもの: 厚労省 産業雇用安定助成金（産業連携人材確保等支援コース・前提補助金の採択と売上10%以上減少が要件／sangyo_renkei_jinzai_mikaiyo_261108 の判定を維持）、厚労省 早期再就職支援等助成金（再就職支援コース・事業規模縮小に伴う離職者の再就職支援が前提で成長中の事業では使えない）、厚労省 業務改善助成金（申請期限が各都道府県の最低賃金発効日の前日または11/30の早い日で、全拠点とも10月中に発効済みのため経過）、事業承継・M&A補助金 第16次（11/6 17時締切）、持続化補助金 災害支援枠（熊本地震）2次と産業雇用安定助成金 災害特例コース（被災地限定）、中小機構 FASTAR 第16期（創業5年以内または創業前）、令和9年度 高年齢者活躍企業コンテストと全国安全週間スローガン募集（賞金の記載なし）、建設業・寒冷地・沖縄・製造業限定の各コース、事業主団体向けコース、職場適応援助者助成金（支給対象が支援団体）。チカパーの他の募集中20件は自社物販商品の卸・EC掲載・出店が前提で主要事業に直接適用できないため不採用。",
   "sustainable_tabi_award_261109": "【2026-11-09 採用しない根拠】観光庁「第4回サステナブルな旅アワード」（kobo13_00011.html・公開11/6・受付11/6〜11/30 17時）は、national 担当が募集要領PDF 002045132.pdf を pdftotext -layout で全文確認し、賞種別は大賞1件・準大賞1件・特別賞3件程度で、受賞の特典は「観光庁ホームページにて紹介予定」「メディア等を通じた国内外への発信や旅行業者への事業紹介など受賞商品の広報支援」のみで賞金・副賞の記載が一切ないことを確認した。除外ルール「賞金の無い表彰制度」に該当する。加えてエントリー資格は旅行業者、または旅行業登録者との連携により旅行商品の販売を行っている者に限られ、エントリー対象も企画旅行商品に限定されるため不採用とした（261108 の判定を維持）。",
   "jeed_kaijo_mikakunin_261109": "【2026-11-09 数値未取得】JEED 障害者介助等助成金の下位措置（職場介助者の配置・委嘱、手話通訳・要約筆記等担当者、健康相談医の委嘱、職業生活相談支援専門員、職業能力開発向上支援専門員、介助者等資質向上措置、重度訪問介護サービス利用者等職場介助）と障害者能力開発助成金（第1種施設設置費・第2種運営費）は、disability/subsidy/kaijo_joseikin/index.html・s_noukai_joseikin/index.html・sub04_assistance_arrange.html がいずれも様式ダウンロードとリンク集のみで、助成率・支給限度額・支給期間がページ本文に存在しない。前日は「各種助成金一覧及び概要」PDF（rib4fd0000005z4x.pdf）から数値を把握したが、適合度が低く重複的になるため今回も見送った（jeed_kaijo_zankyo_261108 の判断を維持）。",
-  "mhlw_mojibake_261109": "【2026-11-09 取得不可】厚労省の旧レイアウトページ www.mhlw.go.jp/bunya/roudoukijun/taisilyokukin_kyousai/ippanchuutai/kakekin_josei.html（中小企業退職金共済 新規加入等掛金助成）と www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/chiiki_koyou.html（地域雇用開発助成金 地域雇用開発コース）は、Shift_JIS/UTF-8 の誤変換で本文が文字化けし判読できない。前者は助成額・助成率・期間が取得できず、後者は対象地域の別表がPDF（dl/260407_02.pdf 等）側にあるため茨城県・栃木県が同意雇用開発促進地域に含まれるかを判定できない。数値の推測記載はしていない。"
+  "mhlw_mojibake_261109": "【2026-11-09 取得不可】厚労省の旧レイアウトページ www.mhlw.go.jp/bunya/roudoukijun/taisilyokukin_kyousai/ippanchuutai/kakekin_josei.html（中小企業退職金共済 新規加入等掛金助成）と www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/chiiki_koyou.html（地域雇用開発助成金 地域雇用開発コース）は、Shift_JIS/UTF-8 の誤変換で本文が文字化けし判読できない。前者は助成額・助成率・期間が取得できず、後者は対象地域の別表がPDF（dl/260407_02.pdf 等）側にあるため茨城県・栃木県が同意雇用開発促進地域に含まれるかを判定できない。数値の推測記載はしていない。",
+  "meti_403_261110": "【2026-11-10 再確認】www.chusho.meti.go.jp は HTTP 403 のまま未解消。親が koukai/hojyokin/kobo.html を1回だけ WebFetch し「The server returned HTTP 403 Forbidden. The response body was not retrieved.」のみ。WebSearch（allowed_domains=www.chusho.meti.go.jp）の結果要約は今回も有効で、持続化第20回・創業型第4回（11/5受付開始・12/15締切）、デジタル化AI第7次（12/1）、成長加速化3次（9/29〜11/12）、省力化カタログ注文型のみが受付中で、いずれも既掲載と確認した。national 担当も同URLで同じ403を確認し、seisansei.smrj.go.jp/subsidy_info/schedule.html と mirasapo-plus.go.jp/category/infomation/、j-net21.smrj.go.jp/news/index.php?newsCategory=4 で代替した。",
+  "enecho_403_261110": "【2026-11-10 新規・取得不可】www.enecho.meti.go.jp がドメイン単位で HTTP 403 になった。enecho_redirect_caution（2026-10-01 追記）の「appli/public_offer/index.html は index.html を明示すれば正常取得できる」は無効化され、今回は index.html 明示でも 403、同ドメインの category/saving_and_new/saving/news/support/ も 403。資源エネルギー庁は今後 WebSearch の要約経由でしか把握できない前提で設計すること。経産省系の代替は sii.or.jp 各事業ページと syouenehojyokin.sii.or.jp/information.html（省エネ補助金の回次スケジュールが1ページで揃う）。",
+  "enetoku_301_403_261110": "【2026-11-10 新規・取得不可】www.env.go.jp/earth/earth/ondanka/enetoku/2026/（環境省エネ特ポータルの事業一覧）が HTTP 301 で carbon-neutral.env.go.jp/subsidy-contract/list/ へ恒久転送されるようになり、転送先はドメイン全体403のため実質取得不可。meti_kobo_js_caution に書かれた「主台帳の一方」は失われた。環境省の網羅入口は www.env.go.jp/press/YYYYMM.html のみとなり、あとは執行団体サイトの個別巡回で補うこと。有効な執行団体入口: eic.or.jp/eic/topics/2026/（ストレージパリティ・地域レジリエンスの全回次が一望できる最良の入口）、eta.or.jp/offering/archive.php、gaj.or.jp/eie/shift/index.html、jreco.or.jp/koubo_env.html、heco-spc.or.jp/posts（heco-hojo.jp の各事業URLが芋づる式に取れる）、siz-kankyou.com/2026co2/（ZEB系の回次一覧）。",
+  "tochigi_josei_office_kaiketsu_261110": "【2026-11-10 解決・採用】栃木県女性活躍オフィス立地・拡大補助金（f01/work/shoukougyou/kigyouricchi/joseikatsuyakuoffice2024.html）の長期の保留事項（local_c_watch_261107 (3)・tochigi_josei_office_horyu_261101）を解消し採用した。親が別表第2 PDF（documents/20240620102737.pdf）を WebFetch → pdftotext -layout で全文取得し、大分類Ｌ 専門・技術サービス業の中分類「技術サービス業（他に分類されないもの）（管理，補助的経済活動を行う事業所、獣医業、土木建築サービス業、機械設計業、商品・非破壊検査業、計量証明業、写真業、その他の技術サービス業）」に写真業が明記されていることを確認。同別表には専門サービス業の「デザイン業」、大分類Ｇ 情報通信業の「ソフトウェア業」「インターネット附随サービス業」「映像情報制作・配給業」も含まれる。募集期間・締切は本文に記載がないが、交付要領PDF（documents/20260416173921.pdf）を pdftotext で読み、第4条「令和6(2024)年4月1日から令和9(2027)年3月31日までに賃貸借契約によりオフィスを賃借し補助対象事業を開始するもの」、第10条の表の提出期限「賃借料・通信費を支払った年度内及び人件費を算出した年度内」、附則2「令和8年4月1日から令和9年3月31日までに賃貸借契約によりオフィスを賃借し補助対象事業を開始したものに適用」を確認した。所在地要件は「県内にオフィスを設置／既に県内にオフィスを有する」のみで本社所在地要件はない。産業政策課企業立地班 028-623-3202。",
+  "nasu_minkan_teian_261110": "【2026-11-10 採用】那須町『公共施設等に関する民間提案制度』（0353/info-0000004481-1.html・掲載 令和8年9月1日／更新 令和8年11月9日）を採用。親が本文を WebFetch し、公募型の第1期＝事前相談 9/1〜9/30・提案受付 10/1〜11/30、第2期＝事前相談 令和9年1/6〜1/29・提案受付 2/1〜3/31、提案型（指定施設以外）は 令和8年9月1日から随時受付を確認した。第1期の対象4物件は旧那須小学校 校舎（湯本201-1・2,258㎡・平成3年・新耐震）／同プール（855㎡）／旧室野井小学校 校舎（高久乙3371-3・1,923㎡・昭和58年・新耐震）／同プール（666㎡）。金銭補助はなく、採択後に町と協議し提案者と随意契約することを前提に事業化する。応募資格は本文に記載がなく『那須町公共施設等に関する民間提案制度募集要項』側のため未確認。企画政策課総合政策係 0287-72-6906。local_c_watch_261107 (6) は第2期のみ把握していたが、第1期の提案受付が 11/30 まで進行中であることが判明した。",
+  "chutaikyo_mhlw_pdf_261110": "【2026-11-10 解決・採用】chutaikyo_403_261102 で「次回も403なら掲載は断念する」としていた中退共の国の掛金助成は、厚労省側のリーフレットPDF www.mhlw.go.jp/bunya/roudoukijun/taisilyokukin_kyousai/ippanchuutai/dl/kakekin_josei.pdf を WebFetch → pdftotext -layout で全文取得できたため採用した（chutaikyo.taisyokukin.go.jp の403は未解消、mhlw側のHTML kakekin_josei.html は文字化けのまま）。確認した内容: 新規加入掛金助成は対象労働者の掛金月額の1/2（労働者ごと上限5,000円）を加入4か月目より1年間控除、短時間労働者の特例掛金月額（2,000/3,000/4,000円）には300/400/500円を上乗せ。掛金月額変更掛金助成は増額分（増額前と増額後の差額）の1/3を増額月より1年間控除、増額前の掛金月額が18,000円以下の場合に限る。対象事業主はサービス業＝資本金5,000万円以下または常時雇用100人以下／小売業（飲食店を含む）5,000万円以下または50人以下／卸売業1億円以下または100人以下／その他3億円以下または300人以下、かつ新規加入助成は初めて中退共制度に加入する事業主に限る。同居の親族のみを雇用する事業主、社会福祉施設職員等退職手当共済制度加入事業主など6類型は対象外。締切の記載はなく随時。リーフレットは2024年3月版。",
+  "chikapa_kaigai_trial_261110": "【2026-11-10 採用・WebSearch要約の誤りを親が訂正】中小機構チカパー『海外市場開拓トライアル（簡易アンケート調査）』（chikapa.smrj.go.jp/trial/2026_001.html）。WebSearch の結果要約は「第3期 エントリー 2026年10月30日18時で締切済み」と述べたが、親が当該ページ本文を WebFetch すると締切は「2026年11月30日（月曜）18時」で期別の区分はなく1回のみ、参加費無料、募集枠500者（上限到達次第終了）だった。WebSearch の要約が混同していたのは別企画の『海外市場開拓トライアル（個別調査）』（trial/001.html）。対象は国内に事業所を有する中小・小規模事業者で消費財分野の自社商品を有する者、対象商品は「食品、雑貨・日用品。自社ブランドとして自社または委託先企業で製造した商品」に限られるため、写真・ブライダル・宿泊・レンタル・アプリは対象外で、ECの自社商品に限って使える。この要件を title と summary に明記して掲載した。",
+  "subagent_misdetect_65sai_261110": "【2026-11-10 サブエージェントの誤り】national A 担当が「65歳超雇用推進助成金（3コース）は既掲載なし・最有力」と報告したが、実際には jeed-65sai-keizoku-r8（65歳超継続雇用促進コース）・jeed-65sai-hyouka-r8（高年齢者評価制度等雇用管理改善コース）・jeed-65sai-muki-tenkan-r8（高年齢者無期雇用転換コース）の3件が既掲載で、親の突合により重複と判明し不採用とした。原因は親が渡した既掲載リストで厚労省分のみを列挙し、同じ機関のJEED分（source=「独立行政法人高齢・障害・求職者雇用支援機構（JEED）」9件）を渡していなかったこと。厚労省を担当させるサブエージェントには JEED の既掲載分も必ず併記すること。",
+  "gyomu_kaizen_shimekiri_261110": "【2026-11-10 全拠点で締切超過・令和9年度に再掲価値あり】厚労省 業務改善助成金（令和8年度・roudoukijun/zigyonushi/shienjigyou/03.html）は申請期間が「令和8年9月1日〜申請事業所の都道府県で適用される地域別最低賃金の発効日の前日または同年11月30日のいずれか早い日」。national 担当が令和8年度地域別最低賃金全国一覧PDF（content/11200000/001753406.pdf）を pdftotext で読み、茨城10/18（期限10/17）・東京10/1・神奈川10/1・千葉10/1・愛知10/1・栃木10/1・静岡10/15（期限10/14）・福岡10/4（期限10/3）で8拠点すべて期限到来済みと確定した。内容は助成率3/4〜4/5（事業場内最低賃金1,050円未満は4/5）、上限30万〜600万円（引上げ額50/70/90円×引上げ労働者数）、対象経費にPOSレジシステム・経営コンサルティングを含み、事業完了期限は交付決定年度の1月31日。令和9年度公募（例年9月開始）時に最優先で掲載すること。",
+  "local_c_gaigai_261110": "【2026-11-10 C群で対象外・既掲載と確定】(1)2027年度あいち中小企業応援ファンド新事業展開応援助成金（aibsc.jp/support/1182/・エントリー12/1〜令和9年1/8）は「愛知県内に本社または主たる事務所」要件で対象外、かつ地場産業枠は食料品・繊維・家具・窯業＋伝統的工芸品限定。(2)静岡県ファンドサポート事業（kigyoshien/kigyoshien/1075089.html・12/18締切・受付中）は「県内に本社又は主たる事業所を置く中小事業者（登記必要）」要件で対象外。(3)福岡県中小企業経営革新・賃上げ緊急支援補助金は「県内に本店」要件かつ経営革新計画の受付は第5次6/8で終了。(4)一宮市SDGs推進支援補助金（12/31まで受付中・1/2・上限100万円）は製造業・繊維産業限定。(5)栃木県 気候変動対策ビジネス等創出支援補助金・とちぎゼロカーボン企業表彰・海外販路開拓拡大支援（4/1〜5/29・補助率3/4・上限50万円／所在地要件は県内に本社または事業所で業種制限なし＝来年度の再募集は要監視）はいずれも本年度の募集終了。(6)静岡県 中小企業等収益力向上事業費補助金（通常枠・DX推進枠・賃上げ環境整備・成長加速化枠）と小規模企業経営力向上事業費補助金はすべて募集終了、かつ「県内に主たる事務所」要件で対象外。(7)名古屋市 中小企業デジタル活用支援補助金（全枠終了）・カスタマーハラスメント対策支援補助金（10/30 17時で超過）。(8)下田市 観光施設バリアフリー化促進支援事業費補助金は令和8年度分終了＋令和9年度の意向調査も9/28で超過、空き店舗等活用事業補助金は下田市内の空き店舗が対象で拠点外。(9)福岡県 第28回福岡デザインアワード（11/5更新）は大賞決定の公表＝採択結果のため候補外。(10)栃木県 省CO2設備の更新等に係る補助金「その他の補助対象事業」11/5〜12/25 再募集と静岡県 ICOI温泉旅館オフィス化事業 令和8年度募集は、いずれも既掲載の tochigi-datsutanso-r8 / shizuoka-icoi-onsen-office-r8 と同一URL・同一回次で重複。",
+  "local_c_watch_261110": "【2026-11-10 C群の要監視】(1)福岡県宿泊事業者生産性向上支援補助金 第3期は未告知。life/4/43/196/index.html の最新は令和8年度第2期（更新 2026-07-23）で、補助金申請の締切 2026-09-30 12時必着・センターへの支援申込 8/26 12時必着ともに超過、第2期はユニバーサルツーリズム対応枠のみ。実施機関 f-seisanseikojo.jp は 11/01・11/04・11/10 と3回連続 HTTP 503（Retry-After: 86400）で未確認。(2)河津町 小規模事業者事業継続支援補助金 3次募集は未告知（k-kappa.com/news/ の最新は 2026.10.08 でプレミアム商品券の件、補助金の最新告知は 2026.08.18 の2次募集）。(3)静岡県 ICT・サービス関連企業進出事業費等補助金は kensei/keikaku/1040922/1053264.html が HTTP 404、代替の shizukuru.pref.shizuoka.jp/ict/index.html が HTTP 503 で、制度の現存・内容とも未確認。(4)河津町 地域課題解決連携事業補助金（town.kawazu.shizuoka.jp/jigyousha/chiikikadaikaiketurenkeihojokin/）は本文が「河津町で一緒に町を盛り上げてくれる取り組みについて町が一部支援します。」の1行のみで補助率・上限額・募集期間・対象者がすべて未記載。詳細PDFと交付要綱PDFのリンクがあるので次回はPDFを pdftotext で読むこと。既掲載にない制度。(5)栃木県 特別高圧受電中小企業等支援補助金（f03/tokubetsukoatsushienmenu.html）は一覧で制度名のみ把握、個別ページ未取得。(6)那須町 民間提案制度の募集要項PDF（応募資格）は未取得。",
+  "sources_tip_261110": "【2026-11-10 台帳の有効性】(1)hojokin.aibsc.jp（あいちナビる）は制度名のみで募集期間・掲載日を一切表示しないため新規判定の台帳にならない。愛知県の新規検出は pref.aichi.jp/life/sub/2/index-2.html と aibsc.jp/ の2本に依存する。(2)city.nagoya.jp/jigyou/boshu/index.html は配下カテゴリへのリンクのみで補助金案件が載らない。名古屋市は nipc.or.jp トップ（日付付き新着）が有効。(3)pref.fukuoka.lg.jp/soshiki/0601820/index-2.html は観光政策課ではなく中小企業経営支援課のページ。福岡県観光政策課の新着一覧の正しい入口は未特定で、宿泊系は life/4/43/196/index.html が唯一の有効な台帳。(4)crossroadfukuoka.jp/business/topics/hojyokin は2025/8/26付の令和7年度版のまま未更新で令和8年度の台帳として使えない。(5)city.shimoda.shizuoka.jp/category/060100syoukougyou/index.html と pref.shizuoka.jp/sangyoshigoto/kigyoshien/1040896/index.html は掲載日を表示しないため日付判定に使えない。静岡県は pref.shizuoka.jp/newslist.html と icoi.pref.shizuoka.jp/category/news/ が有効。(6)那須町は index1.html が11月分の新着を日付付きで取得でき、商工会は r.goope.jp/srb-09-21/info が有効。(7)smrj.go.jp/org/info/solicitation/index.html は中小機構の公募情報一覧で、本日は助成金・補助金等の事務局公募が「現在、公募情報はありません」だった。",
+  "churn_90day_261110": "【2026-11-10 削除判定】削除1件＝tochigi-social-startup-2ji（栃木県 社会課題解決スタートアップ企業応援事業 認定事業 2次募集。申請 11/9 17時必着で締切超過。初出コミットは 2026-10-18 だが、30日未満の例外は90日ルールにのみ適用され締切超過には適用されないため削除）。90日ルールの機械判定では churn_90day_kaishaku_261109 と同じ27件前後が形式上の該当となったが、いずれも通年・随時・年度内・予算到達までの記載がある現に受付中の制度のため、従来運用どおり 2027-03-31 を締切とみなして0件とした（解釈の揺れについてはユーザーの判断を仰ぎたい旨 churn_90day_kaishaku_261109 のとおり）。締切マーカー付きの日付を全件機械抽出して 11/10 より前のものを洗い出したが、yokohama-engage-kyujin-2ki（11/13 18時）、tokyo-shokei-seicho-hanro-r8-2（11/12 16時）、chusho-seicho-kasokuka-3（11/12 15時）、tokyo-soui-challenge-gyomu-r8-3（11/13 16時）、tokyo-chakushu-r8（11/18 17時）、tokyo-kasuhara-shoreikin-r8-2（11/18 17時）はいずれも未到来で残置した。",
+  "shosai_261110": "【2026-11-10 追加4件・削除1件】(a)新規公開分は0件。12機関すべての一覧ページを取得できており収集の故障ではなく、2026-11-02 以降に公開された新規公募が既掲載以外に存在しなかった（中小企業庁の11月分4件・観光庁・環境省11月報道発表26〜27件・愛知/名古屋/一宮/栃木/静岡/福岡の11月分はいずれも既掲載・イベント・採択結果・対象外）。(b)取りこぼし分4件＝厚労省 中退共 新規加入等掛金助成（date は公開日の記載がないため実行日 2026-11-10）、中小機構 チカパー 海外市場開拓トライアル（簡易アンケート調査）（同様に実行日。締切 11/30 18時）、那須町 公共施設等に関する民間提案制度（date は掲載日 2026-09-01）、栃木県女性活躍オフィス立地・拡大補助金（date は更新日 2026-04-01）。",
+  "subagent_261110": "【2026-11-10 サブエージェント3体の精度】national 3機関×2体・local C 6機関×1体を同時起動し全員の結果を受領（tool_uses 75／65／79、所要 8〜14分）。3体とも403・404・503・文字化け・未到達URLを機関ごとに列挙し、取得できなかったページの数値を推測で書くことはなかった（national B は carbon-neutral.env.go.jp について「403は解消していません」と明記、local C は静岡県ICT補助金について「本文を引用できないため制度内容・補助率・締切は報告しない」と明記）。2026-10-18 のような捏造は検出されなかった。採否に影響した誤りは2件: (1)national A の「65歳超雇用推進助成金は既掲載なし」（親の原因＝既掲載リストにJEED分を含めなかった。subagent_misdetect_65sai_261110）、(2)local C が挙げた栃木県省CO2再募集とICOI温泉旅館オフィス化は既掲載と同一URL。採用した4件はすべて親が自分で WebSearch → WebFetch して本文を確認し、PDF 3本（栃木県 別表第2・交付要領、厚労省 中退共リーフレット）は pdftotext -layout で全文を読んだ。"
  },
  "national": [
   {
@@ -487,7 +502,10 @@
     "https://j-net21.smrj.go.jp/snavi/support/support.xml",
     "https://mirasapo-plus.go.jp/infomation/",
     "https://r6.jizokukahojokin.info/",
-    "https://r6.jizokukahojokin.info/doc/r6_koubover9_ip20.pdf"
+    "https://r6.jizokukahojokin.info/doc/r6_koubover9_ip20.pdf",
+    "https://seisansei.smrj.go.jp/news/",
+    "https://j-net21.smrj.go.jp/news/index.php?newsCategory=4",
+    "https://mirasapo-plus.go.jp/category/infomation/"
    ]
   },
   {
@@ -568,14 +586,15 @@
     "https://fastar.smrj.go.jp/news.html",
     "https://it-shien.smrj.go.jp/pdf/it2026_kaitei_koubo_tsujyo.pdf",
     "https://fastar.smrj.go.jp/program/16/",
-    "https://chikapa.smrj.go.jp/kikaku/project/ool3bn000000dlvb.html"
+    "https://chikapa.smrj.go.jp/kikaku/project/ool3bn000000dlvb.html",
+    "https://chikapa.smrj.go.jp/trial/project/"
    ]
   },
   {
    "name": "厚生労働省",
    "site": "mhlw.go.jp",
    "list_url": [
-    "https://www.mhlw.go.jp/stf/houdou/houdou_list_202609.html",
+    "https://www.mhlw.go.jp/stf/houdou/houdou_list_202611.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index_00057.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/shokuba_kosodate/ryouritsu01/index.html",
@@ -630,7 +649,8 @@
     "https://www.mhlw.go.jp/content/001716053.pdf",
     "https://www.jeed.go.jp/elderly/subsidy/subsidy_tebiki.html",
     "https://www.jeed.go.jp/disability/subsidy/q2k4vk000001wtq5-att/v1tt1c0000002zw5.pdf",
-    "https://www.jeed.go.jp/disability/subsidy/s_syokubajisyu_jigyo/sub04_syokubajisyu.html"
+    "https://www.jeed.go.jp/disability/subsidy/s_syokubajisyu_jigyo/sub04_syokubajisyu.html",
+    "https://www.mhlw.go.jp/bunya/roudoukijun/taisilyokukin_kyousai/ippanchuutai/kakekin_josei.html"
    ]
   },
   {
@@ -764,7 +784,9 @@
     "https://www.heco-hojo.jp/yR08/trkbus.html",
     "https://rcespa.jp/r08-gurisuro/r08-gurisuro-no4",
     "https://eic.or.jp/info/",
-    "https://www.eic.or.jp/eic/topics/2025/resi_r07c/5th/"
+    "https://www.eic.or.jp/eic/topics/2025/resi_r07c/5th/",
+    "https://www.eta.or.jp/offering/archive.php",
+    "https://www.gaj.or.jp/eie/shift/index.html"
    ]
   }
  ],
@@ -1178,7 +1200,8 @@
      "https://www.pref.aichi.jp/life/sub/2/32/",
      "https://www.pref.aichi.jp/press-release/tokko-shien8.html",
      "https://www.pref.aichi.jp/soshiki/shugyo/fukugyo.html",
-     "https://www.pref.aichi.jp/soshiki/ondanka/sbt.html"
+     "https://www.pref.aichi.jp/soshiki/ondanka/sbt.html",
+     "https://www.aibsc.jp/support/1182/"
     ]
    },
    {
@@ -1211,7 +1234,8 @@
      "https://www.city.nagoya.jp/jigyou/boshu/1014251/1014283/index.html",
      "https://www.city.nagoya.jp/jigyou/category/38-3-10-14-0-0-0-0-0-0.html",
      "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1026471/1026472.html",
-     "https://www.nipc.or.jp/digitalgrants/"
+     "https://www.nipc.or.jp/digitalgrants/",
+     "https://www.nipc.or.jp/"
     ]
    },
    {
@@ -1284,7 +1308,9 @@
      "https://www.pref.tochigi.lg.jp/f02/houdou/houdou/r8datutannsokagijutuikusei.html",
      "https://www.pref.tochigi.lg.jp/f01/2026tochigikigyounaidxjinzaiikuseihojyokin.html",
      "https://www.pref.tochigi.lg.jp/d02/carbonneutral/r8zerocarbon_boshu.html",
-     "https://www.town.nasu.lg.jp/0037/info-0000003396-1.html"
+     "https://www.town.nasu.lg.jp/0037/info-0000003396-1.html",
+     "https://www.pref.tochigi.lg.jp/f01/work/shoukougyou/kigyouricchi/joseikatsuyakuoffice2024.html",
+     "https://www.town.nasu.lg.jp/0353/info-0000004481-1.html"
     ]
    },
    {
@@ -1328,7 +1354,9 @@
      "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/159601.html",
      "https://icoi.pref.shizuoka.jp/post-1368/",
      "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/energy/1056219.html",
-     "https://kankou.town.kawazu.shizuoka.jp/information/4143/"
+     "https://kankou.town.kawazu.shizuoka.jp/information/4143/",
+     "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/kigyoshien/1075089.html",
+     "https://www.city.shimoda.shizuoka.jp/category/060100syoukougyou/159503.html"
     ]
    },
    {
