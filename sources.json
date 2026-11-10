@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -484,7 +484,19 @@
   "sources_tip_261110": "【2026-11-10 台帳の有効性】(1)hojokin.aibsc.jp（あいちナビる）は制度名のみで募集期間・掲載日を一切表示しないため新規判定の台帳にならない。愛知県の新規検出は pref.aichi.jp/life/sub/2/index-2.html と aibsc.jp/ の2本に依存する。(2)city.nagoya.jp/jigyou/boshu/index.html は配下カテゴリへのリンクのみで補助金案件が載らない。名古屋市は nipc.or.jp トップ（日付付き新着）が有効。(3)pref.fukuoka.lg.jp/soshiki/0601820/index-2.html は観光政策課ではなく中小企業経営支援課のページ。福岡県観光政策課の新着一覧の正しい入口は未特定で、宿泊系は life/4/43/196/index.html が唯一の有効な台帳。(4)crossroadfukuoka.jp/business/topics/hojyokin は2025/8/26付の令和7年度版のまま未更新で令和8年度の台帳として使えない。(5)city.shimoda.shizuoka.jp/category/060100syoukougyou/index.html と pref.shizuoka.jp/sangyoshigoto/kigyoshien/1040896/index.html は掲載日を表示しないため日付判定に使えない。静岡県は pref.shizuoka.jp/newslist.html と icoi.pref.shizuoka.jp/category/news/ が有効。(6)那須町は index1.html が11月分の新着を日付付きで取得でき、商工会は r.goope.jp/srb-09-21/info が有効。(7)smrj.go.jp/org/info/solicitation/index.html は中小機構の公募情報一覧で、本日は助成金・補助金等の事務局公募が「現在、公募情報はありません」だった。",
   "churn_90day_261110": "【2026-11-10 削除判定】削除1件＝tochigi-social-startup-2ji（栃木県 社会課題解決スタートアップ企業応援事業 認定事業 2次募集。申請 11/9 17時必着で締切超過。初出コミットは 2026-10-18 だが、30日未満の例外は90日ルールにのみ適用され締切超過には適用されないため削除）。90日ルールの機械判定では churn_90day_kaishaku_261109 と同じ27件前後が形式上の該当となったが、いずれも通年・随時・年度内・予算到達までの記載がある現に受付中の制度のため、従来運用どおり 2027-03-31 を締切とみなして0件とした（解釈の揺れについてはユーザーの判断を仰ぎたい旨 churn_90day_kaishaku_261109 のとおり）。締切マーカー付きの日付を全件機械抽出して 11/10 より前のものを洗い出したが、yokohama-engage-kyujin-2ki（11/13 18時）、tokyo-shokei-seicho-hanro-r8-2（11/12 16時）、chusho-seicho-kasokuka-3（11/12 15時）、tokyo-soui-challenge-gyomu-r8-3（11/13 16時）、tokyo-chakushu-r8（11/18 17時）、tokyo-kasuhara-shoreikin-r8-2（11/18 17時）はいずれも未到来で残置した。",
   "shosai_261110": "【2026-11-10 追加4件・削除1件】(a)新規公開分は0件。12機関すべての一覧ページを取得できており収集の故障ではなく、2026-11-02 以降に公開された新規公募が既掲載以外に存在しなかった（中小企業庁の11月分4件・観光庁・環境省11月報道発表26〜27件・愛知/名古屋/一宮/栃木/静岡/福岡の11月分はいずれも既掲載・イベント・採択結果・対象外）。(b)取りこぼし分4件＝厚労省 中退共 新規加入等掛金助成（date は公開日の記載がないため実行日 2026-11-10）、中小機構 チカパー 海外市場開拓トライアル（簡易アンケート調査）（同様に実行日。締切 11/30 18時）、那須町 公共施設等に関する民間提案制度（date は掲載日 2026-09-01）、栃木県女性活躍オフィス立地・拡大補助金（date は更新日 2026-04-01）。",
-  "subagent_261110": "【2026-11-10 サブエージェント3体の精度】national 3機関×2体・local C 6機関×1体を同時起動し全員の結果を受領（tool_uses 75／65／79、所要 8〜14分）。3体とも403・404・503・文字化け・未到達URLを機関ごとに列挙し、取得できなかったページの数値を推測で書くことはなかった（national B は carbon-neutral.env.go.jp について「403は解消していません」と明記、local C は静岡県ICT補助金について「本文を引用できないため制度内容・補助率・締切は報告しない」と明記）。2026-10-18 のような捏造は検出されなかった。採否に影響した誤りは2件: (1)national A の「65歳超雇用推進助成金は既掲載なし」（親の原因＝既掲載リストにJEED分を含めなかった。subagent_misdetect_65sai_261110）、(2)local C が挙げた栃木県省CO2再募集とICOI温泉旅館オフィス化は既掲載と同一URL。採用した4件はすべて親が自分で WebSearch → WebFetch して本文を確認し、PDF 3本（栃木県 別表第2・交付要領、厚労省 中退共リーフレット）は pdftotext -layout で全文を読んだ。"
+  "subagent_261110": "【2026-11-10 サブエージェント3体の精度】national 3機関×2体・local C 6機関×1体を同時起動し全員の結果を受領（tool_uses 75／65／79、所要 8〜14分）。3体とも403・404・503・文字化け・未到達URLを機関ごとに列挙し、取得できなかったページの数値を推測で書くことはなかった（national B は carbon-neutral.env.go.jp について「403は解消していません」と明記、local C は静岡県ICT補助金について「本文を引用できないため制度内容・補助率・締切は報告しない」と明記）。2026-10-18 のような捏造は検出されなかった。採否に影響した誤りは2件: (1)national A の「65歳超雇用推進助成金は既掲載なし」（親の原因＝既掲載リストにJEED分を含めなかった。subagent_misdetect_65sai_261110）、(2)local C が挙げた栃木県省CO2再募集とICOI温泉旅館オフィス化は既掲載と同一URL。採用した4件はすべて親が自分で WebSearch → WebFetch して本文を確認し、PDF 3本（栃木県 別表第2・交付要領、厚労省 中退共リーフレット）は pdftotext -layout で全文を読んだ。",
+  "meti_chusho_enecho_403_261111": "【2026-11-11 再確認】www.chusho.meti.go.jp は HTTP 403 のまま未解消（national 担当サブエージェントが1回試行）。加えて www.enecho.meti.go.jp/appli/public_offer/index.html も index.html を明示しても HTTP 403 になった。2026-10-01 の『index.html を付ければ取得できる』という回避策は 2026-11-11 時点で無効。経産省系の公募は sii.or.jp トップ、各事業の /setsubi07r/・/koujou07r/ 配下、mirasapo-plus.go.jp、j-net21 支援情報ヘッドライン、中小機構の各事業サイトで代替する。",
+  "shoryokuka_catalog_kaitei_261111": "【2026-11-11 発見・重要】省力化投資補助金〈カタログ注文型〉の 2026年12月3日 制度改定は、トップ https://shoryokuka.smrj.go.jp/catalog/ の本文に『2026年12月3日（木）カタログ注文型の制度が変わります NEW』と /catalog/revision_261203/ へのリンクとして出ているが、制度更新履歴ページ /catalog/about/update/ には11月・12月の項目が無く最新が2026年3月19日のまま。WebSearch も『12月3日の改定は見つからない』と返す。改定の有無はトップページと revision_261203 を直接 WebFetch して確認すること（revision_261203 の更新日は2026-11-10）。トップページには改定前（5名以下200万円）と改定後（5名以下500万円）の2つの上限表が併存しており、どちらがどの時期かは注記のリンク先で判断する。",
+  "env_press_koubo_enchou_261111": "【2026-11-11 確認】環境省の公募期間延長は報道発表の見出しに【公募期間延長】が付く形で出る（例: press_05813.html『【公募期間延長】令和8年度予算「業務用建築物の脱炭素改修加速化事業」の公募開始について』2026-11-10）。制度名『脱炭素ビルリノベ』では WebSearch に全く表出せず、月別一覧 press/202611.html でもなく、報道発表トップ https://www.env.go.jp/press/ を WebFetch して見出しから拾うのが唯一確実な経路。延長後の締切は本文に『同年12月24日（木）まで※延長』とあり、補助率・上限額・対象用途はこのプレス本文に無いので執行団体 bl-renos.jp/r8/ 側で確認する。",
+  "ibaraki_ok_261111": "【2026-11-11 確認】www.pref.ibaraki.jp は正常（親が shokorodo/chusho/shintyaku/ichiran.html を自分で WebFetch し、本文冒頭『ここから本文です。／新着情報一覧』を確認。臨時障害ページは返らなかった）。中小企業課新着の11月分は4件（11/11 大規模小売店舗立地法の届出状況、11/6 同 説明会開催情報、11/5 中小企業課、11/5 特別高圧受電施設等電気料金支援事業＝既掲載）で新規公募はゼロ。11月の県報道発表40件にも事業者向け補助金の新規公表なし。障害からの取り返しは 2026-10-27 に完了済みで毎日の復旧確認は不要。",
+  "ibaraki_gyomu_kaizen_404_261111": "【2026-11-11 確認】茨城県『いばらき業務改善奨励金』の専用ページ /shokorodo/rosei/rodo/gyoumukaizen.html と制度チラシ /shokorodo/rosei/rodo/documents/chirasi2026.pdf はいずれも HTTP 404（2回試行）。WebSearch には常に表出するが実体がない。同奨励金と いばらき賃上げ支援金 の内容は /shokorodo/rosei/rodo/saitei/saichin.html（最低賃金ページ。上乗せコース1/8・上限100万円／拡大コース7/8・上限700万円の記載あり）と特設サイト ibaraki-chinage.com で確認すること。両制度は news.json の ibaraki-chinage-r8 として既掲載。",
+  "mito_kenou_kigyo_guide_261111": "【2026-11-11 確認・採用しない根拠】水戸市『いばらき県央企業ガイド』掲載企業募集（https://www.city.mito.lg.jp/page/95986.html ・更新2025-03-05）は、掲載要件（県央9市町村内に本社または事業所を有する法人／令和6年度以降5年程度で新卒採用予定またはインターンシップ受入予定）は本文にあるが、掲載料が無料かどうか・申込方法・締切がいずれも本文に記載がなく、申請窓口は商工課中小企業振興係の電話番号のみ。『申請窓口が存在しないもの』に近いため掲載を見送った。local 担当サブエージェントが挙げた page/103399.html も同趣旨のページ。",
+  "mito_tele_78022_404_261111": "【2026-11-11 再確認】水戸市 page/78022.html（テレワーク導入促進補助金）は依然 HTTP 404。リンク元の page/51586.html は更新日2023-07-06 の古いページで、リンク切れを含むため台帳としての信頼度が低い。水戸市は /soshiki/57/（商工課・カテゴリ別で日付付き全件）と /soshiki/list1-1.html（新着更新情報）、/soshiki/58/（観光課）を主台帳にすること。指定の /life/sub/2/index-2.html は WebSearch に表出しないことがある。",
+  "sii_newsrelease_404_261111": "【2026-11-11 確認】https://sii.or.jp/newsrelease.html は HTTP 404。SII 全体の新着情報一覧ページは存在せず、新着は事業別の /<事業名>/newsrelease.html または各事業トップに出る。SII 横断の確認は https://sii.or.jp/ トップの『公募中の事業』一覧と /announcement/index.html（執行団体告知）で行う。",
+  "ryugasaki_komecho_hiroba_261111": "【2026-11-11 採用】龍ケ崎市『米町イベント広場』の無料利用（/jigyosha/sangyo/oshirase/ibentohiroba.html・更新2023-06-22）を (b) で追加した。約1,200平方メートルの屋外広場を利用料無料で通年8時〜17時（延長可）使える。金銭補助はないが、振袖の屋外撮影会・ブライダル相談会・出張撮影イベントの会場として直接活用できる。締切の記載がなく公開日が古いため、追加後30日の保留が切れる 2026-12-11 ごろに90日ルールの削除候補になる点に注意（churn_90day_261022 と同じ構造的課題）。",
+  "subagent_261111": "【2026-11-11 サブエージェント3体の精度】national 3機関×2体・local A_茨城 6機関×1体を同時起動し全員の結果を受領（tool_uses 79／100／111、所要 13〜17分）。3体とも403・404・リダイレクト・本文空を機関ごとに列挙し、取得できなかったページの数値は『未確認』と明記していた（local 担当は『いばらき業務改善奨励金の専用ページが404のため一次情報での裏取りは未完了』と自己申告、national B は『enecho は index.html 明示でも403で未解消』と明記）。2026-10-18 のような捏造は検出されなかった。採否に影響した誤りは1件のみ: local 担当が挙げた候補26件のうち20件が既掲載で、うち5件（日立市住宅手当・つくば市ビジネス拡大・展示会・男性育休・PR TIMES）は news.json と別URL経路（/soshikikarasagasu/ 配下 vs /jigyosha/ 配下）だったためURL一致では重複検出されず、制度名での目視照合が必要だった。採用した3件はすべて親が自分で WebSearch → WebFetch して本文を確認した。",
+  "tsukuba_mito_dup_url_261111": "【2026-11-11 重要・重複判定の落とし穴】つくば市は同一制度が /jigyosha/shigoto/sangyo/1011810/ 配下と /soshikikarasagasu/keizaibusangyoshinkoka/gyomuannai/ 配下の2系統のURLで提供されており、news.json には後者で登録されている（tsukuba-business-kakudai-r8=1018201、tsukuba-tenjikai-r8=1011814、tsukuba-dansei-ikukyu-r8=16867、tsukuba-joho-hasshin-prtimes=1011815）。日立市の住宅手当も news.json は /koyotaga/1010320/1010371/1010374.html、巡回で見つかるのは /sangyo_business/koyo_shugyo_shien/1008016.html。URL集合の突き合わせだけでは重複を検出できないため、必ず制度名でも照合すること。",
+  "delete_90day_261111": "【2026-11-11 削除】人材開発支援助成金（人への投資促進コース／mhlw-hitohenotoushi-r8・公開日2026-08-03・通年で締切の記載なし）を90日ルールで削除した。初出日は 2026-09-30 で追加後30日を超えているため保留の例外に当たらない。制度自体は現在も有効なので、取りこぼしとして再追加される可能性がある。同じ人材開発支援助成金の『教育訓練休暇等付与コース』『人材育成支援コース』は初出2026-10-19で30日以内のため保留した。"
  },
  "national": [
   {
@@ -587,7 +599,9 @@
     "https://it-shien.smrj.go.jp/pdf/it2026_kaitei_koubo_tsujyo.pdf",
     "https://fastar.smrj.go.jp/program/16/",
     "https://chikapa.smrj.go.jp/kikaku/project/ool3bn000000dlvb.html",
-    "https://chikapa.smrj.go.jp/trial/project/"
+    "https://chikapa.smrj.go.jp/trial/project/",
+    "https://shoryokuka.smrj.go.jp/catalog/about/update/",
+    "https://shoryokuka.smrj.go.jp/catalog/revision_261203/"
    ]
   },
   {
@@ -851,7 +865,9 @@
      "https://www.pref.ibaraki.jp/shokorodo/sansei/kinyu/shosei/yushi/kanko.html",
      "https://www.pref.ibaraki.jp/shokorodo/sansei/kinyu/shosei/yushi/innovation.html",
      "https://www.pref.ibaraki.jp/shokorodo/rosei/rodo/shogakukinhenkan/shien.html",
-     "https://www.pref.ibaraki.jp/shokorodo/chusho/keiei/keieikakushin/maching.html"
+     "https://www.pref.ibaraki.jp/shokorodo/chusho/keiei/keieikakushin/maching.html",
+     "https://www.pref.ibaraki.jp/shokorodo/rosei/rodo/saitei/saichin.html",
+     "https://www.pref.ibaraki.jp/soshiki/shokorodo/sanjin/tyuusyoukigyou.html"
     ]
    },
    {
@@ -873,7 +889,9 @@
      "https://www.city.hitachi.lg.jp/bunkakoryu_sports/kanko/1019944/index.html",
      "https://www.city.hitachi.lg.jp/bunkakoryu_sports/kanko/1019944/1019945.html",
      "https://www.city.hitachi.lg.jp/sangyo_business/shien_hojo_josei/1003000/1008021.html",
-     "https://www.city.hitachi.lg.jp/sangyo_business/koyo_shugyo_shien/1008016.html"
+     "https://www.city.hitachi.lg.jp/sangyo_business/koyo_shugyo_shien/1008016.html",
+     "https://www.city.hitachi.lg.jp/kurashi_tetsuzuki/1017262/index.html",
+     "https://www.city.hitachi.lg.jp/bunkakoryu_sports/kanko/index.html"
     ]
    },
    {
@@ -943,7 +961,8 @@
      "https://www.city.mito.lg.jp/site/mito-sougyou/3999.html",
      "https://www.city.mito.lg.jp/page/124791.html",
      "https://www.city.mito.lg.jp/page/3636.html",
-     "https://www.city.mito.lg.jp/life/sub/2/27/"
+     "https://www.city.mito.lg.jp/life/sub/2/27/",
+     "https://www.city.mito.lg.jp/page/95986.html"
     ]
    },
    {
@@ -964,7 +983,8 @@
      "https://www.city.hitachinaka.lg.jp/",
      "https://www.city.hitachinaka.lg.jp/business/chushokigyo/1008757.html",
      "https://www.city.hitachinaka.lg.jp/business/chushokigyo/1008273/1002735.html",
-     "https://www.city.hitachinaka.lg.jp/business/chushokigyo/1002740.html"
+     "https://www.city.hitachinaka.lg.jp/business/chushokigyo/1002740.html",
+     "https://www.city.hitachinaka.lg.jp/business/kankoshinko/index.html"
     ]
    }
   ],
