@@ -1,6 +1,6 @@
 {
  "note": "関連新着情報の巡回対象リスト。日次の自動収集タスクは national を毎日確認し、local は A→B→C の順に1日1グループずつ巡回する（3日で一巡）。対象を増減したいときはこのファイルを編集する。※list_url は巡回対象を示す台帳であって、そのまま WebFetch するためのものではない（collection_method を必ず読むこと）。",
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "collection_method": {
   "primary": "必ず『WebSearch でURLを検索結果に表出させる → そのURLを WebFetch で読む』の順で行う。WebSearch はタイトルとURLしか返さない（本文スニペットなし）ため読み取りには使えず、WebFetch は素性のないURLを拒否する。両方を順に使うこと。",
   "provenance": "【2026-09-14 の無人検証で確定】WebFetch は会話に出ていないURLに許可ダイアログを出し、無人実行では誰も応答しないため約5分待たされたうえで PROVENANCE_REQUIRED で失敗する。WebSearch の検索結果に出たURLは待ちゼロで取得できる。",
@@ -537,7 +537,20 @@
   "jnet21_category_tip_261114": "【2026-11-14 判明】j-net21 支援情報ヘッドラインの一覧URLは category パラメータで区分が分かれる: results.php?category=1 がセミナー・イベント、category=2 が補助金・助成金・融資、category=3 がその他（表彰・事業者募集）。巡回では category=2 を優先し、会員募集・表彰を拾うときに category=3 を見ればよい。個別記事URLは従来どおりJS描画で取得不可。",
   "local_A_gaigai_261114": "【2026-11-14 対象外と判定】水戸市テレワーク導入促進補助金＝紹介元 /page/51586.html（更新日2023-07-06）に名前はあるが詳細ページ /page/78022.html が HTTP 404 で実体なし、申請窓口が確認できないため対象外。水戸市創業期支援補助金（1/2・上限20万円、ページ更新日2026-08-05）および水戸市創業支援利子補給制度（利率1%以内・上限35万円、同2026-10-21）＝いずれも現役だが対象が『認定特定創業支援等事業の支援を受けた創業予定者または創業後3年未満』『創業から5年以内の初回創業融資』で、既存事業体の小野写真館グループは対象外。環境省『廃棄物・資源循環分野のフィジカルAIコンソーシアム』会員募集（2026-11-13公開・会費無料・12/03締切）＝親が press_05819.html を読んで確認したが、分野が廃棄物処理・資源循環に限定されグループの6事業に直接活用できないため対象外。観光庁『オーバーツーリズム受入環境整備オンラインソリューション商談会』（10/30）＝イベント告知。中小機構『中小企業大学校東京校 第48期経営後継者研修』（11/11）＝有料の長期研修。『第26回Japan Venture Awards』（11/10）＝会場参加・視聴の受付案内。いずれも対象外。いばらき中小企業グローバル推進機構『茨城ものづくり製品・技術カタログ掲載企業募集』（11/05）＝製造業限定、『FOODEX JAPAN 2027 茨城県ブース設営業務プロポーザル』（11/09）＝委託事業の受託先公募で対象外。観光庁『第4回サステナブルな旅アワード』（11/06公開・11/30締切）＝賞金・副賞の記載がない表彰かつ旅行業登録者との連携が要件のため、2026-11-13 の判断を踏襲して対象外。",
   "sankou_nyuguchi_watch_261114": "【2026-11-14 未検証の入口メモ】サブエージェントが有効な一覧ページとして報告したが親が自分で開いていないURL: https://www.env.go.jp/news/earth/index.html（環境省 地球環境局 新着情報一覧）、https://www.env.go.jp/nature/np/ryokakuzei00/index.html（国際観光旅客税を活用した事業者向け支援一覧）、https://www.city.ryugasaki.ibaraki.jp/shisei/soshiki-R6/soshiki/shimin/2013081500367.html（龍ケ崎市 商工観光課。更新日2024-06-05と古い）。有効性を親が確認できた時点で sources.json の list_url に移すこと。本日は未検証のため list_url には追記していない。",
-  "sakujo_handan_watch_261114": "【2026-11-14 90日ルールの保留分】date が90日より古いが初出から30日未満のため削除候補から外した項目: mhlw-jinzai-ikusei-shien-r8（date 2026-08-03／初出 2026-10-19）、mhlw-hitohenotoushi-r8（date 2026-08-03／初出 2026-10-02。令和4〜8年度の期間限定で2027-03-31を締切とみなすため本来90日ルール対象外）、tsukuba-gorirteki-hairyo-hojo（date 2026-01-28／初出 2026-10-26。本文に締切の記載がない唯一の該当例）、nagareyama-shogaisha-jisshu-shoreikin（date 2021-06-25／初出 2026-11-08。『申請期間の定めなし』＝随時のためユーザー決定(1)により90日ルール対象外）。また shutoken-saiene-kyodo-kounyu（date 2026-05-15／非化石証書共同購入は随時募集）と hitachi-jichi-shinko-kinyu（date 2026-04-01／通年受付）も『随時・通年』の記載があるため90日ルールを適用せず維持した。誤読しやすかった数値: 河津町の『補助率10/10』、水戸市体験型観光の『改良は10/10』、愛知県副業人材の『8/10以内』、一宮市障害者奨励金の『2019年11月30日以前の雇入れ』、栃木県EV充電の『令和8年4月20日から受付中』は、いずれも締切ではないので削除してはならない。"
+  "sakujo_handan_watch_261114": "【2026-11-14 90日ルールの保留分】date が90日より古いが初出から30日未満のため削除候補から外した項目: mhlw-jinzai-ikusei-shien-r8（date 2026-08-03／初出 2026-10-19）、mhlw-hitohenotoushi-r8（date 2026-08-03／初出 2026-10-02。令和4〜8年度の期間限定で2027-03-31を締切とみなすため本来90日ルール対象外）、tsukuba-gorirteki-hairyo-hojo（date 2026-01-28／初出 2026-10-26。本文に締切の記載がない唯一の該当例）、nagareyama-shogaisha-jisshu-shoreikin（date 2021-06-25／初出 2026-11-08。『申請期間の定めなし』＝随時のためユーザー決定(1)により90日ルール対象外）。また shutoken-saiene-kyodo-kounyu（date 2026-05-15／非化石証書共同購入は随時募集）と hitachi-jichi-shinko-kinyu（date 2026-04-01／通年受付）も『随時・通年』の記載があるため90日ルールを適用せず維持した。誤読しやすかった数値: 河津町の『補助率10/10』、水戸市体験型観光の『改良は10/10』、愛知県副業人材の『8/10以内』、一宮市障害者奨励金の『2019年11月30日以前の雇入れ』、栃木県EV充電の『令和8年4月20日から受付中』は、いずれも締切ではないので削除してはならない。",
+  "shosai_261115": "【2026-11-15 結果】通算日319÷3=余り1→B_首都圏グループ。(a)新規公開分0件・(b)取りこぼし分1件・削除3件。合計329件（331→329）。national 6機関・local B 6機関の全12機関を巡回し、開けなかった機関はゼロ（中企庁本体のみ403だが代替経路で網羅）。サブエージェント3体の候補は national A 11件・national B 7件・local B 13件＋参考17件で、親が news.json の id/url 全件と python で突き合わせた結果、url一致・タイトル一致のいずれかで全件が既掲載だった。唯一の未掲載案件は親が自分で見つけた『デジタル化・AI導入補助金2026 インボイス枠（インボイス対応類型）』で、(b) として追加した（親が it-shien.smrj.go.jp/about/ から applicant/subsidy/digitalbase/ を WebFetch し、補助率は50万円以下の部分が中小3/4以内・小規模4/5以内、50万円超〜350万円以下が2/3以内、PC・タブレットは10万円／レジ・券売機は20万円まで1/2以内、ソフトウェア必須でハードのみ申請不可、7次締切2026-12-01 17:00、業種限定なしを確認）。11月は国が採択結果公表フェーズで、首都圏6機関も年度の募集を終えた制度が多く新規公募自体が無い時期であり、収集の故障ではない（各機関の一覧ページはすべて取得できている）。",
+  "natl_zero_shin_261115": "【2026-11-15 (a)0件の裏取り】親が自分で WebSearch→WebFetch して国の4機関の11/08以降の新規公募ゼロを確認した。(1)厚労省 stf/new-info/index.html の11/09〜11/13掲載74件に助成金・補助金の新規公募は1件も無く、11/07・11/08の掲載はゼロ（11/09の「介護福祉士養成施設における教育の充実モデル支援事業の公募結果」は結果公表）。(2)ミラサポplus category/infomation/ の10月下旬以降5件は GビズIDメンテ告知(11/09)・サイバーセキュリティ特別相談窓口(11/05)・持続化創業型第4回(11/05)・持続化一般型第20回(11/05)・新事業進出ものづくり第2回(11/02)で、公募3件はいずれも既掲載。(3)j-net21 支援情報ヘッドライン（補助金・助成金・融資／全国）の最新10件のうち11/08以降は NEDOディープテック基金(11/13)と厚労省 病床数適正化緊急支援事業(11/12)のみで、どちらも対象外。(4)観光庁 kobo_boshu.html の募集中5件は11/06のサステナブルな旅アワード以降に追加が無く、うち2件は既掲載・3件は対象外。",
+  "meti_403_261115": "【2026-11-15 再確認】www.chusho.meti.go.jp は HTTP 403 のまま未解消（national A 担当が koukai/hojyokin/kobo.html を1回試行、本文は1文字も取得できず、レスポンスボディなし）。www.meti.go.jp/information/publicoffer/kobo.html も403のまま。carbon-neutral.env.go.jp 配下は既知403のため national B 担当は試行せず（403解消の判断はしていない）。代替経路（ミラサポplus／j-net21 category=2／中小機構各事業サイト／sii.or.jp）で漏れなく網羅できている。",
+  "kosha_dx_iotai02_shuryo_261115": "【2026-11-15 重要・親が自分で確認】iot-robot.jp の HTTP 502 は解消した。親が WebSearch 経由で iot-robot.jp/business/iotai02/ を WebFetch し、本文に「【募集終了】」「2026年度の募集は予定件数に達したため終了いたしました。（11/11更新）」「募集は終了しました」（申込方法欄）が出ることを確認したため、tokyo-dx-total-support-seisansei-r8-2（DX推進トータルサポート事業 生産性向上コース アドバイザー派遣 第2回）を予算・定員到達による受付終了として削除した。助成金本体 iot-robot.jp/business/dxtotalsupportsubsidy/ は申請期間が11/2〜11/30で生きているため維持したが、事前予約期間が10/15〜11/6ではなく「11月13日(金)まで延長」されて既に終了していることを本文で確認したので title と summary を訂正した。あわせて iot-robot.jp/business/dxsubsidy/（DX推進助成金 生産性向上コース／DX戦略策定支援コース・上限3,000万円・下限30万円）も親が開いたが、申請にはアドバイザー作成の提案書が必須で作成に最低3か月かかり、かつ前提の「DX推進支援事業」の新規採択が終了しているため今年度の新規申請は実質不可能＝対象外とした。2026-10-31以来の要監視事項(1)はこれで解消。",
+  "dup_record_sakujo_261115": "【2026-11-15 重複レコードの整理】news.json 内に url が完全一致する重複レコードが2組あったため、親が1件ずつ目視と裏取りで同一制度と確認したうえで冗長な側を削除した。(1)tokyo-ai-senhan-kanko-kofukakachi-tsuika（初出11/05・「AI等先端技術を活用した観光地の高付加価値化支援 補助金の追加募集」）と tokyo-ai-sentan-ukeire-r8（初出11/11）はどちらも sangyo-rodo.metro.tokyo.lg.jp/tourism/kakusyu/advanced-tech/ を指す同一制度。親が当該ページを WebFetch し、正式名称は「AI等先端技術を活用した受入環境高度化支援事業」で本文に「第2回」「追加募集」の記載が無く、募集期間は令和8年11月4日〜12月11日必着・個別説明会申込締切11/27・4,000万円・2分の1以内・採択2件（予定）・2者以上の都内事業者グループであることを確認したため、名称が正確な tokyo-ai-sentan-ukeire-r8 を残し、誤った名称の側を削除した。(2)iis-chusho-expert-haken（初出11/04）と iis-senmonka-haken（初出10/16）はどちらも iis-net.or.jp/page?kind=venture_senmonka を指し、企業負担1日約1万円・年度内最大10日・随時受付まで一致する同一制度のため、先に掲載した iis-senmonka-haken を残した。※両立支援等助成金の ryouritsu01/index.html と content/001716053.pdf は兄弟コースが同一ページを共有する正当な重複なので維持する（mhlw_same_url_courses のとおり）。",
+  "local_b_gaigai_261115": "【2026-11-15 B群で対象外・不採用と判定（根拠つき）】(1)足立区の事業者向け補助金19制度すべて＝ホームページ作成・更新補助金の本文「区内に本店登記があり、かつ、区内に主たる事業所を有していること。」、オンラインショップ出店支援補助金の「区内に本社又は本店を有する活動実態のある区内の事業者」が共通要件で、本社が茨城県のグループは対象外（新製品・新事業開発補助金は「【令和８年度 申請終了しました】」と明記）。(2)KIPC カーボンニュートラルワンストップ相談窓口（kipc.or.jp/CNsupport/）＝相談窓口の案内のみ。(3)横浜型地域貢献企業 認定（idec.or.jp/business/csr/chiikikouken-01howto.html）＝令和8年度後期の新規外部評価申込は令和9年1/8まで開いているが、前提の新規企業向け研修会（後期分）が11/6に実施済みで、申込までに制度説明動画→エントリー→CSR経営セミナー受講→研修№1〜10受講＋課題提出→マネジメントシステム構築・運用→内部監査という長い前提プロセスがあり今期の新規参入は現実的でない。さらに要件に「横浜市内で3年以上継続して事業を営んでいる」があり、外部評価料は新規2万円（税抜）。今回は不採用とし、令和9年度前期（認定日2027-10-01）に向けた監視対象とする。(4)デジタル化・AI導入補助金「インボイス枠（電子取引類型）」＝発注者が受発注ソフトを導入して取引先の受注者に供与する商流単位の枠で、交付決定一覧（11/09更新）でも全締切回の申請・交付決定が0件。グループの事業形態に合わないため対象外。(5)観光庁 クルーズ等訪日旅客の受入促進事業（令和8年度第3回・j-net21に10/26掲載）＝補助対象者は港湾管理者・地方公共団体・民間事業者（登録DMO含む）・クルーズ振興のための地域の協議会等で、クルーズ寄港地の受入環境整備が対象。グループの6事業に直接活用できないため対象外。(6)観光庁 オーバーツーリズム受入環境整備オンラインソリューション商談会（10/30）＝イベント告知、第4回サステナブルな旅アワード（11/06・11/30締切）＝賞金・副賞の記載が無い表彰かつ旅行業登録者との連携が要件（2026-11-13の判断を踏襲）、令和8年度DMO総合支援 専門家派遣事業（6/10）＝DMO向けで民間中小企業が対象外。",
+  "local_b_watch_261115": "【2026-11-15 B群の要監視・未確認】(1)しごと財団『ABWオフィス促進助成金』は令和7年度分が「令和7年度の募集・受付は終了いたしました」で、令和8年度は当該ページに受付中の明示が無い。確認できたのは令和8年度の専門家による導入支援の申込が特設サイト abw.metro.tokyo.lg.jp 側であることと、導入支援決定事業者の支給申請期間が2026-06-01〜2027-12-31であることのみ。助成率・上限額は募集要項PDF（2,142KB）側で未取得のため数値は記録しない。構造上、助成金のみの申請は不可で先に導入支援の対象決定が必要。令和8年度の導入支援申込が締切済みかを次回 abw.metro.tokyo.lg.jp で確認すること。(2)公社『令和8年度 展示会出展助成事業』（tenjikai/r8/）は補助率2/3・上限150万円・受付は令和8年4/1〜令和9年1/14の規定日全10日と分かったが、補助対象者の要件が本文に無く募集要項PDF側。BtoB展示会限定のためブライダル・写真のBtoC展示会が対象外の可能性があり、既掲載の tokyo-tenjikai-r8 の要件を次回詰めること。(3)TCVB project/subsidy/ は本日も40制度を列挙できたが募集期間・「募集中」表示が本文に展開されず、「募集終了」明記は6件のみだった（tcvb_status_unstable の症状が継続）。(4)神奈川県 jf2/dantai/support/2024support.html は HTTP 404、jf2/prs/r1525607.html は301→m2w/prs/r1525607.html も404。代替として m2w/prs/r2625041.html が有効。(5)流山市『多様な人材が活躍できる職場づくり補助金』は本文に申請期間の記載が無く、申請前に商工振興課との協議が必須（既掲載 nagareyama-tayo-jinzai-shokuba-r8）。(6)流山市お知らせ一覧 1048452 は掲載日が表示されないため直近7日の新規告知を判定できない。",
+  "subagent_261115": "【2026-11-15 サブエージェントの挙動】3体とも誠実性の指示を守り、取得できなかったページを「取得できなかった」と正直に報告した。捏造は発生していない。national A は www.chusho.meti.go.jp の403と chutaikyo.taisyokukin.go.jp の403を「本文は一切取得できず」と明記し、中退共の助成内容はWebSearchのスニペットしか根拠が無いため数値を書かないと自ら判断した（中退共は mhlw-chutaikyo-kakekin-josei として既掲載なので実害なし）。national B は carbon-neutral.env.go.jp に最初から試行せず「403が解消したとの判断はしていない」と明記した。local B は iot-robot.jp の502解消を本文冒頭の引用つきで報告し、親が iotai02/ と dxsubsidy/ と dxtotalsupportsubsidy/ の3ページを自分で WebFetch して裏取りした結果、報告内容は正確だった。local B の未検証項目（神奈川県の募集中17制度）は「推測で書くことを避け、名称とURLのみ記載します」と明示して列挙しており適切。",
+  "churn_90day_261115": "【2026-11-15 90日ルールの判定】date が90日より古い項目は145件あるが、ユーザー決定(1)により「通年」「随時」「年度内」「予算到達まで」「◯年度の取組が対象」「締切なし」「申請期間の定めなし」のいずれかの記載がある項目と、本文に将来の締切が明記されている項目は対象外。本文に受付の終期の手がかりが無く90日超の項目は3件のみで、いずれも削除しなかった: mhlw-jinzai-ikusei-shien-r8（date 2026-08-03／初出 2026-10-19＝27日前で30日未満のため保留）、tsukuba-gorirteki-hairyo-hojo（date 2026-01-28／初出 2026-10-26＝20日前で30日未満のため保留）、mhlw-hitohenotoushi-r8（date 2026-08-03／title に「令和8年度末までの期間限定」とあり2027-03-31を締切とみなすため本来90日ルール対象外）。mhlw-reskilling-20260803（date 2026-08-06／初出 2026-10-03＝43日前）は90日超だが summary に「本コースは2027年3月末までの時限措置」と終期の記載があるため対象外として維持した。",
+  "shimekiri_261115": "【2026-11-15 締切判定】python で全329件の title+summary から日付表現を抽出し、将来日付を1つも含まない項目11件と、2026-10-25〜11-14の日付を含む項目31件を1件ずつ目視確認した。実際に締切超過していた項目はゼロ。誤読しやすかった数値: mhlw-reskilling-20260803 の「8/3以降の計画届から」は制度改正日、yukuhashi-eizo-location の「申請受付9/1開始」と shoryokuka-ippan-9 の「公募開始11/4」と tokyo-tokko-lpg-shienkin-7 の「申請11/9〜」と chiba-hisai-shokibo-saiken-r8 の「受付11/6開始」と tochigi-datsutanso-r8 の「11/5〜12/25に再募集」はいずれも開始日、kawazu-chiiki-kadai-renkei-hojo の「補助率10/10」は分数、mhlw-gaikokujin-shuro-kankyo-r8 の「10/1改正で増額」は改正日。これらを締切と誤読して現役の制度を消してはならない。なお tokyo-dx-total-support-joseikin-r8 は事前予約（必須）が11/13で終了したが申請期間が11/30まで残っており、既に事前予約済みの事業者はまだ申請できるため削除せず title の訂正にとどめた。",
+  "mhlw_202611_ok_261115": "【2026-11-15 確認】厚労省 stf/houdou/houdou_list_202611.html は正常に取得でき、11月分40件を一覧できた（national A 担当）。親も stf/new-info/index.html で11/09〜11/13の全74件を確認済み。11月の list_url は当月のままで更新不要。12月に入ったら houdou_list_202612.html へ差し替えること。",
+  "jnet21_zenkoku_filter_261115": "【2026-11-15 判明・有効な入口】j-net21 支援情報ヘッドラインは prefecture[]=00 を付けると「全国」対象の案件だけに絞れる。親が https://j-net21.smrj.go.jp/snavi2/results.php?category=2&page=1&sort=publish_date_default&prefecture%5B%5D=00&period=1&displaysort=DESC&displaycount=10&navitype=is-number を WebFetch して全217件中の最新10件を取得できた（category=2 の全件は2,521件あり自治体案件が大半を占めるため、国の機関の新規公募を探すにはこの全国フィルタが効率的）。page=2,3… で遡れる。個別記事URLは従来どおりJS描画で取得不可。",
+  "it_shien_about_261115": "【2026-11-15 判明】デジタル化・AI導入補助金2026 の枠の一覧は https://it-shien.smrj.go.jp/about/ が入口で、各枠の個別ページのパスが本文に載っている（インボイス対応類型 /applicant/subsidy/digitalbase/、電子取引類型 /applicant/subsidy/digitalbased_invoice/、通常枠 /applicant/subsidy/normal/、セキュリティ対策推進枠 /applicant/subsidy/security/、複数者連携枠 /applicant/subsidy/digitalbased_multiple_companies/）。about/ 自体には補助率・上限額・締切が無いので、数値は必ず個別ページで読むこと。"
  },
  "national": [
   {
@@ -643,7 +656,9 @@
     "https://chikapa.smrj.go.jp/trial/project/",
     "https://shoryokuka.smrj.go.jp/catalog/about/update/",
     "https://shoryokuka.smrj.go.jp/catalog/revision_261203/",
-    "https://shinjigyou-monodukuri.smrj.go.jp/schedule"
+    "https://shinjigyou-monodukuri.smrj.go.jp/schedule",
+    "https://j-net21.smrj.go.jp/snavi2/results.php?category=2&page=1&sort=publish_date_default&prefecture%5B%5D=00&period=1&displaysort=DESC&displaycount=10&navitype=is-number",
+    "https://it-shien.smrj.go.jp/about/"
    ]
   },
   {
@@ -1100,7 +1115,12 @@
      "https://www.metro.tokyo.lg.jp/information/press/2026/11",
      "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/telework/abw/abw.html",
      "https://www.tokyo-kosha.or.jp/chizai/josei/syouhyoutaisaku/index.html",
-     "https://iot-robot.jp/business/totalsupport/"
+     "https://iot-robot.jp/business/totalsupport/",
+     "https://www.metro.tokyo.lg.jp/information/press/2026/11?page=2",
+     "https://www.koyokankyo.shigotozaidan.or.jp/allNewsList.html",
+     "https://iot-robot.jp/business/iotai02/",
+     "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/jokatsu-seibi/joseikatsuyaku.html",
+     "https://www.koyokankyo.shigotozaidan.or.jp/jigyo/telework/abw/boshu/abw.html"
     ]
    },
    {
@@ -1151,7 +1171,9 @@
      "https://www.pref.kanagawa.jp/docs/ap4/cnt/f7600/re100project.html",
      "https://www.pref.kanagawa.jp/docs/ap4/cnt/f7600/saieneauction-joint.html",
      "https://www.pref.kanagawa.jp/docs/jf2/cnt/f105/index.html",
-     "https://www.pref.kanagawa.jp/docs/jf2/boshu.html"
+     "https://www.pref.kanagawa.jp/docs/jf2/boshu.html",
+     "https://www.pref.kanagawa.jp/docs/m2w/prs/r2625041.html",
+     "https://www.pref.kanagawa.jp/docs/ap4/cnt/f7226/syoueneshindan.html"
     ]
    },
    {
@@ -1177,7 +1199,8 @@
      "https://www.city.yokohama.lg.jp/business/kigyoshien/syogyo/tenpo/akitenjosei/tenpoyuuti.html",
      "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/capex/carbon-led-sme.html",
      "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/kaihatsu/tenjikai/tennjikaijyosei.html",
-     "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/kaihatsu/tenjikai/"
+     "https://www.city.yokohama.lg.jp/business/kigyoshien/keieishien/kaihatsu/tenjikai/",
+     "https://www.idec.or.jp/business/csr/chiikikouken-01howto.html"
     ]
    },
    {
